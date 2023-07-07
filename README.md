@@ -1,5 +1,5 @@
 ### Hi there 👋
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/626c7ff4-4785-44ed-8370-53eccb5558f1/deploy-status)](https://app.netlify.com/sites/silasshaibu/deploys)
 <!--
 **Silasshaibu/silasshaibu** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
