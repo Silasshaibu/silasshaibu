@@ -14,7 +14,6 @@ body{
     background-color: orange;
 }
 
-
 header{
     height:10vh;
 }
@@ -25,6 +24,7 @@ article{
     flex-direction: column;
     justify-content: flex-end;
     padding:1.5rem;
+    width: 100%;
 }
 
 .layout{
@@ -85,7 +85,6 @@ footer{
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
-    border:1px solid grey;
 }
 
 
@@ -114,7 +113,14 @@ footer div:nth-child(2){
 
 ul{
     display: flex;
+    justify-content: center;
 }
+
+li a{
+    margin-right:5px;
+}
+
+
 
 h6{
     text-transform: uppercase;
