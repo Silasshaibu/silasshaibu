@@ -15,7 +15,7 @@ body{
 }
 
 header{
-    height:10vh;
+    height:8vh;
 }
 
 article{
@@ -81,6 +81,7 @@ span{
 
 footer{
     height:20vh;
+    padding-bottom:2vh;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
