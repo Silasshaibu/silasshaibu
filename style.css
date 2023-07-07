@@ -1,5 +1,91 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+/*Head+Body+Foot == 100vh*/
+/*HeadHeight is 1, BodyHeight is 2*/
+
+body{
+    padding:0rem 4rem;
+    background-color: #efefef;
+    font-family: 'Product Sans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    height: 50px;
+    background-color: orange;
+}
+
+
+header, footer{
+    background-color: grey;
+}
+
+header{
+    height:10vh;
+}
+
+article{
+    height: 70vh;
+    /* border:1px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding:1.5rem;
+}
+
+footer{
+    height:20vh;
+}
+
+
 .layout{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap:1rem;  
+    gap:20px;   
+    /* margin:0 auto;    */
+}
+
+.portfolio-gigImage{
+    background-color: white;
+    border-radius: 1rem;
+    aspect-ratio: 16/9;
+    padding:3rem  1.5rem;
+    width: 100%;
+    display: flex;
+    line-height: 1.5rem;
+    flex-direction: column;
+    align-items: start;
+    justify-content: flex-end;
+    position: relative;
+    cursor: default;
+    cursor: pointer;
+    outline:3px solid transparent;
+    transition: all 300ms;
+}
+
+.portfolio-gigImage:hover{
+    outline:3px solid rgb(255, 102, 0)
+}
+
+a:hover {
+    color:red;
+}
+
+.site-title{
+    text-align: center;
+    padding:2rem;
+}
+
+.portfolio-gigImage a{
+    color:black;
+    font-size: .8rem;  
+    padding-bottom:2px;
+    margin-bottom: 2px;
+}
+
+/*MOBILE DEVICE STYLING*/
+@media only screen and (max-width:768px){
+    body{
+        background-color: red;
+    }
 }
