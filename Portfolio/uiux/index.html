@@ -9,19 +9,9 @@
 </head>
 <body>
     <div class="artBody">
-        
-        <div class="ux-layout">
-            <div class="main">
-                <div class="tablet-space">
-                    UIUX -TABLET
-                </div>
-                <div class="aside-tablet">
-                    UIUX -TABLET
-                </div>
-            </div>
-           
-            <div class="control-panel">
-                UIUX -TABLET
+        <div class="screen-layout">
+            <div class="tabletFrame">
+                <h1>TABLET SCREEN </h1> 
             </div>
         </div>
     </div>    
@@ -29,35 +19,33 @@
 
 <style>
 
-    h1{
-        text-align: center;
-    }
-    .ux-layout .main{
-        height:200px;
-        display: flex;
-        width: 100%;
-        min-width: 100%;
-        border: 2px solid red;
-        height: 80vh;
-    }
+.artBody, .screen-layout{
+    display: flex;
+    justify-content: center;
+    margin:0 auto;
+    width:100%;
+    background-color: #efefef;
+    height: 100vh;
+    border:1px solid black;
+}
 
-    .aside-tablet{
-        border:2px solid green;
-        min-width: 20%;
-        width:20%;
-    }
+.screen-layout{
+    height: 80vh;
+    display: grid;
+    place-items: center;
+    
+}
 
-    .tablet-space{
-        width: 80%;
-        min-width:80%;
-        border:5px solid orange;
-    }
+.tabletFrame{
+    width:360px;
+    aspect-ratio:4/3;
+    border:5px solid black;
+    display: grid;
+    place-items: center;
+    border-radius:12px;
+    filter: drop-shadow(0 0 0.75rem rgb(107, 98, 98));
+}
 
-    .control-panel{
-        width: 100vw;
-        height: 20vh;
-        border:2px solid green;
-    }
 
 
 </style>
