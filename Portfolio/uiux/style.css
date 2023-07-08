@@ -13,10 +13,11 @@ padding-bottom:1rem;
     display: grid;
     grid-template-columns: 1fr;
     grid-gap:0px;
+    min-height: 80vh; /*min-height*/
   }
   
    .item { 
-    background: #eee;
+    background: rgb(129, 126, 126);
     border: 1px solid #ddd;
     grid-column: 80vh;
   }
