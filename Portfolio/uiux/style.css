@@ -1,42 +1,6 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing: border-box;
-    font-family: 'product sans', Verdana, Geneva, Tahoma, sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'product sans', Verdana, Geneva, Tahoma, sans-serif;
 }
-
-.artBody h1{
-padding-bottom:1rem;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-gap:0px;
-    min-height: 80vh; /*min-height*/
-  }
-  
-   .item { 
-    background: rgb(129, 126, 126);
-    border: 1px solid #ddd;
-    grid-column: 80vh;
-  }
-
-  .artBody{
-    padding:1rem;
-    background-color: grey;
-  }
-  
-  /* TABLET DEVICE SCREEN */
-  @media (max-width:1024px){
-    .grid {
-        display: grid;
-      }
-    }
-
-  /* MOBILE DEVICE SCREEN */
-  @media (max-width:600px){
-    .grid {
-        display: grid;
-      }
-    }
