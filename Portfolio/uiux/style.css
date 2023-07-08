@@ -11,15 +11,14 @@ padding-bottom:1rem;
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 300px);
+    grid-template-columns: 1fr;
     grid-gap:0px;
   }
   
    .item { 
     background: #eee;
     border: 1px solid #ddd;
-    grid-column: 200px;
+    grid-column: 80vh;
   }
 
   .artBody{
@@ -31,9 +30,6 @@ padding-bottom:1rem;
   @media (max-width:1024px){
     .grid {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(4, 200px);
-        grid-gap:0rem;
       }
     }
 
@@ -41,8 +37,5 @@ padding-bottom:1rem;
   @media (max-width:600px){
     .grid {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(6, 200px);
-        grid-gap:0rem;
       }
     }
