@@ -62,7 +62,7 @@ a:hover {
 
 .site-title{
     text-align: center;
-    padding:1rem;
+    padding:.3rem;
 }
 
 .portfolio-gigImage a{
@@ -82,14 +82,13 @@ span{
 }
 
 footer{
-    height:20vh;
-    padding-bottom:2vh;
+    min-height:20vh;
+    padding-bottom:1vh;
     overflow: hidden;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
     place-items: center;
 }
-
 
 img.social-conn-icons{
     height: 2rem;
@@ -109,7 +108,6 @@ img.social-conn-icons{
     margin-right:0rem;
 }
 
-
 footer div:nth-child(2){
     text-align: center;
 }
@@ -123,11 +121,21 @@ li a{
     margin-right:5px;
 }
 
-
-
 h6{
     text-transform: uppercase;
 }
+
+.imgContainer{
+    display: none;
+}
+
+/*Changing the social div section to top right of the page on pc view*/
+
+/* .Socials{
+    position: absolute;
+    right:2%;
+    top:50px;
+} */
 
 /*MOBILE DEVICE STYLING*/
 @media only screen and (max-width:768px){
@@ -136,10 +144,15 @@ h6{
     }
 
     article{
-        padding:.8rem;
+        padding:.5rem;
     }
 
     header{
+        height:1vh;
+    }
+
+    footer{
+        /* padding:1vh; */
     }
 
     .layout{
@@ -150,7 +163,7 @@ h6{
 }
 
 article, header, .layout{
-    min-height:20px;
+    min-height:10px;
 }
 
 .portfolio-gigImage{
@@ -162,4 +175,37 @@ article, header, .layout{
     align-items: center;
     padding:.5rem  2.5rem;
 }
+
+.aid{
+    display:grid;
+    place-items:center;
+}
+
+.imgContainer img{
+    border-radius: 50%;
+
+}
+.imgContainer{
+    position: relative;
+    display: block;
+}
+
+.imgContainer::after{
+    content:'@silasshaibu';
+    background-color: rgb(16, 156, 180);
+    padding:5px 10px;
+    color: white;
+    border-radius: 20px;
+    bottom:-.5rem;
+    font-size: .5rem;
+    left:50%;
+    position: absolute;
+    transform: scale(1) translateX(-50%);
+}
+
+h2{
+    font-size: 1rem;
+    margin-top: .5rem;
+}
+
 }
