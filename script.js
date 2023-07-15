@@ -1,6 +1,7 @@
 //onClick let user be directed to that project link
 
-const project = document.getElementById('');
-function projectLink(){
-    console.log('projectLinkClicked');
+// const project = document.getElementById('');
+function projectlink(){
+    let projectLinkURL = document.getSelection;
+    console.log(projectLinkURL);
 }
