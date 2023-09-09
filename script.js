@@ -1,20 +1,15 @@
+    //If A Skill Box contains an anchor tag then when user clicks on it, user an new window opens that features the link in the Skill Box
+    const allDivs = document.querySelectorAll('.portfolio-gigImage');
+    allDivs.forEach(specificDiv => {
+        specificDiv.addEventListener('click', ()=> {
+            const anchorElement = specificDiv.querySelector('a');
 
-    const anchorTags = document.querySelectorAll('.portfolio-gigImage a');
-
-    // Attach click event listener to each anchor tag
-    anchorTags.forEach((anchorTag) => {
-    anchorTag.addEventListener('click', (event) => {
-        // Prevent the default link behavior
-        event.preventDefault();
-
-        // Get the href attribute value of the clicked anchor tag
-        const link = anchorTag.href;
-
-        // Redirect to the link
-        window.location.href = link;
+            if (anchorElement) {
+                const href = anchorElement.getAttribute('href');
+                window.open(href, '_blank');
+            }
+        });
     });
-    });
-}
 
 
 
