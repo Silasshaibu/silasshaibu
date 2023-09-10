@@ -13,3 +13,42 @@
 //if the users is on mobile
 //only mobile options should be allowed to be toggled,
 //others should be greyed out and also provide a tip that notifies the user that uiux of other devices can be viewed with devices on higher width. and also user cand download the pdf format of the uiux instead.
+
+
+/**
+ * Toggles the device options in a UI based on the user's device type (tablet or mobile).
+ * Only the relevant options are active. Provides tips and allows the user to download a PDF version of the UI/UX.
+ */
+
+function toggleDeviceOptions() {
+  const switchNav = document.querySelector('.switchNav');
+  const allBtns = switchNav.querySelectorAll('li');
+  const activeElement = switchNav.querySelector('.active');
+    if (activeElement) {
+    activeElement.classList.remove('active');
+    }
+
+    const viewer =  document.querySelector('.Frame');
+    //when user clicks on the toggle device option,
+    //the if the ul.innerHtml matches or has a certain text,
+    //then the class of the frame class gets a specific class added to it.
+
+  switchNav.addEventListener('click', (event) => {
+    const clickedElement = event.target;
+    if (clickedElement.matches('li')) {
+      clickedElement.classList.add('active');
+      const viewerName = clickedElement.innerHTML.toLowerCase();
+        if (viewerName.includes('pc')) {
+            console.log('This is a PC Viewer');
+        }
+
+        if (viewerName.includes('tablet')) {
+            console.log('It is a Tablet Viewer');
+        }
+
+        if (viewerName.includes('mobile')) {
+            console.log('It is a mobile');
+        }
+    }
+  });
+}
