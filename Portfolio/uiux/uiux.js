@@ -29,25 +29,29 @@ function toggleDeviceOptions() {
     }
 
     const viewer =  document.querySelector('.Frame');
-    //when user clicks on the toggle device option,
-    //the if the ul.innerHtml matches or has a certain text,
-    //then the class of the frame class gets a specific class added to it.
 
   switchNav.addEventListener('click', (event) => {
     const clickedElement = event.target;
     if (clickedElement.matches('li')) {
       clickedElement.classList.add('active');
       const viewerName = clickedElement.innerHTML.toLowerCase();
+      const viewerFrame = document.querySelector('.ViewerFrame')
         if (viewerName.includes('pc')) {
             console.log('This is a PC Viewer');
+            viewerFrame.classList.remove('tablet', 'mobile');
+            viewerFrame.classList.add('pc');
         }
 
         if (viewerName.includes('tablet')) {
             console.log('It is a Tablet Viewer');
+            viewerFrame.classList.remove('pc', 'mobile');
+            viewerFrame.classList.add('tablet');
         }
 
         if (viewerName.includes('mobile')) {
             console.log('It is a mobile');
+            viewerFrame.classList.remove('pc', 'tablet');
+            viewerFrame.classList.add('mobile');
         }
     }
   });
