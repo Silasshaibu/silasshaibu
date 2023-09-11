@@ -10,19 +10,78 @@
 <body>
     <div class="artBody">
         <div class="screen-layout">
-            <div class="ViewerFrame">
-                <h1>TABLET SCREEN </h1>
+            <div id="myDiv" class="ViewerFrame ">
+                <div class="slideContainer">
+                    <img class="slide" src="./ux-images/1920x1080_Bimto_01_desktop.jpg" alt="First Slide" width="300px" height="fit-content">
+                    <img class="slide" src="./ux-images/1920x1080_Bimto_02_desktop.jpg" alt="Second Slide" width="400px">
+                    <img class="slide" src="./ux-images/1920x1080_Bimto_03_desktop.jpg" alt="Second Slide" width="400px">
+                </div>
+            </div>
+            <div class="aside-designs">
+                <p class="list-title">PROJECTS</p>
+                <ul>
+                    <li>
+                        BIMTO | Ecommerce
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        ASKMEABROAD | Education
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        SAAS | Business
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        TheFuture | 3D Website
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        ASKMEABROAD | Education
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        SAAS | Business
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        TheFuture | 3D Website
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        ASKMEABROAD | Education
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        SAAS | Business
+                        <span class="tag">View Live Site</span>
+                    </li>
+                    <li>
+                        TheFuture | 3D Website
+                        <span class="tag">View Live Site</span>
+                    </li>
+
+                </ul>
             </div>
         </div>
-        <div class="aside-designs">
 
-        </div>
     </div>
     <div class="screen-control">
         <div class="switchNav">
             <li onclick="toggleDeviceOptions()" class='tablet active'>Tablet</li>
             <li onclick="toggleDeviceOptions()" class="pc">PC</li>
             <li onclick="toggleDeviceOptions()" class="mobile">Mobile</li>
+        </div>
+
+        <div class="carouselNav">
+            <li onclick="leftArrow()" class='arrow left'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgIcon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+              </li>
+            <li onclick="rightArrow()" class='arrow right'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgIcon">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+              </li>
         </div>
     </div>
 </body>

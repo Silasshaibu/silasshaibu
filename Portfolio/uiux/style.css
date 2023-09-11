@@ -5,141 +5,217 @@
   font-family: 'product sans', Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.artBody{
+.artBody {
   position: relative;
   display: flex;
   justify-content: center;
-  margin:0 auto;
-  width:100%;
+  margin: 0 auto;
+  width: 100%;
   background-color: #701010;
   height: 80vh;
-  border:1px solid black;
+  border: 1px solid black;
 }
 
-.artBody .aside-designs{
-  right:8vw;
-  top:10vh;
-  height:65vh;
-  position: absolute;
-  width:15vw;
-  min-width: 20vw;
+.artBody .aside-designs {
+  position: relative;
+  min-width: 200px;
+  margin-left: 1.5rem;
+}
+
+.aside-designs ul {
+  height: 60vh;
+  position: relative;
+  overflow-y: scroll;
   background-color: orange;
-  z-index:2;
+  margin-left: 1rem;
+  padding: 0;
+  margin: 0;
 }
 
-.highlighter-selector{
+.list-title {
+  content: 'PROJECTS';
+  z-index: 10;
+  padding: 0.5rem;
   position: absolute;
-  width:calc((33%));
-  top:0;
-  left:0px;
+  top: -2.2em;
+  color: white;
+  background-color: grey;
+  width: 100%;
+}
+
+.aside-designs li {
+  min-height: 2rem;
+  background-color: #a8a8a8;
+  border: 1px solid grey;
+  border-top: none;
+  cursor: pointer;
+  list-style: none;
+  padding: 1rem 0.5rem;
+  align-content: center;
+  align-tracks: center;
+}
+
+span.tag {
+  float: right;
+  margin-left: 0.5rem;
+  border-radius: 0.2rem;
+  color: white;
+  padding: 0.25em 0.25em;
+  background-color: rgb(80, 80, 99);
+}
+.aside-designs li:hover {
+  background-color: white;
+}
+
+.highlighter-selector {
+  position: absolute;
+  width: calc((33%));
+  top: 0;
+  left: 0px;
   content: '0';
   background-color: rgba(189, 184, 184, 0.295);
-  height:100%;
-  z-index:3;
+  height: 100%;
+  z-index: 3;
   /* border-radius: 50px; */
 }
 
-.screen-control{
+.screen-control {
   height: 20vh;
   display: flex;
-  margin:0 auto;
+  margin: 0 auto;
   align-items: center;
   justify-content: center;
   background-color: orange;
 }
 
-.switchNav{
+.switchNav,
+.carouselNav {
   position: relative;
   display: flex;
   text-align: center;
-  margin:0 auto;
-  width:auto;
+  width: auto;
+  /* float: right; */
   list-style: none;
   background-color: white;
-  outline:3px solid white;
-  border-radius:50px;
+  outline: 3px solid white;
+  border-radius: 50px;
+  margin-right: 1rem;
 }
 
-.switchNav li{
-  padding:15px 30px;
-  border-radius:30px;
-  width:100px;
+.carouselNav {
+  margin-right: 0;
+  margin-left: 1rem;
+}
+
+.carouselNav::before {
+  content: '';
+  margin-left: -1rem;
+  position: absolute;
+  height: 100%;
+  width: 0.2rem;
+  background-color: grey;
+  border-radius: 1rem;
+}
+
+.switchNav li,
+.carouselNav li {
+  padding: 15px 30px;
+  border-radius: 30px;
+  width: 100px;
   cursor: pointer;
   transform: all 300ms;
 }
 
-.switchNav li.active{
-  background-color: rgb(59, 59, 59);
-  color:white;
+.carouselNav li {
+  padding: 15px 15px;
+  width: 3rem;
+  /* aspect-ratio: 1/1; */
 }
 
-.switchNav li:hover{
+.switchNav li.active,
+.carouselNav li.active {
+  background-color: rgb(59, 59, 59);
+  color: white;
+}
+
+.switchNav li:hover {
   background-color: rgb(143, 143, 143);
-  color:white
+  color: white;
 }
 
-.switchNav li:active{
+.switchNav li:active,
+.carouselNav li:active {
   background-color: rgb(59, 59, 59);
-  color:white;
+  color: white;
 }
 
-.screen-layout{
+/* svg icons styling*/
+.svgIcon {
+  width: 1rem;
+}
+.screen-layout {
   height: 80vh;
-  display: grid;
+  width: 90%;
+  justify-content: center;
   place-items: center;
+  margin: 0 auto;
+  display: flex;
 }
 
-.ViewerFrame{
-  height:60vh;
-  aspect-ratio:1.3/1;
+.ViewerFrame {
+  height: 60vh;
+  aspect-ratio: 1.3/1;
   background-color: white;
   display: grid;
   place-items: center;
-  border-radius:1.5rem;
+  border-radius: 1.5rem;
+  position: relative;
+  overflow: hidden;
   filter: drop-shadow(0 0 0.75rem rgb(107, 98, 98));
 }
 
-.ViewerFrame.tablet{
-  height:60vh;
-  aspect-ratio:1.3/1;
+.slideContainer {
+  position: absolute;
+  display: inline-block;
+  background-color: pink;
+  width: 400%; /*the number of each image multiply by the width of each image or slide - use JS to achieve this*/
+  top: 0;
+  left: 0;
+  height: 500px;
 }
 
-.ViewerFrame.pc{
-  height:70vh;
-  border-radius:.5rem;
-  aspect-ratio:1.68/1;
+.ViewerFrame.tablet {
+  height: 60vh;
+  aspect-ratio: 1.3/1;
 }
 
-.ViewerFrame.mobile{
-  height:70vh;
-  border-radius:.5rem;
-  aspect-ratio:9/16;
+.ViewerFrame.pc {
+  height: 70vh;
+  border-radius: 0.5rem;
+  aspect-ratio: 1.68/1;
 }
 
+.ViewerFrame.mobile {
+  height: 70vh;
+  border-radius: 0.5rem;
+  aspect-ratio: 9/16;
+}
 
 /*PC DEVICES*/
 
-
-
-
 /*TABLET DEVICES*/
-@media (max-width:1024px){
-  .ViewerFrame{
-    height:60vh;
+@media (max-width: 1024px) {
+  .ViewerFrame {
+    height: 60vh;
     /* aspect-ratio:9/16; */
   }
 }
 
-
-
 /*MOBILE DEVICES*/
-@media (max-width:768px){
-  .ViewerFrame{
-    height:70vh;
-    border-radius:.5rem;
-    aspect-ratio:9/16;
+@media (max-width: 768px) {
+  .ViewerFrame {
+    height: 70vh;
+    border-radius: 0.5rem;
+    aspect-ratio: 9/16;
   }
 }
-
-
-

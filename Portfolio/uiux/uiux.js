@@ -57,6 +57,28 @@ function toggleDeviceOptions() {
             viewerFrame.classList.remove('pc', 'tablet');
             viewerFrame.classList.add('mobile');
         }
+
+        let myDiv = document.getElementById("myDiv");
+
+        // Get the width of the div screen viewer
+        let divWidth = myDiv.offsetWidth;
+        let divHeight = myDiv.offsetHeight;
+        console.log(`Height is + ${divHeight}`)
+        var indImgWidthAll = document.querySelectorAll(".slide");
+
+        indImgWidthAll.forEach(element => {
+          element.width = divWidth;
+          console.log(element.width);
+        });
+
+        // Output the width to the console
+        console.log("Width of ScreenViewer: " + divWidth + " pixels");
     }
   });
 }
+
+//observe if windowsWidth < 1024px
+//disable the PC button nav it should not be clickable.
+
+
+
