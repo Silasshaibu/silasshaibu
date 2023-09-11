@@ -36,18 +36,22 @@ function toggleDeviceOptions() {
       clickedElement.classList.add('active');
       const viewerName = clickedElement.innerHTML.toLowerCase();
       const viewerFrame = document.querySelector('.ViewerFrame')
+
+      //Resize Viewer Devices upon tweaking Viewer Option for PC
         if (viewerName.includes('pc')) {
             console.log('This is a PC Viewer');
             viewerFrame.classList.remove('tablet', 'mobile');
             viewerFrame.classList.add('pc');
         }
 
+        //Resize Viewer Devices upon tweaking Viewer Option for Tablet
         if (viewerName.includes('tablet')) {
             console.log('It is a Tablet Viewer');
             viewerFrame.classList.remove('pc', 'mobile');
             viewerFrame.classList.add('tablet');
         }
 
+        //Resize Viewer Devices upon tweaking Viewer Option for Mobile
         if (viewerName.includes('mobile')) {
             console.log('It is a mobile');
             viewerFrame.classList.remove('pc', 'tablet');
