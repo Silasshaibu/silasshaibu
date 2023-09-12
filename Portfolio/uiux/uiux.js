@@ -24,10 +24,6 @@ window.addEventListener('load', () => {
 });
 
 
-
-
-
-
 function toggleDeviceOptions() {
   const switchNav = document.querySelector('.switchNav');
   const allBtns = switchNav.querySelectorAll('li');
@@ -66,8 +62,6 @@ function toggleDeviceOptions() {
             viewerFrame.classList.add('mobile');
         }
 
-
-
         // Get the width of the div screen viewer
         let divWidth = myDiv.offsetWidth;
         let divHeight = myDiv.offsetHeight;
@@ -83,6 +77,34 @@ function toggleDeviceOptions() {
     }
   });
 }
+
+
+
+// Declaring widths of containers and slides and others
+const myDiv = document.getElementById('myDiv');
+const slideContainer = document.querySelector('.slideContainer');
+let divWidth = myDiv.offsetWidth;
+let divHeight = myDiv.offsetHeight;
+
+var numOfSlides = slideContainer.childElementCount;
+let slideContainerWidth = numOfSlides * myDiv.offsetWidth;
+
+
+function rightArrow(){
+  console.log('rightArrow has been clicked')
+
+  let divWidth = myDiv.offsetWidth;
+  slideContainer.style.transform = `translateX(-${myDiv.offsetWidth}px)`;
+  console.log(myDiv.offsetWidth);
+
+}
+
+function leftArrow(){
+  console.log('leftArrow has been clicked')
+  let divWidth = myDiv.offsetWidth;
+  slideContainer.style.transform = `translateX(${myDiv.offsetWidth}px)`;
+}
+
 
 
 
