@@ -1,24 +1,32 @@
-
-// console.log(45);
-
-
-//if the users is on tablet
-//only tablet and mobile options should be allowed to be toggled. pc option should be greyed out or disabled for click, there should be a tip that says to view the ui ux of a higher screen please view on a higher screen. or click to download the ui ux in pdf format. //provide the user a pdf that contains the uiux but not all of the pages jus the preview pages
+//on windows load reset viewer screen to match 'active toggle device'
 
 
-//if the users is on mobile
-//only mobile options should be allowed to be toggled,
-//others should be greyed out and also provide a tip that notifies the user that uiux of other devices can be viewed with devices on higher width. and also user cand download the pdf format of the uiux instead.
+// Check if the window width is less than certain width, the upper devices toggle button should be disabled
+window.addEventListener('resize', () => {
+  const pcButton = document.querySelector('.pc');
+  pcButton.style.display = (window.innerWidth < 1024) ? "none" : "block";
 
-//if the users is on mobile
-//only mobile options should be allowed to be toggled,
-//others should be greyed out and also provide a tip that notifies the user that uiux of other devices can be viewed with devices on higher width. and also user cand download the pdf format of the uiux instead.
+  const tabletButton = document.querySelector('.tablet');
+  tabletButton.style.display = (window.innerWidth < 768) ? "none" : "block";
+});
 
 
-/**
- * Toggles the device options in a UI based on the user's device type (tablet or mobile).
- * Only the relevant options are active. Provides tips and allows the user to download a PDF version of the UI/UX.
- */
+window.addEventListener('load', () => {
+  const myDiv = document.getElementById('myDiv');
+  const divWidth = myDiv.offsetWidth;
+  const indImgWidthAll = document.querySelectorAll(".slide");
+
+  indImgWidthAll.forEach(element => {
+    element.width = divWidth;
+  });
+
+  console.log("Width of ScreenViewer: " + divWidth + " pixels");
+});
+
+
+
+
+
 
 function toggleDeviceOptions() {
   const switchNav = document.querySelector('.switchNav');
@@ -58,17 +66,16 @@ function toggleDeviceOptions() {
             viewerFrame.classList.add('mobile');
         }
 
-        let myDiv = document.getElementById("myDiv");
+
 
         // Get the width of the div screen viewer
         let divWidth = myDiv.offsetWidth;
         let divHeight = myDiv.offsetHeight;
-        console.log(`Height is + ${divHeight}`)
+        console.log(`The Height is ${divHeight}`)
         var indImgWidthAll = document.querySelectorAll(".slide");
 
         indImgWidthAll.forEach(element => {
           element.width = divWidth;
-          console.log(element.width);
         });
 
         // Output the width to the console
@@ -77,8 +84,9 @@ function toggleDeviceOptions() {
   });
 }
 
-//observe if windowsWidth < 1024px
-//disable the PC button nav it should not be clickable.
+
+
+
 
 
 
