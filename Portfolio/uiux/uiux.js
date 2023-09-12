@@ -1,5 +1,12 @@
 //on windows load reset viewer screen to match 'active toggle device'
+// Declaring widths of containers and slides and others
+const viewerFrame = document.getElementById('viewerFrame');
+const slideContainer = document.querySelector('.slideContainer');
+let viewerWidth = viewerFrame.offsetWidth;
+let viewerHeight = viewerFrame.offsetHeight;
 
+var numOfSlides = slideContainer.childElementCount;
+let slideContainerWidth = numOfSlides * viewerFrame.offsetWidth;
 
 // Check if the window width is less than certain width, the upper devices toggle button should be disabled
 window.addEventListener('resize', () => {
@@ -12,8 +19,8 @@ window.addEventListener('resize', () => {
 
 
 window.addEventListener('load', () => {
-  const myDiv = document.getElementById('myDiv');
-  const divWidth = myDiv.offsetWidth;
+  const viewerFrame = document.getElementById('viewerFrame');
+  const viewerWidth = viewerFrame.offsetWidth;
   const indImgWidthAll = document.querySelectorAll(".slide");
 
   indImgWidthAll.forEach(element => {
@@ -43,29 +50,25 @@ function toggleDeviceOptions() {
 
       //Resize Viewer Devices upon tweaking Viewer Option for PC
         if (viewerName.includes('pc')) {
-            console.log('This is a PC Viewer');
             viewerFrame.classList.remove('tablet', 'mobile');
             viewerFrame.classList.add('pc');
         }
 
         //Resize Viewer Devices upon tweaking Viewer Option for Tablet
         if (viewerName.includes('tablet')) {
-            console.log('It is a Tablet Viewer');
             viewerFrame.classList.remove('pc', 'mobile');
             viewerFrame.classList.add('tablet');
         }
 
         //Resize Viewer Devices upon tweaking Viewer Option for Mobile
         if (viewerName.includes('mobile')) {
-            console.log('It is a mobile');
             viewerFrame.classList.remove('pc', 'tablet');
             viewerFrame.classList.add('mobile');
         }
 
         // Get the width of the div screen viewer
-        let divWidth = myDiv.offsetWidth;
-        let divHeight = myDiv.offsetHeight;
-        console.log(`The Height is ${divHeight}`)
+        let viewerWidth = viewerFrame.offsetWidth;
+        let viewerHeight = viewerFrame.offsetHeight;
         var indImgWidthAll = document.querySelectorAll(".slide");
 
         indImgWidthAll.forEach(element => {
@@ -80,29 +83,22 @@ function toggleDeviceOptions() {
 
 
 
-// Declaring widths of containers and slides and others
-const myDiv = document.getElementById('myDiv');
-const slideContainer = document.querySelector('.slideContainer');
-let divWidth = myDiv.offsetWidth;
-let divHeight = myDiv.offsetHeight;
 
-var numOfSlides = slideContainer.childElementCount;
-let slideContainerWidth = numOfSlides * myDiv.offsetWidth;
 
 
 function rightArrow(){
   console.log('rightArrow has been clicked')
 
-  let divWidth = myDiv.offsetWidth;
-  slideContainer.style.transform = `translateX(-${myDiv.offsetWidth}px)`;
-  console.log(myDiv.offsetWidth);
+  let divWidth = viewerFrame.offsetWidth;
+  slideContainer.style.transform = `translateX(-${viewerFrame.offsetWidth}px)`;
+  console.log(viewerFrame.offsetWidth);
 
 }
 
 function leftArrow(){
   console.log('leftArrow has been clicked')
-  let divWidth = myDiv.offsetWidth;
-  slideContainer.style.transform = `translateX(${myDiv.offsetWidth}px)`;
+  let divWidth = viewerFrame.offsetWidth;
+  slideContainer.style.transform = `translateX(${viewerFrame.offsetWidth}px)`;
 }
 
 

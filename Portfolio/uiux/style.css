@@ -177,7 +177,6 @@ span.tag {
   position: absolute;
   display: inline-block;
   background-color: pink;
-  /*the number of each image multiply by the width of each image or slide - use JS to achieve this*/
   top: 0;
   left: 0;
   height: 500px;
