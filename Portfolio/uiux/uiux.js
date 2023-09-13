@@ -20,8 +20,8 @@ window.addEventListener('resize', () => {
 });
 
 window.addEventListener('load', () => {
-  indImgWidthAll.forEach(element => {
-    element.width = viewerWidth;
+  indImgWidthAll.forEach(imgAttribute => {
+    imgAttribute.width = viewerWidth;
   });
   console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
 });
@@ -35,8 +35,6 @@ function toggleDeviceOptions() {
     activeElement.classList.remove('active');
     }
 
-    const viewer =  document.querySelector('.Frame');
-
   switchNav.addEventListener('click', (event) => {
     const clickedElement = event.target;
     if (clickedElement.matches('li')) {
@@ -48,6 +46,7 @@ function toggleDeviceOptions() {
         if (viewerName.includes('pc')) {
             viewerFrame.classList.remove('tablet', 'mobile');
             viewerFrame.classList.add('pc');
+
         }
 
         //Resize Viewer Devices upon tweaking Viewer Option for Tablet
@@ -79,23 +78,26 @@ function toggleDeviceOptions() {
 
 function rightArrow(){
   console.log('rightArrow has been clicked')
-
-  let divWidth = viewerFrame.offsetWidth;
-  slideContainer.style.transform = `translateX(-${viewerFrame.offsetWidth}px)`;
-  console.log(viewerFrame.offsetWidth);
-
+  //get the width of the image attribute
+  //get the width of the viewer
+  //get the width of the slideContainer
+  indImgWidthAll.forEach(element => {
+    element.width = viewerWidth;
+  });
+  console.log(`The width of the image is + ${viewerWidth} + px`);
+  console.log(`The width of the viewer is + ${slideContainerWidth}  `);
 }
 
 function leftArrow(){
   console.log('leftArrow has been clicked')
   let divWidth = viewerFrame.offsetWidth;
-  slideContainer.style.transform = `translateX(${viewerFrame.offsetWidth}px)`;
+  // slideContainer.style.transform = `translateX(${viewerWidth}px)`;
 }
 
 //on click on right arrow, compare if the width of the image matches the
 //width of the viewer frame before translating it left or right
 
-
+//a carousel slider, such that it has an action button where by when user clicks on the left arrow it slides left and when the right arrow is clicked, it slides right.
 
 
 
