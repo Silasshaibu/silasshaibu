@@ -77,11 +77,6 @@ function toggleDeviceOptions() {
   });
 }
 
-
-
-
-
-
 function rightArrow(){
   console.log('rightArrow has been clicked')
 
@@ -96,6 +91,9 @@ function leftArrow(){
   let divWidth = viewerFrame.offsetWidth;
   slideContainer.style.transform = `translateX(${viewerFrame.offsetWidth}px)`;
 }
+
+//on click on right arrow, compare if the width of the image matches the
+//width of the viewer frame before translating it left or right
 
 
 
