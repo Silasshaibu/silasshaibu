@@ -1,7 +1,12 @@
 //on windows load reset viewer screen to match 'active toggle device'
 // Declaring widths of containers and slides and others
+
+const pcButton = document.querySelector('.pc');
+const tabletButton = document.querySelector('.tablet');
+
 const viewerFrame = document.getElementById('viewerFrame');
 const slideContainer = document.querySelector('.slideContainer');
+const indImgWidthAll = document.querySelectorAll(".slide");
 let viewerWidth = viewerFrame.offsetWidth;
 let viewerHeight = viewerFrame.offsetHeight;
 
@@ -10,24 +15,15 @@ let slideContainerWidth = numOfSlides * viewerFrame.offsetWidth;
 
 // Check if the window width is less than certain width, the upper devices toggle button should be disabled
 window.addEventListener('resize', () => {
-  const pcButton = document.querySelector('.pc');
   pcButton.style.display = (window.innerWidth < 1024) ? "none" : "block";
-
-  const tabletButton = document.querySelector('.tablet');
   tabletButton.style.display = (window.innerWidth < 768) ? "none" : "block";
 });
 
-
 window.addEventListener('load', () => {
-  const viewerFrame = document.getElementById('viewerFrame');
-  const viewerWidth = viewerFrame.offsetWidth;
-  const indImgWidthAll = document.querySelectorAll(".slide");
-
   indImgWidthAll.forEach(element => {
-    element.width = divWidth;
+    element.width = viewerWidth;
   });
-
-  console.log("Width of ScreenViewer: " + divWidth + " pixels");
+  console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
 });
 
 
@@ -72,11 +68,11 @@ function toggleDeviceOptions() {
         var indImgWidthAll = document.querySelectorAll(".slide");
 
         indImgWidthAll.forEach(element => {
-          element.width = divWidth;
+          element.width = viewerWidth;
         });
 
         // Output the width to the console
-        console.log("Width of ScreenViewer: " + divWidth + " pixels");
+        console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
     }
   });
 }
