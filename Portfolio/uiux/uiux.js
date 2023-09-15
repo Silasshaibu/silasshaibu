@@ -77,25 +77,33 @@ function toggleDeviceOptions() {
 }
 
 let defTanslateInterfval = 0;
+let numOfSlides = slideContainer.childElementCount;
+Slides = document.querySelectorAll('.slide');
 
 function rightArrow(){
-  Slides = document.querySelectorAll('.slide');
-  let numOfSlides = slideContainer.childElementCount;
-  let slideContainerWidth = numOfSlides * viewerFrame.offsetWidth;
-  let slideWidth = viewerFrame.offsetWidth;;
+  let slideWidth = viewerFrame.offsetWidth;
+
   Slides.forEach(slide => {
     slide.width = slideWidth;
   });
   console.log(`Slide width is ${slideWidth}px`);
-  console.log(`SlidesContainer width is ${slideContainerWidth}px`);
-  //translate the slideContainer by a decrement of a slide width
 
+
+  //translate the slideContainer by a decrement of a slide width
+  defTanslateInterfval -= slideWidth;
 
   slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
+  console.log(defTanslateInterfval);
 }
 
 function leftArrow(){
-
+  let slideWidth = viewerFrame.offsetWidth;
+  Slides.forEach(slide => {
+    slide.width = slideWidth;
+  });
+  defTanslateInterfval += slideWidth;
+  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
+  console.log(defTanslateInterfval);
 }
 
 

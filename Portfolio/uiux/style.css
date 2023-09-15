@@ -178,10 +178,17 @@ span.tag {
   display: inline-block;
   background-color: pink;
   top: 0;
+  margin:0;
+  padding:0;
   left: 0;
   height: 300px;
   width: 10000px;
   transition: transform 300ms;
+}
+
+.slideContainer .slide{
+  padding:0;
+  margin:0;
 }
 
 .ViewerFrame.tablet {
