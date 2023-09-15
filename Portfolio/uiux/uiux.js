@@ -1,6 +1,4 @@
-//on windows load reset viewer screen to match 'active toggle device'
-// Declaring widths of containers and slides and others
-
+//DEFAULTS PRESET
 const pcButton = document.querySelector('.pc');
 const tabletButton = document.querySelector('.tablet');
 
@@ -11,17 +9,20 @@ let viewerWidth = viewerFrame.offsetWidth;
 let viewerHeight = viewerFrame.offsetHeight;
 
 
-
-
-// Check if the window width is less than certain width, the upper devices toggle button should be disabled
+// RESIZE WINDOW - Check if the window width is less than certain width, the upper devices toggle button should be disabled
 window.addEventListener('resize', () => {
   pcButton.style.display = (window.innerWidth < 1024) ? "none" : "block";
   tabletButton.style.display = (window.innerWidth < 768) ? "none" : "block";
 });
 
+//WINDOW ON LOAD
 window.addEventListener('load', () => {
   indImgWidthAll.forEach(imgAttribute => {
     imgAttribute.width = viewerWidth;
+  });
+
+  Slides.forEach(slide => {
+    slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none' : slide.style.display = 'block';
   });
   console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
 });
@@ -30,6 +31,7 @@ let defTanslateInterfval = 0;
 let numOfSlides = slideContainer.childElementCount;
 Slides = document.querySelectorAll('.slide');
 
+//RIGHT ARROW
 function rightArrow(){
   let slideWidth = viewerFrame.offsetWidth;
 
@@ -38,7 +40,6 @@ function rightArrow(){
   });
   console.log(`Slide width is ${slideWidth}px`);
 
-
   //translate the slideContainer by a decrement of a slide width
   defTanslateInterfval -= slideWidth;
 
@@ -46,6 +47,8 @@ function rightArrow(){
   console.log(defTanslateInterfval);
 }
 
+
+//LEFT ARROW
 function leftArrow(){
   let slideWidth = viewerFrame.offsetWidth;
   Slides.forEach(slide => {
@@ -57,12 +60,14 @@ function leftArrow(){
 }
 
 
+//TOGGLE BUTTONS FOR DIFFERENT DEVICES (TABLET, PC, MOBILE)
 function toggleDeviceOptions() {
   const switchNav = document.querySelector('.switchNav');
   const allBtns = switchNav.querySelectorAll('li');
   const activeElement = switchNav.querySelector('.active');
+
     if (activeElement) {
-    activeElement.classList.remove('active');
+      activeElement.classList.remove('active');
     }
 
   switchNav.addEventListener('click', (event) => {
@@ -72,23 +77,37 @@ function toggleDeviceOptions() {
       const viewerName = clickedElement.innerHTML.toLowerCase();
       const viewerFrame = document.querySelector('.ViewerFrame')
 
+      //resetting the translate state back to 0
+      let defTanslateInterfval = 0;
+
       //Resize Viewer Devices upon tweaking Viewer Option for PC
         if (viewerName.includes('pc')) {
             viewerFrame.classList.remove('tablet', 'mobile');
             viewerFrame.classList.add('pc');
 
+            Slides.forEach(slide => {
+              slide.classList.contains('mobile--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none': slide.style.display = 'block'
+            });
         }
 
         //Resize Viewer Devices upon tweaking Viewer Option for Tablet
         if (viewerName.includes('tablet')) {
             viewerFrame.classList.remove('pc', 'mobile');
             viewerFrame.classList.add('tablet');
+
+            Slides.forEach(slide => {
+              slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none': slide.style.display = 'block';
+            });
         }
 
         //Resize Viewer Devices upon tweaking Viewer Option for Mobile
         if (viewerName.includes('mobile')) {
             viewerFrame.classList.remove('pc', 'tablet');
             viewerFrame.classList.add('mobile');
+
+            Slides.forEach(slide => {
+              slide.classList.contains('desktop--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none' : slide.style.display = 'block';
+            });
         }
 
         // Get the width of the div screen viewer
