@@ -11,18 +11,23 @@ let viewerHeight = viewerFrame.offsetHeight;
 
 // RESIZE WINDOW - Check if the window width is less than certain width, the upper devices toggle button should be disabled
 window.addEventListener('resize', () => {
-  pcButton.style.display = (window.innerWidth < 1024) ? "none" : "block";
-  tabletButton.style.display = (window.innerWidth < 768) ? "none" : "block";
+  pcButton.style.display = (window.innerWidth < 1024) ? "none" : "inline-block";
+  tabletButton.style.display = (window.innerWidth < 768) ? "none" : "inline-block";
 });
 
 //WINDOW ON LOAD
 window.addEventListener('load', () => {
+  slideContainer.style.width = "1000px";
+  //slide width is equal to the sum of the width of all the images
+  //that has a display block;
+
+
   indImgWidthAll.forEach(imgAttribute => {
     imgAttribute.width = viewerWidth;
   });
 
   Slides.forEach(slide => {
-    slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none' : slide.style.display = 'block';
+    slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none' : slide.style.display = 'inline-block';
   });
   console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
 });
@@ -86,7 +91,7 @@ function toggleDeviceOptions() {
             viewerFrame.classList.add('pc');
 
             Slides.forEach(slide => {
-              slide.classList.contains('mobile--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none': slide.style.display = 'block'
+              slide.classList.contains('mobile--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none': slide.style.display = 'inline-block'
             });
         }
 
@@ -96,7 +101,7 @@ function toggleDeviceOptions() {
             viewerFrame.classList.add('tablet');
 
             Slides.forEach(slide => {
-              slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none': slide.style.display = 'block';
+              slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none': slide.style.display = 'inline-block';
             });
         }
 
@@ -106,7 +111,7 @@ function toggleDeviceOptions() {
             viewerFrame.classList.add('mobile');
 
             Slides.forEach(slide => {
-              slide.classList.contains('desktop--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none' : slide.style.display = 'block';
+              slide.classList.contains('desktop--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none' : slide.style.display = 'inline-block';
             });
         }
 
