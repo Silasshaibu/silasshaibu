@@ -26,6 +26,36 @@ window.addEventListener('load', () => {
   console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
 });
 
+let defTanslateInterfval = 0;
+let numOfSlides = slideContainer.childElementCount;
+Slides = document.querySelectorAll('.slide');
+
+function rightArrow(){
+  let slideWidth = viewerFrame.offsetWidth;
+
+  Slides.forEach(slide => {
+    slide.width = slideWidth;
+  });
+  console.log(`Slide width is ${slideWidth}px`);
+
+
+  //translate the slideContainer by a decrement of a slide width
+  defTanslateInterfval -= slideWidth;
+
+  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
+  console.log(defTanslateInterfval);
+}
+
+function leftArrow(){
+  let slideWidth = viewerFrame.offsetWidth;
+  Slides.forEach(slide => {
+    slide.width = slideWidth;
+  });
+  defTanslateInterfval += slideWidth;
+  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
+  console.log(defTanslateInterfval);
+}
+
 
 function toggleDeviceOptions() {
   const switchNav = document.querySelector('.switchNav');
@@ -76,35 +106,7 @@ function toggleDeviceOptions() {
   });
 }
 
-let defTanslateInterfval = 0;
-let numOfSlides = slideContainer.childElementCount;
-Slides = document.querySelectorAll('.slide');
 
-function rightArrow(){
-  let slideWidth = viewerFrame.offsetWidth;
-
-  Slides.forEach(slide => {
-    slide.width = slideWidth;
-  });
-  console.log(`Slide width is ${slideWidth}px`);
-
-
-  //translate the slideContainer by a decrement of a slide width
-  defTanslateInterfval -= slideWidth;
-
-  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
-  console.log(defTanslateInterfval);
-}
-
-function leftArrow(){
-  let slideWidth = viewerFrame.offsetWidth;
-  Slides.forEach(slide => {
-    slide.width = slideWidth;
-  });
-  defTanslateInterfval += slideWidth;
-  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
-  console.log(defTanslateInterfval);
-}
 
 
 
