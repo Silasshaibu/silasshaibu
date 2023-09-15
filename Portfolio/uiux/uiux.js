@@ -10,8 +10,8 @@ const indImgWidthAll = document.querySelectorAll(".slide");
 let viewerWidth = viewerFrame.offsetWidth;
 let viewerHeight = viewerFrame.offsetHeight;
 
-var numOfSlides = slideContainer.childElementCount;
-let slideContainerWidth = numOfSlides * viewerFrame.offsetWidth;
+
+
 
 // Check if the window width is less than certain width, the upper devices toggle button should be disabled
 window.addEventListener('resize', () => {
@@ -76,28 +76,27 @@ function toggleDeviceOptions() {
   });
 }
 
+let defTanslateInterfval = 0;
+
 function rightArrow(){
-  console.log('rightArrow has been clicked')
-  //get the width of the image attribute
-  //get the width of the viewer
-  //get the width of the slideContainer
-  indImgWidthAll.forEach(element => {
-    element.width = viewerWidth;
+  Slides = document.querySelectorAll('.slide');
+  let numOfSlides = slideContainer.childElementCount;
+  let slideContainerWidth = numOfSlides * viewerFrame.offsetWidth;
+  let slideWidth = viewerFrame.offsetWidth;;
+  Slides.forEach(slide => {
+    slide.width = slideWidth;
   });
-  console.log(`The width of the image is + ${viewerWidth} + px`);
-  console.log(`The width of the viewer is + ${slideContainerWidth}  `);
+  console.log(`Slide width is ${slideWidth}px`);
+  console.log(`SlidesContainer width is ${slideContainerWidth}px`);
+  //translate the slideContainer by a decrement of a slide width
+
+
+  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
 }
 
 function leftArrow(){
-  console.log('leftArrow has been clicked')
-  let divWidth = viewerFrame.offsetWidth;
-  // slideContainer.style.transform = `translateX(${viewerWidth}px)`;
+
 }
-
-//on click on right arrow, compare if the width of the image matches the
-//width of the viewer frame before translating it left or right
-
-//a carousel slider, such that it has an action button where by when user clicks on the left arrow it slides left and when the right arrow is clicked, it slides right.
 
 
 
