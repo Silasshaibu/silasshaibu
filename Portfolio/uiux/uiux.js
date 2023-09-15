@@ -17,14 +17,12 @@ window.addEventListener('resize', () => {
 
 //WINDOW ON LOAD
 window.addEventListener('load', () => {
-  slideContainer.style.width = "1000px";
-  //slide width is equal to the sum of the width of all the images
-  //that has a display block;
-
-
   indImgWidthAll.forEach(imgAttribute => {
     imgAttribute.width = viewerWidth;
   });
+
+  slideContainer.style.width = `${viewerWidth * slideContainer.childElementCount }px`;
+
 
   Slides.forEach(slide => {
     slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none' : slide.style.display = 'inline-block';
