@@ -5,6 +5,10 @@
   font-family: 'product sans', Verdana, Geneva, Tahoma, sans-serif;
 }
 
+.slideContainer {
+  font-size: 0; /*Use to remove unncessary space between img tags*/
+}
+
 .artBody {
   position: relative;
   display: flex;
@@ -178,17 +182,17 @@ span.tag {
   display: inline-block;
   background-color: pink;
   top: 0;
-  margin:0;
-  padding:0;
+  margin: 0;
+  padding: 0;
   left: 0;
   height: 300px;
   width: 10000000000px; /*Default*/
   transition: transform 300ms;
 }
 
-.slideContainer .slide{
-  padding:0;
-  margin:0;
+.slideContainer .slide {
+  padding: 0;
+  margin: 0;
 }
 
 .ViewerFrame.tablet {
