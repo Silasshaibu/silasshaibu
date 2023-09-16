@@ -185,7 +185,7 @@ span.tag {
   margin: 0;
   padding: 0;
   left: 0;
-  height: 300px;
+  min-height: 300px;
   width: 10000000000px; /*Default*/
   transition: transform 300ms;
 }

@@ -154,9 +154,102 @@ function toggleDeviceOptions() {
 }
 
 
-//localStorage 
+//localStorage
+//Any empty array created to house every project added
+const uiuxProjects = [];
+
+//Create an object named "BIMTO"
+let bimtoUIUX = {
+  name:"BIMTO",
+  liveUrl:"https://bimto.co.uk",
+  shortDescription:"BIMTO is an ecommerce website aimed at etc",
+  views:{
+    tablet:{
+      images: ["tablet-image1.jpg", "tablet-image2.jpg", "tablet-image3.jpg"],
+    },
+    desktop:{
+      images: ["desktop-image1.jpg", "desktop-image2.jpg", "desktop-image3.jpg"],
+    },
+    mobile:{
+      images: ["mobile-image1.jpg", "mobile-image2.jpg", "mobile-image3.jpg"],
+    }
+  }
+}
+
+// Add the "BIMTO" object to the array
+uiuxProjects.push(bimtoUIUX);
+console.log(uiuxProjects[0]);
 
 
+
+
+//on click on bimto li what should happen
+function displayBIMTO(){
+  //Extracting the tablet image sets for BIMTO
+  for (let i = 0; i < bimtoUIUX.views.tablet.images.length; i++) {
+    const imageSrc = bimtoUIUX.views.tablet.images[i];
+    const imageWdh = viewerWidth;
+    // Create an img element with class tablet--version"
+    const tabletImg = document.createElement("img");
+    tabletImg.className = "slide tablet--version";
+
+    tabletImg.src = imageSrc;
+    tabletImg.style.minWidth = `${imageWdh}px`;
+    tabletImg.style.minHeight = '200px';
+    // Append the tablet imgs to the slideContainer
+    slideContainer.appendChild(tabletImg);
+    console.log(tabletImg);
+  }
+
+  for (let j = 0; j < bimtoUIUX.views.mobile.images.length; j++) {
+    const imageSrc = bimtoUIUX.views.mobile.images[j];
+    const imageWdh = viewerWidth;
+
+    // Create an img element with class mobile--version"
+    const mobileImg = document.createElement("img");
+    mobileImg.className = "slide mobile--version";
+
+    mobileImg.src = imageSrc;
+    mobileImg.style.minWidth = `${imageWdh}px`;
+    mobileImg.style.minHeight = '200px';
+    // Append the mobile imgs to the slideContainer
+    slideContainer.appendChild(mobileImg);
+    console.log(mobileImg);
+  }
+
+  for (let k = 0; k < bimtoUIUX.views.desktop.images.length; k++) {
+    const imageSrc = bimtoUIUX.views.desktop.images[k];
+    const imageWdh = viewerWidth;
+
+    // Create an img element with class desktop--version"
+    const desktopImg = document.createElement("img");
+    desktopImg.className = "slide desktop--version";
+
+    desktopImg.src = imageSrc;
+    desktopImg.style.minWidth = `${imageWdh}px`;
+    desktopImg.style.minHeight = '200px';
+    // Append the desktop imgs to the slideContainer
+    slideContainer.appendChild(desktopImg);
+    console.log(desktopImg);
+  }
+
+
+  // Iterate through the categories and count the images
+  let totalImages = 0;
+  for (let view in bimtoUIUX.views) {
+    if (bimtoUIUX.views.hasOwnProperty(view)) {
+      totalImages += bimtoUIUX.views[view].images.length;
+    }
+  }
+  console.log(`"Total number of images for ${bimtoUIUX.name} is ${totalImages} `);
+}
+
+//we want that on click on BIMTO Button,
+//it should remove any image tag found in the slideContainer,
+//then it should create image tags where the number of tags is the sum of all the images in all the views(categories) put together
+//then it should check add the tablet class to the images from the tablet images array list
+//it should also add the mobile class to the images from the tablet images array list
+//it should also add the desktop class to the images from the tablet image array li
 
 
 
