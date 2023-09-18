@@ -11,42 +11,59 @@
     <header>
         <h1>UI/UX Portfolio</h1>
     </header>
-    <nav>
-        <ul>
-            <li data-device="tablet">Tablet</li>
-            <li data-device="pc">PC</li>
-            <li data-device="mobile">Mobile</li>
-        </ul>
-    </nav>
+
     <main>
         <section id="viewer">
             <div id="image-container">
-                <!-- Left arrow button -->
-                <button id="left-arrow" class="arrow-button left">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-                    </svg>
-                </button>
+                <div class="deviceViewer--imageCustomize">
+                    <!-- Images will be displayed here -->
+                    <img src="1920x1080_Bimteo_01_desktop.jpg" alt="Image 1" class="slide">
+                    <img src="1920x1080_Bimteo_02_desktop.jpg" alt="Image 2" class="slide">
+                </div>
 
-                <!-- Images will be displayed here -->
-                <img src="tablet-image1.jpg" alt="Image 1" class="slide">
-                <img src="tablet-image2.jpg" alt="Image 2" class="slide">
-                <img src="tablet-image3.jpg" alt="Image 3" class="slide">
+                <!-- KeyPad Section Area -->
+                <div class="keypad-section">
+                    <div class="viewerDevice--section">
+                        <nav>
+                            <ul>
+                                <li  class="active" data-device="tablet">Tablet</li>
+                                <li data-device="pc">PC</li>
+                                <li data-device="mobile">Mobile</li>
+                            </ul>
+                        </nav>
+                    </div>
 
-                <!-- Right arrow button -->
-                <button id="right-arrow" class="arrow-button right">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                    </svg>
-                </button>
+                    <div class="navigation--arrow--section">
+                        <button id="left-arrow" class="arrow-button left">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+
+                        <button id="right-arrow" class="arrow-button right">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
         </section>
         <section id="project-list">
             <h2>Projects</h2>
             <ul>
                 <!-- Project list items go here -->
-                <li data-project="project1">Project 1</li>
-                <li data-project="project2">Project 2</li>
+                <li  data-project="project1">Project 1<br>
+                BIMTO (Brilliant Ideas Made To Order) <br>
+                Ecommerce Website<br><span style="font-size:.8rem;">Tools: Adobe XD</span></li>
+                <li  data-project="project2">Project 2<br>
+                    ASKMEABROAD <br>
+                    Educational Purpose<br><span style="font-size:.8rem;">Tools: Adobe XD</span>
+                </li>
+                <li  data-project="project3">Project 3<br>
+                        ANYTECHSOLUTIONS <br>
+                        Marketing Purpose<br><span style="font-size:.8rem;">Tools: Adobe XD</span>
+                </li>
             </ul>
         </section>
     </main>

@@ -1,37 +1,9 @@
-// JavaScript for image navigation and aspect ratio adjustment
-// Function to set the initial state on page load
-function setInitialState() {
-  // Set "Project 1" as the active project
-  const initialProject = 'project1';
-  const project1Item = document.querySelector(`#project-list li[data-project="${initialProject}"]`);
-  projectListItems.forEach((item) => {
-      item.classList.remove('active');
-  });
-  project1Item.classList.add('active');
-
-  // Set "Tablet" as the active device
-  const initialDevice = 'tablet';
-  const tabletItem = document.querySelector(`nav li[data-device="${initialDevice}"]`);
-  deviceOptions.forEach((option) => {
-      option.classList.remove('active');
-  });
-  tabletItem.classList.add('active');
-
-  // Update images and aspect ratio
-  updateImages(projects[initialProject][initialDevice]);
-  updateAspectRatio(initialDevice);
-  setActiveDevice(initialDevice);
-}
-
-// Call the setInitialState function on window load
-window.addEventListener('load', () => {
-  setInitialState();
-});
-
+// Declarations
+const projectListItems = document.querySelectorAll('#project-list li');
+const deviceOptions = document.querySelectorAll('nav li');
 const leftArrow = document.getElementById('left-arrow');
 const rightArrow = document.getElementById('right-arrow');
 const images = document.querySelectorAll('#image-container img');
-const projectListItems = document.querySelectorAll('#project-list li');
 let currentIndex = 0;
 let activeDevice = 'tablet'; // Default active device
 
@@ -46,36 +18,30 @@ const aspectRatios = {
 const projects = {
   project1: {
       tablet: [
-          'tablet-image1.jpg',
-          'tablet-image2.jpg',
-          'tablet-image3.jpg'
+          '1024x768_Bimteo_01_Tablet.jpg',
+          '1024x768_Bimteo_02_Tablet.jpg'
       ],
       mobile: [
-          'mobile-image1.jpg',
-          'mobile-image2.jpg',
-          'mobile-image3.jpg'
+          '768x384_Bimteo_01_Mobile.jpg',
+          '768x384_Bimteo_01_Mobile.jpg'
       ],
       pc: [
-          'pc-image1.jpg',
-          'pc-image2.jpg',
-          'pc-image3.jpg'
+          '1920x1080_Bimteo_01_desktop.jpg',
+          '1920x1080_Bimteo_02_desktop.jpg'
       ]
   },
   project2: {
       tablet: [
-          'tablet-image4.jpg',
-          'tablet-image5.jpg',
-          'tablet-image6.jpg'
+        '1024x768_Bimto_01_Tablet.jpg',
+        '1024x768_Bimto_02_Tablet.jpg'
       ],
       mobile: [
-          'mobile-image4.jpg',
-          'mobile-image5.jpg',
-          'mobile-image6.jpg'
+        '768x384_Bimto_01_Mobile.jpg',
+        '768x384_Bimto_01_Mobile.jpg'
       ],
       pc: [
-          'pc-image4.jpg',
-          'pc-image5.jpg',
-          'pc-image6.jpg'
+        '1920x1080_Bimto_01_desktop.jpg',
+        '1920x1080_Bimto_02_desktop.jpg'
       ]
   }
 };
@@ -83,7 +49,7 @@ const projects = {
 // Function to update the aspect ratio of the image container
 function updateAspectRatio(device) {
   const imageContainer = document.getElementById('image-container');
-  imageContainer.style.paddingBottom = `calc(${aspectRatios[device]} * 100%)`;
+  imageContainer.style.aspectRatio = aspectRatios[device];
 }
 
 // Function to navigate images
@@ -126,7 +92,6 @@ projectListItems.forEach((item) => {
 });
 
 // Event listeners for device options (tablet, mobile, pc)
-const deviceOptions = document.querySelectorAll('nav li');
 deviceOptions.forEach((option) => {
   option.addEventListener('click', () => {
       const device = option.dataset.device;
@@ -169,7 +134,7 @@ function setActiveDevice(device) {
   activeDevice = device;
   // Update aspect ratio for all images
   images.forEach((img) => {
-      img.style.paddingBottom = `calc(${aspectRatios[activeDevice]} * 100%)`;
+      img.style.aspectRatio = aspectRatios[activeDevice];
   });
 }
 
@@ -181,4 +146,5 @@ updateAspectRatio(activeDevice); // Set the initial aspect ratio to the default 
 setActiveDevice(activeDevice); // Set the initial device option as active
 
 
-
+//To avoid stretching of the image, do this
+//on windows load, let Tablet be clicked and the first project be selected by default.

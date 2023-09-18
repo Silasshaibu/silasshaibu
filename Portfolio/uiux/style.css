@@ -11,24 +11,10 @@ body {
 
 /* Header styles */
 header {
-  background-color: #701010;
+  background-color: rgb(80, 80, 80);
   color: white;
-  text-align: center;
-  padding: 1rem 0;
-}
-
-/* Navigation styles */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  background-color: orange;
-  padding: 0.5rem 0;
-}
-
-nav li {
-  margin: 0 1rem;
-  cursor: pointer;
+  /* text-align: center; */
+  padding: 1rem 2rem;
 }
 
 /* Main content styles */
@@ -43,7 +29,7 @@ main {
   background-color: white;
   padding: 1rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 100px; /*Just as place holder but to allow */
+  height: 80vh; /*Just as place holder but to allow */
 }
 
 #image-container {
@@ -56,10 +42,11 @@ main {
 }
 
 #image-container img {
-  max-width: 100%;
+  width: 100%;
   height: auto;
   transition: transform 0.3s;
   display: none;
+  aspect-ratio: 16/9;
 }
 
 #image-container img.active {
@@ -67,7 +54,7 @@ main {
 }
 
 #project-list {
-  flex: 1;
+  flex: 0.3;
   background-color: #f4f4f4;
   padding: 1rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
@@ -84,11 +71,16 @@ main {
 }
 
 #project-list li {
-  margin: 0.5rem 0;
+  /* margin: 0.5rem 0; */
   cursor: pointer;
   padding: 0.5rem;
   background-color: #fff;
   border: 1px solid #ddd;
+  border-bottom: none;
+}
+
+#project-list li:last-child {
+  border-bottom: 1px solid #ddd;
 }
 
 /* Footer styles */
@@ -99,6 +91,33 @@ footer {
   padding: 1rem 0;
 }
 
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: white;
+  border: 3px solid grey;
+}
+
+nav li {
+  cursor: pointer;
+  padding: 1rem;
+  min-width: 16px;
+  width: 100px;
+  text-align: center;
+}
+
+nav li:hover {
+  background-color: #efefef;
+}
+
+/*if current project is the one that has its image displayed on the image containter, then add the active class to its li element*/
+#project-list li.active {
+  background-color: rgb(80, 80, 80);
+  color: white;
+}
+
 /* Device toggle button styles */
 nav li.active {
   background-color: rgb(59, 59, 59);
@@ -107,27 +126,34 @@ nav li.active {
 
 /* Arrow button styles */
 .arrow-button {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
+  color: black;
   border: none;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  /* border-radius: 2rem; */
+  width: 50px;
+  height: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  background-color: white;
 }
 
-.arrow-button.left {
-  left: 10px;
+.arrow-button:hover {
+  background-color: #efefef;
 }
 
-.arrow-button.right {
-  right: 10px;
+.navigation--arrow--section {
+  display: flex;
+  margin-left: 1rem;
+  background-color: white;
+  border: 3px solid grey;
+}
+
+.navigation--arrow--section,
+nav li,
+nav ul {
+  border-radius: 50px;
+  border-radius: 0px;
 }
 
 .arrow-button svg {
@@ -137,31 +163,32 @@ nav li.active {
 
 /* Add this to your CSS stylesheet */
 
-/* Image container styles */
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-  background-color: orange; /* Set the background color to orange */
+/* Mobile styles: 9/16 aspect ratio */
+nav li[data-device='mobile'].active #image-container img {
+  aspect-ratio: 9/16;
 }
 
-/* Image styles */
-#image-container img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-  display: none;
-  border: 2px solid pink; /* Add a pink border to the images */
+/* Tablet styles: 4/3 aspect ratio */
+nav li[data-device='tablet'].active #image-container img {
+  aspect-ratio: 4/3;
+}
+
+/*ADD LIVE IMAGES OF DEVICES, PC, TABLET AND MOBILE
+SO THEY ARE SHOW RESPECTIVELY WHEN CALLED*/
+.deviceViewer--imageCustomize {
+  width: fit-content;
+  height: 50vh;
+  padding: 0px;
+  border-radius: 1rem;
+  border: 3px solid black;
+  background-color: grey;
+  margin-bottom: 12vh;
+  position: relative;
 }
 
 #image-container img.active {
   display: block;
 }
-
-/* Add this to your CSS stylesheet */
 
 /* Body styles to ensure full viewport height */
 body {
@@ -179,44 +206,27 @@ main {
   max-height: 100%; /* Set the maximum height of the main content to 100% */
 }
 
-/* Image container styles */
 #image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  max-height: 100%; /* Set the maximum height of the image container to 100% */
+  min-height: 75vh; /* Set the maximum height of the image container to 100% */
   overflow: hidden;
   position: relative;
-  background-color: orange;
+  /* background-color: rgba(255, 166, 0, 0.822); */
 }
 
-/* Image styles */
-#image-container img {
-  max-width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-  display: none;
-  border: 9px solid pink;
-}
-
-#image-container img.active {
-  display: block;
-}
-
-/* Add this to your CSS stylesheet */
-/*ADJUST HEIGHT FROM DOWN HERE 👀*/
-/* Image container styles */
-#image-container {
+.keypad-section {
+  position: absolute;
+  bottom: 0;
+  width: fit-content;
+  padding: 10px 10px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  max-height: 100%; /* Set the maximum height of the image container to 100% */
-  overflow: hidden;
-  position: relative;
-  background-color: orange;
+  justify-content: center;
+  min-height: 3rem;
 }
 
-/* Image styles */
 #image-container img {
   max-width: 100%;
   max-height: 50vh; /* Set the maximum height of any image to 50vh */
@@ -224,9 +234,35 @@ main {
   height: auto; /* Reset the height to auto to maintain aspect ratio */
   transition: transform 0.3s;
   display: none;
-  border: 2px solid pink;
+  border-radius: 1rem;
+  position: relative;
+
+  /*Transfer the tablet styling to the img.tablet below*/
+  border: 5px solid black;
+}
+/*
+.deviceViewer--imageCustomize::after {
+  position: absolute;
+  content: '';
+  min-width: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  min-height: 1.6rem;
+  border-radius: 0rem 0rem 1rem 1rem;
+  bottom: -1rem;
+  z-index: 1;
 }
 
-#image-container img.active {
-  display: block;
-}
+.deviceViewer--imageCustomize::before {
+  position: absolute;
+  content: '';
+  min-width: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: grey;
+  min-height: 0.7rem;
+  border-radius: 0rem 0rem 0.3rem 0.3rem;
+  bottom: -0.4rem;
+  z-index: 2;
+} */
