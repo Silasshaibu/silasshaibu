@@ -22,19 +22,26 @@ window.addEventListener('load', () => {
 
   slideContainer.style.width = `${viewerWidth * slideContainer.childElementCount }px`;
 
+  //Initial-State  ->  To show only tablet--versions on windows load
   Slides.forEach(slide => {
     slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none' : slide.style.display = 'inline-block';
-
-    // //identifying the active slide or current slide
-    // slide.classList.contains('active')?console.log(slide): console.log('do nothing') ;
   });
+
+  //Console out the screen viewers width
   console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
+
+  //check if the there exist a UIUX project on the ASIDE,if yes RUN IT else
+  //alert that there is no project at the moment, and a project should be added
+  //let the first UIUX project be loaded to the slideContainer on WindowsOnLoad
+  //write the function for in here and run it
 
 });
 
 let defTanslateInterfval = 0;
 let numOfSlides = slideContainer.childElementCount;
 Slides = document.querySelectorAll('.slide');
+
+
 
 //RIGHT ARROW
 function rightArrow(){
