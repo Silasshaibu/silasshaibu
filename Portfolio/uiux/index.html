@@ -7,89 +7,52 @@
     <title>UI UX | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <div class="artBody">
-        <div class="screen-layout">
-            <div id="viewerFrame" class="ViewerFrame ">
-                <div class="slideContainer">
-                    <img class="slide desktop--version" src="./ux-images/1920x1080_Bimto_01_desktop.jpg" alt="First Slide" width="400px" height="fit-content">
-                    <img class="slide desktop--version" src="./ux-images/1920x1080_Bimto_02_desktop.jpg" alt="First Slide" width="400px" height="fit-content">
-                    <img class="slide desktop--version" src="./ux-images/1920x1080_Bimto_03_desktop.jpg" alt="Second Slide" width="400px" height="fit-content">
-                    <img class="slide mobile--version" src="./ux-images/768x384_Bimto_01_Mobile.jpg" alt="First Slide" width="400px" height="fit-content">
-                    <img class="slide mobile--version" src="./ux-images/768x384_Bimto_02_Mobile.jpg" alt="First Slide" width="400px" height="fit-content">
-                    <img class="slide tablet--version active" src="./ux-images/1024x768_Bimto_01_Tablet.jpg" alt="First Slide" width="400px" height="fit-content">
-                    <img class="slide tablet--version" src="./ux-images/1024x768_Bimto_02_Tablet.jpg" alt="First Slide" width="400px" height="fit-content">
-                    <img class="slide tablet--version" src="./ux-images/1024x768_Bimto_03_Tablet.jpg" alt="First Slide" width="400px" height="fit-content">
-                </div>
-            </div>
-            <div class="aside-designs">
-                <p class="list-title">PROJECTS</p>
-                <ul>
-                    <li onclick="displayBIMTO()">
-                        BIMTO | Ecommerce
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        ASKMEABROAD | Education
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        SAAS | Business
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        TheFuture | 3D Website
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        ASKMEABROAD | Education
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        SAAS | Business
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        TheFuture | 3D Website
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        ASKMEABROAD | Education
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        SAAS | Business
-                        <span class="tag">View Live Site</span>
-                    </li>
-                    <li>
-                        TheFuture | 3D Website
-                        <span class="tag">View Live Site</span>
-                    </li>
+    <header>
+        <h1>UI/UX Portfolio</h1>
+    </header>
+    <nav>
+        <ul>
+            <li data-device="tablet">Tablet</li>
+            <li data-device="pc">PC</li>
+            <li data-device="mobile">Mobile</li>
+        </ul>
+    </nav>
+    <main>
+        <section id="viewer">
+            <div id="image-container">
+                <!-- Left arrow button -->
+                <button id="left-arrow" class="arrow-button left">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </button>
 
-                </ul>
-            </div>
-        </div>
-    </div>
+                <!-- Images will be displayed here -->
+                <img src="tablet-image1.jpg" alt="Image 1" class="slide">
+                <img src="tablet-image2.jpg" alt="Image 2" class="slide">
+                <img src="tablet-image3.jpg" alt="Image 3" class="slide">
 
-    <div class="screen-control">
-        <div class="switchNav">
-            <li onclick="toggleDeviceOptions()" class='tablet active'>Tablet</li>
-            <li onclick="toggleDeviceOptions()" class="pc">PC</li>
-            <li onclick="toggleDeviceOptions()" class="mobile">Mobile</li>
-        </div>
-        <div class="carouselNav">
-            <li onclick="leftArrow()" class='arrow left'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgIcon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
-              </svg>
-              </li>
-            <li onclick="rightArrow()" class='arrow right'><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="svgIcon">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-              </svg>
-              </li>
-        </div>
-    </div>
+                <!-- Right arrow button -->
+                <button id="right-arrow" class="arrow-button right">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                    </svg>
+                </button>
+            </div>
+        </section>
+        <section id="project-list">
+            <h2>Projects</h2>
+            <ul>
+                <!-- Project list items go here -->
+                <li data-project="project1">Project 1</li>
+                <li data-project="project2">Project 2</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Your Name</p>
+    </footer>
+    <script src="uiux.js"></script>
 </body>
-
-<script src="uiux.js"></script>
 </html>

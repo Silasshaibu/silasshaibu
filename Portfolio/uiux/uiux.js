@@ -1,264 +1,184 @@
-//DEFAULTS PRESET
-const pcButton = document.querySelector('.pc');
-const tabletButton = document.querySelector('.tablet');
+// JavaScript for image navigation and aspect ratio adjustment
+// Function to set the initial state on page load
+function setInitialState() {
+  // Set "Project 1" as the active project
+  const initialProject = 'project1';
+  const project1Item = document.querySelector(`#project-list li[data-project="${initialProject}"]`);
+  projectListItems.forEach((item) => {
+      item.classList.remove('active');
+  });
+  project1Item.classList.add('active');
 
-const viewerFrame = document.getElementById('viewerFrame');
-const slideContainer = document.querySelector('.slideContainer');
-const indImgWidthAll = document.querySelectorAll(".slide");
-let viewerWidth = viewerFrame.offsetWidth;
-let viewerHeight = viewerFrame.offsetHeight;
+  // Set "Tablet" as the active device
+  const initialDevice = 'tablet';
+  const tabletItem = document.querySelector(`nav li[data-device="${initialDevice}"]`);
+  deviceOptions.forEach((option) => {
+      option.classList.remove('active');
+  });
+  tabletItem.classList.add('active');
 
-// RESIZE WINDOW - Check if the window width is less than certain width, the upper devices toggle button should be disabled
-window.addEventListener('resize', () => {
-  pcButton.style.display = (window.innerWidth < 1024) ? "none" : "inline-block";
-  tabletButton.style.display = (window.innerWidth < 768) ? "none" : "inline-block";
-});
+  // Update images and aspect ratio
+  updateImages(projects[initialProject][initialDevice]);
+  updateAspectRatio(initialDevice);
+  setActiveDevice(initialDevice);
+}
 
-//WINDOW ON LOAD
+// Call the setInitialState function on window load
 window.addEventListener('load', () => {
-  indImgWidthAll.forEach(imgAttribute => {
-    imgAttribute.width = viewerWidth;
-  });
-
-  slideContainer.style.width = `${viewerWidth * slideContainer.childElementCount }px`;
-
-  //Initial-State  ->  To show only tablet--versions on windows load
-  Slides.forEach(slide => {
-    slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none' : slide.style.display = 'inline-block';
-  });
-
-  //Console out the screen viewers width
-  console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
-
-  //check if the there exist a UIUX project on the ASIDE,if yes RUN IT else
-  //alert that there is no project at the moment, and a project should be added
-  //let the first UIUX project be loaded to the slideContainer on WindowsOnLoad
-  //write the function for in here and run it
-
+  setInitialState();
 });
 
-let defTanslateInterfval = 0;
-let numOfSlides = slideContainer.childElementCount;
-Slides = document.querySelectorAll('.slide');
+const leftArrow = document.getElementById('left-arrow');
+const rightArrow = document.getElementById('right-arrow');
+const images = document.querySelectorAll('#image-container img');
+const projectListItems = document.querySelectorAll('#project-list li');
+let currentIndex = 0;
+let activeDevice = 'tablet'; // Default active device
 
+// Define aspect ratios for different devices
+const aspectRatios = {
+  tablet: '4/3',
+  mobile: '9/16',
+  pc: '16/9'
+};
 
+// Define project data with images for each device
+const projects = {
+  project1: {
+      tablet: [
+          'tablet-image1.jpg',
+          'tablet-image2.jpg',
+          'tablet-image3.jpg'
+      ],
+      mobile: [
+          'mobile-image1.jpg',
+          'mobile-image2.jpg',
+          'mobile-image3.jpg'
+      ],
+      pc: [
+          'pc-image1.jpg',
+          'pc-image2.jpg',
+          'pc-image3.jpg'
+      ]
+  },
+  project2: {
+      tablet: [
+          'tablet-image4.jpg',
+          'tablet-image5.jpg',
+          'tablet-image6.jpg'
+      ],
+      mobile: [
+          'mobile-image4.jpg',
+          'mobile-image5.jpg',
+          'mobile-image6.jpg'
+      ],
+      pc: [
+          'pc-image4.jpg',
+          'pc-image5.jpg',
+          'pc-image6.jpg'
+      ]
+  }
+};
 
-//RIGHT ARROW
-function rightArrow(){
-  let slideWidth = viewerFrame.offsetWidth;
-  let numOfSlidesCompatibleWithCurrentDevice = 0;
+// Function to update the aspect ratio of the image container
+function updateAspectRatio(device) {
+  const imageContainer = document.getElementById('image-container');
+  imageContainer.style.paddingBottom = `calc(${aspectRatios[device]} * 100%)`;
+}
 
-  Slides.forEach(slide => {
-    slide.width = slideWidth;
+// Function to navigate images
+function navigateImage(direction) {
+  images[currentIndex].classList.remove('active'); // Remove the 'active' class from the current image
+  currentIndex += direction;
 
+  // Ensure the index stays within bounds
+  if (currentIndex < 0) {
+      currentIndex = images.length - 1;
+  } else if (currentIndex >= images.length) {
+      currentIndex = 0;
+  }
 
-    //if this current slide does not have a previousElementSibling with a class that matches the current div then it is the first slide.
+  images[currentIndex].classList.add('active'); // Add the 'active' class to the new current image
+}
 
-     // console.log(slide.nextElementSibling);
-      // console.log(slide);
-      // console.log(slide.parentElement);
+// Event listener for left arrow button
+leftArrow.addEventListener('click', () => {
+  navigateImage(-1); // Move to the previous image
+});
 
+// Event listener for right arrow button
+rightArrow.addEventListener('click', () => {
+  navigateImage(1); // Move to the next image
+});
 
-    if (slide.classList.contains('active') && (slide.previousElementSibling)){
-        console.log(slide);
-        console.log('this was the first element')
-      }
-      ///CONTINUE FROM HERE 🏆
+// Event listeners for project list items
+projectListItems.forEach((item) => {
+  item.addEventListener('click', () => {
+      const project = item.dataset.project;
+      // Highlight the selected project
+      projectListItems.forEach((li) => {
+          li.classList.remove('active');
+      });
+      item.classList.add('active');
+      // Update the image list based on the selected project and device
+      updateImages(projects[project][activeDevice]);
+  });
+});
 
-    //Below is to get the number of availabe slides for the current viewer}
-    if (slide.style.display === 'inline-block'){
-      numOfSlidesCompatibleWithCurrentDevice++;
-    }
-    //get the lastElementsSibling that has a class of  that matches the current device e.g tablet
-    //
+// Event listeners for device options (tablet, mobile, pc)
+const deviceOptions = document.querySelectorAll('nav li');
+deviceOptions.forEach((option) => {
+  option.addEventListener('click', () => {
+      const device = option.dataset.device;
+      // Highlight the selected device option
+      deviceOptions.forEach((li) => {
+          li.classList.remove('active');
+      });
+      option.classList.add('active');
+      // Update the active device and adjust aspect ratio
+      setActiveDevice(device);
+      // Update the image list based on the selected project and device
+      const activeProject = document.querySelector('#project-list li.active').dataset.project;
+      updateImages(projects[activeProject][device]);
+  });
+});
+
+// Function to update images based on selected project and device
+function updateImages(imageList) {
+  // Hide all images
+  images.forEach((img) => {
+      img.classList.remove('active');
   });
 
-  //if slide do not have a previous element or previous slibling,
-  //then create one for it at its previous position
+  // Display images for the selected project and device
+  imageList.forEach((imageName, index) => {
+      images[index].src = imageName;
 
-  //if current slide has active class, get the slide position
-  //translate the slideContainer by a decrement of a slide width
-  defTanslateInterfval -= slideWidth;
-  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
-}
-
-
-//LEFT ARROW
-function leftArrow(){
-  let slideWidth = viewerFrame.offsetWidth;
-  Slides.forEach(slide => {
-    slide.width = slideWidth;
+      // Update alt attribute following the specified format
+      const activeProject = document.querySelector('#project-list li.active').dataset.project;
+      images[index].alt = `${activeProject}_${activeDevice}_image${index + 1}`;
   });
-  defTanslateInterfval += slideWidth;
-  slideContainer.style.transform =`translateX(${defTanslateInterfval}px)`;
-  console.log(defTanslateInterfval);
+
+  // Start with the first image displayed
+  currentIndex = 0;
+  images[currentIndex].classList.add('active');
 }
 
-
-//TOGGLE BUTTONS FOR DIFFERENT DEVICES (TABLET, PC, MOBILE)
-function toggleDeviceOptions() {
-  const switchNav = document.querySelector('.switchNav');
-  const allBtns = switchNav.querySelectorAll('li');
-  const activeElement = switchNav.querySelector('.active');
-
-    if (activeElement) {
-      activeElement.classList.remove('active');
-    }
-
-  switchNav.addEventListener('click', (event) => {
-    const clickedElement = event.target;
-    if (clickedElement.matches('li')) {
-      clickedElement.classList.add('active');
-      const viewerName = clickedElement.innerHTML.toLowerCase();
-      const viewerFrame = document.querySelector('.ViewerFrame')
-
-      //resetting the translate state back to 0
-      let defTanslateInterfval = 0;
-
-      //Resize Viewer Devices upon tweaking Viewer Option for PC
-        if (viewerName.includes('pc')) {
-            viewerFrame.classList.remove('tablet', 'mobile');
-            viewerFrame.classList.add('pc');
-
-            Slides.forEach(slide => {
-              slide.classList.contains('mobile--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none': slide.style.display = 'inline-block'
-            });
-        }
-
-        //Resize Viewer Devices upon tweaking Viewer Option for Tablet
-        if (viewerName.includes('tablet')) {
-            viewerFrame.classList.remove('pc', 'mobile');
-            viewerFrame.classList.add('tablet');
-
-            Slides.forEach(slide => {
-              slide.classList.contains('desktop--version') || slide.classList.contains('mobile--version') ? slide.style.display = 'none': slide.style.display = 'inline-block';
-            });
-        }
-
-        //Resize Viewer Devices upon tweaking Viewer Option for Mobile
-        if (viewerName.includes('mobile')) {
-            viewerFrame.classList.remove('pc', 'tablet');
-            viewerFrame.classList.add('mobile');
-
-            Slides.forEach(slide => {
-              slide.classList.contains('desktop--version') || slide.classList.contains('tablet--version') ? slide.style.display = 'none' : slide.style.display = 'inline-block';
-            });
-        }
-
-        // Get the width of the div screen viewer
-        let viewerWidth = viewerFrame.offsetWidth;
-        let viewerHeight = viewerFrame.offsetHeight;
-        var indImgWidthAll = document.querySelectorAll(".slide");
-
-        indImgWidthAll.forEach(element => {
-          element.width = viewerWidth;
-        });
-
-        // Output the width to the console
-        console.log("Width of ScreenViewer: " + viewerWidth + " pixels");
-    }
+// Function to update the active device and adjust aspect ratio
+function setActiveDevice(device) {
+  activeDevice = device;
+  // Update aspect ratio for all images
+  images.forEach((img) => {
+      img.style.paddingBottom = `calc(${aspectRatios[activeDevice]} * 100%)`;
   });
 }
 
-
-//localStorage
-//Any empty array created to house every project added
-const uiuxProjects = [];
-
-//Create an object named "BIMTO"
-let bimtoUIUX = {
-  name:"BIMTO",
-  liveUrl:"https://bimto.co.uk",
-  shortDescription:"BIMTO is an ecommerce website aimed at etc",
-  views:{
-    tablet:{
-      images: ["1024x768_Bimteo_01_Tablet.JPG", "1024x768_Bimteo_02_Tablet.JPG", "tablet-image1.jpg", "tablet-image2.jpg", "tablet-image3.jpg"],
-    },
-    desktop:{
-      images: ["1920x1080_Bimteo_01_desktop.jpg", "1920x1080_Bimteo_02_desktop.jpg", "desktop-image1.jpg", "desktop-image2.jpg", "desktop-image3.jpg"],
-    },
-    mobile:{
-      images: ["768x384_Bimteo_01_Mobile.jpg","mobile-image1.jpg", "mobile-image2.jpg", "mobile-image3.jpg"],
-    }
-  }
-}
-
-// Add the "BIMTO" object to the array
-uiuxProjects.push(bimtoUIUX);
-console.log(uiuxProjects[0]);
-
-
-
-
-//on click on bimto li what should happen
-function displayBIMTO(){
-  //Extracting the tablet image sets for BIMTO
-  for (let i = 0; i < bimtoUIUX.views.tablet.images.length; i++) {
-    const imageSrc = bimtoUIUX.views.tablet.images[i];
-    const imageWdh = viewerWidth;
-    // Create an img element with class tablet--version"
-    const tabletImg = document.createElement("img");
-    tabletImg.className = "slide tablet--version";
-
-    tabletImg.src = imageSrc;
-    tabletImg.style.minWidth = `${imageWdh}px`;
-    tabletImg.style.minHeight = '200px';
-    // Append the tablet imgs to the slideContainer
-    slideContainer.appendChild(tabletImg);
-    console.log(tabletImg);
-  }
-
-  for (let j = 0; j < bimtoUIUX.views.mobile.images.length; j++) {
-    const imageSrc = bimtoUIUX.views.mobile.images[j];
-    const imageWdh = viewerWidth;
-
-    // Create an img element with class mobile--version"
-    const mobileImg = document.createElement("img");
-    mobileImg.className = "slide mobile--version";
-
-    mobileImg.src = imageSrc;
-    mobileImg.style.minWidth = `${imageWdh}px`;
-    mobileImg.style.minHeight = '200px';
-    // Append the mobile imgs to the slideContainer
-    slideContainer.appendChild(mobileImg);
-    console.log(mobileImg);
-  }
-
-  for (let k = 0; k < bimtoUIUX.views.desktop.images.length; k++) {
-    const imageSrc = bimtoUIUX.views.desktop.images[k];
-    const imageWdh = viewerWidth;
-
-    // Create an img element with class desktop--version"
-    const desktopImg = document.createElement("img");
-    desktopImg.className = "slide desktop--version";
-
-    desktopImg.src = imageSrc;
-    desktopImg.style.minWidth = `${imageWdh}px`;
-    desktopImg.style.minHeight = '200px';
-    // Append the desktop imgs to the slideContainer
-    slideContainer.appendChild(desktopImg);
-    console.log(desktopImg);
-  }
-
-
-  // Iterate through the categories and count the images
-  let totalImages = 0;
-  for (let view in bimtoUIUX.views) {
-    if (bimtoUIUX.views.hasOwnProperty(view)) {
-      totalImages += bimtoUIUX.views[view].images.length;
-    }
-  }
-  console.log(`"Total number of images for ${bimtoUIUX.name} is ${totalImages} `);
-}
-
-//we want that on click on BIMTO Button,
-//it should remove any image tag found in the slideContainer,
-//then it should create image tags where the number of tags is the sum of all the images in all the views(categories) put together
-//then it should check add the tablet class to the images from the tablet images array list
-//it should also add the mobile class to the images from the tablet images array list
-//it should also add the desktop class to the images from the tablet image array li
-
-
+// Initialize with the first project and its images for the default device (tablet)
+const initialProject = projectListItems[0].dataset.project;
+updateImages(projects[initialProject][activeDevice]);
+projectListItems[0].classList.add('active');
+updateAspectRatio(activeDevice); // Set the initial aspect ratio to the default device (tablet)
+setActiveDevice(activeDevice); // Set the initial device option as active
 
 
 
