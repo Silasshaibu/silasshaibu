@@ -172,13 +172,13 @@ let bimtoUIUX = {
   shortDescription:"BIMTO is an ecommerce website aimed at etc",
   views:{
     tablet:{
-      images: ["tablet-image1.jpg", "tablet-image2.jpg", "tablet-image3.jpg"],
+      images: ["1024x768_Bimteo_01_Tablet.JPG", "1024x768_Bimteo_02_Tablet.JPG", "tablet-image1.jpg", "tablet-image2.jpg", "tablet-image3.jpg"],
     },
     desktop:{
-      images: ["desktop-image1.jpg", "desktop-image2.jpg", "desktop-image3.jpg"],
+      images: ["1920x1080_Bimteo_01_desktop.jpg", "1920x1080_Bimteo_02_desktop.jpg", "desktop-image1.jpg", "desktop-image2.jpg", "desktop-image3.jpg"],
     },
     mobile:{
-      images: ["mobile-image1.jpg", "mobile-image2.jpg", "mobile-image3.jpg"],
+      images: ["768x384_Bimteo_01_Mobile.jpg","mobile-image1.jpg", "mobile-image2.jpg", "mobile-image3.jpg"],
     }
   }
 }
