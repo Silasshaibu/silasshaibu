@@ -113,6 +113,19 @@ nav li:hover {
   background-color: #efefef;
 }
 
+#project-list li{
+  position: relative;
+}
+
+.action-icons{
+position: absolute;
+right:0;
+bottom:0;
+width:50px;
+min-height:50px;
+border:1px solid black;
+}
+
 /*if current project is the one that has its image displayed on the image containter, then add the active class to its li element*/
 #project-list li.active {
   background-color: rgb(80, 80, 80);
