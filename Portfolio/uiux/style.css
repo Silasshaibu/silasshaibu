@@ -231,14 +231,14 @@ main {
 }
 
 .svgListStyle{
-  stroke:white;
+  stroke: rgba(54, 54, 54, 0.527);
   stroke:black;
   width:1.5rem;
   height:1.5rem;
 }
 
-.svgListStyle.active{
-  stroke:white;
+.svgListStyle:hover {
+  stroke:black;
 }
 
 .deviceViewer--imageCustomize {
@@ -253,4 +253,8 @@ main {
   position: relative;
   overflow-y: hidden;
   aspect-ratio: inherit;
+}
+
+#project-list li {
+  display: block;
 }
