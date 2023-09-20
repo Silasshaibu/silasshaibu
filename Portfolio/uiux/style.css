@@ -115,15 +115,14 @@ nav li:hover {
 
 #project-list li{
   position: relative;
+  padding-left:.8rem;
 }
 
 .action-icons{
 position: absolute;
-right:0;
-bottom:0;
-width:50px;
-min-height:50px;
-border:1px solid black;
+display: flex;
+right:.8rem;
+bottom:1rem;
 }
 
 /*if current project is the one that has its image displayed on the image containter, then add the active class to its li element*/

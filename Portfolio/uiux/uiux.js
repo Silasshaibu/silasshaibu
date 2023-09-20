@@ -46,6 +46,25 @@ const projects = {
       '1920x1080_Bimto_01_desktop.jpg',
       '1920x1080_Bimto_02_desktop.jpg'
     ]
+  },
+  project3: {
+    name: "Optimum-Payments",
+    tools: "Adobe XD",
+    description:"Affiliate",
+    liveWebsite: "",
+    fileDownloadLink: "Anytechsolutions.pdf",
+    tablet: [
+      '1024x768_Bimto_01_Tablet.jpg',
+      '1024x768_Bimto_02_Tablet.jpg'
+    ],
+    mobile: [
+      '768x384_Bimto_01_Mobile.jpg',
+      '768x384_Bimto_01_Mobile.jpg'
+    ],
+    pc: [
+      '1920x1080_Bimto_01_desktop.jpg',
+      '1920x1080_Bimto_02_desktop.jpg'
+    ]
   }
 };
 
@@ -87,28 +106,35 @@ function populateProjectList() {
 
       // Create an SVG icon for the live website link
       if (project.liveWebsite) {
-        const webIcon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        const webIcon = document.createElement('img');
         webIcon.classList.add('svgListStyle', 'web');
-        webIcon.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-        webIcon.setAttribute('width', '24');
-        webIcon.setAttribute('height', '24');
-        webIcon.setAttribute('viewBox', '0 0 24 24');
-        webIcon.setAttribute('stroke-width', '1.5');
-        webIcon.setAttribute('stroke', 'currentColor');
-
-        const webPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
-        webPath.setAttribute('stroke-linecap', 'round');
-        webPath.setAttribute('stroke-linejoin', 'round');
-        webPath.setAttribute('d', 'M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-1.605.42-3.113 1.157-4.418');
-
-        webIcon.appendChild(webPath);
-
+        webIcon.src = 'web.svg'; // Replace with the URL of your SVG icon
+        webIcon.alt = 'Live Site';
         webIcon.addEventListener('click', () => {
           window.open(project.liveWebsite, '_blank');
         });
-
         actionIcons.appendChild(webIcon);
       }
+
+      // Create an SVG icon for the download action
+      if (project.fileDownloadLink) {
+        const downloadIcon = document.createElement('img');
+        downloadIcon.classList.add('svgListStyle', 'download');
+        downloadIcon.src = 'downloadIcon.svg'; // Replace with the URL of your download SVG icon
+        downloadIcon.alt = 'Download Icon';
+
+        // Add an event listener for the download action
+        downloadIcon.addEventListener('click', () => {
+          // Handle the download logic here
+          // For example, open the file download link in a new tab
+          if (project.fileDownloadLink) {
+            window.open(project.fileDownloadLink, '_blank');
+          }
+        });
+
+        actionIcons.appendChild(downloadIcon);
+      }
+
 
       // Append the project details and action icons to the list item
       listItem.appendChild(projectDetails);
