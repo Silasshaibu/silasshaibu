@@ -45,8 +45,7 @@ main {
   width: 100%;
   height: auto;
   transition: transform 0.3s;
-  display: none;
-  aspect-ratio: 16/9;
+  position:relative;
 }
 
 #image-container img.active {
@@ -78,7 +77,9 @@ main {
   border: 1px solid #ddd;
   border-bottom: none;
 }
-
+nav li.hidden {
+  display: none;
+}
 #project-list li:last-child {
   border-bottom: 1px solid #ddd;
 }
@@ -160,18 +161,7 @@ nav ul {
   width: 20px;
   height: 20px;
 }
-
-/* Add this to your CSS stylesheet */
-
 /* Mobile styles: 9/16 aspect ratio */
-nav li[data-device='mobile'].active #image-container img {
-  aspect-ratio: 9/16;
-}
-
-/* Tablet styles: 4/3 aspect ratio */
-nav li[data-device='tablet'].active #image-container img {
-  aspect-ratio: 4/3;
-}
 
 /*ADD LIVE IMAGES OF DEVICES, PC, TABLET AND MOBILE
 SO THEY ARE SHOW RESPECTIVELY WHEN CALLED*/
@@ -206,16 +196,6 @@ main {
   max-height: 100%; /* Set the maximum height of the main content to 100% */
 }
 
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 75vh; /* Set the maximum height of the image container to 100% */
-  overflow: hidden;
-  position: relative;
-  /* background-color: rgba(255, 166, 0, 0.822); */
-}
-
 .keypad-section {
   position: absolute;
   bottom: 0;
@@ -228,41 +208,49 @@ main {
 }
 
 #image-container img {
-  max-width: 100%;
   max-height: 50vh; /* Set the maximum height of any image to 50vh */
   width: auto; /* Reset the width to auto to maintain aspect ratio */
   height: auto; /* Reset the height to auto to maintain aspect ratio */
   transition: transform 0.3s;
   display: none;
-  border-radius: 1rem;
   position: relative;
-
-  /*Transfer the tablet styling to the img.tablet below*/
-  border: 5px solid black;
-}
-/*
-.deviceViewer--imageCustomize::after {
-  position: absolute;
-  content: '';
-  min-width: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: black;
-  min-height: 1.6rem;
-  border-radius: 0rem 0rem 1rem 1rem;
-  bottom: -1rem;
-  z-index: 1;
 }
 
-.deviceViewer--imageCustomize::before {
-  position: absolute;
-  content: '';
-  min-width: 20%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+
+#project-list ul li{
+  position:relative;
+}
+
+.actionIcons{
+  min-width:1rem;
+  min-height:1rem;
+  stroke:white;
+  position:absolute;
+  bottom:0;
+  right:.5rem;
+}
+
+.svgListStyle{
+  stroke:white;
+  stroke:black;
+  width:1.5rem;
+  height:1.5rem;
+}
+
+.svgListStyle.active{
+  stroke:white;
+}
+
+.deviceViewer--imageCustomize {
+  width: fit-content;
+  /*Set width property to a percentage of the media width so it can feature well and also when a device option is toggled, you can achieve using both css and js*/
+  height: auto;
+  padding: 0px;
+  border-radius: 1rem;
+  border: 3px solid black;
   background-color: grey;
-  min-height: 0.7rem;
-  border-radius: 0rem 0rem 0.3rem 0.3rem;
-  bottom: -0.4rem;
-  z-index: 2;
-} */
+  margin-bottom: 12vh;
+  position: relative;
+  overflow-y: hidden;
+  aspect-ratio: inherit;
+}
