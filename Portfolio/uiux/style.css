@@ -137,6 +137,14 @@ nav li.active {
   color: white;
 }
 
+.active-icon{
+  stroke:white;
+}
+
+img.svgListStyle.filtered{
+  filter:brightness(100%) grayscale(100%) invert(100%);
+}
+
 /* Arrow button styles */
 .arrow-button {
   color: black;

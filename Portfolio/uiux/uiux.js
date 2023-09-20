@@ -68,6 +68,8 @@ const projects = {
   }
 };
 
+
+
 // Function to populate the project list dynamically
 function populateProjectList() {
   const projectList = document.querySelector('#project-list ul');
@@ -76,6 +78,8 @@ function populateProjectList() {
   for (const projectKey in projects) {
     if (projects.hasOwnProperty(projectKey)) {
       const project = projects[projectKey];
+
+
 
       // Create a new list item element
       const listItem = document.createElement('li');
@@ -103,6 +107,9 @@ function populateProjectList() {
       // Create a div for the action icons
       const actionIcons = document.createElement('div');
       actionIcons.classList.add('action-icons');
+
+
+
 
       // Create an SVG icon for the live website link
       if (project.liveWebsite) {
@@ -134,7 +141,6 @@ function populateProjectList() {
 
         actionIcons.appendChild(downloadIcon);
       }
-
 
       // Append the project details and action icons to the list item
       listItem.appendChild(projectDetails);
@@ -195,11 +201,6 @@ function updateImages(imageList) {
   // Start with the first image displayed
   currentIndex = 0;
   images[currentIndex].classList.add('active');
-}
-
-// Function to update the active device
-function setActiveDevice(device) {
-  activeDevice = device;
 }
 
 // Function to set the default project, device, and display images
@@ -296,4 +297,22 @@ rightArrow.addEventListener('click', () => {
   navigateImage(1); // Move to the next image
 });
 
+const activeProjectListItem = document.querySelector('ul.projectList li'); // Make sure this selector matches your HTML structure
+
+if (activeProjectListItem && activeProjectListItem.querySelector('.active')) {
+  console.log('Yes, it has a child element with the class "active"');
+} else {
+  console.log('No child element with the class "active" found or activeProjectListItem not found');
+}
+// // Check if the second child has the class 'active'
+// if (activeProjectListItem && activeProjectListItem.children[1].classList.contains('active')) {
+//   console.log('The second child has the class "active"');
+// } else {
+//   console.log('The second child does not have the class "active" or activeProjectListItem not found');
+// }
+
 // ... (The rest of your code remains unchanged) ...
+
+
+      //check for each list item ready in the dom if the list element has active class then
+      //check if there exist an img in the list item, it there exist then add an class filtered to the img element.
