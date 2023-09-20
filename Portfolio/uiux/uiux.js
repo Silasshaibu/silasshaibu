@@ -18,7 +18,7 @@ const aspectRatios = {
 const projects = {
   project1: {
     name:"Bimto",
-    liveWebsite:"www.google.com",
+    liveWebsite:"http://www.google.com",
     fileDownloadLink:"bimto-uiux.pdf",
     tablet: [
       '1024x768_Bimteo_01_Tablet.jpg',
@@ -35,8 +35,8 @@ const projects = {
   },
   project2: {
     name:"AskMeAbroad",
-    liveWebsite:"www.google.com",
-    fileDownloadLink:"www.pdf.com",
+    liveWebsite:"http://www.askmeabroad.com",
+    fileDownloadLink:"",
     tablet: [
       '1024x768_Bimto_01_Tablet.jpg',
       '1024x768_Bimto_02_Tablet.jpg'
@@ -86,6 +86,7 @@ rightArrow.addEventListener('click', () => {
 });
 
 // Event listeners for project list items
+// Event listeners for project list items
 projectListItems.forEach((item) => {
   item.addEventListener('click', () => {
     const project = item.dataset.project;
@@ -101,10 +102,11 @@ projectListItems.forEach((item) => {
   // Add an event listener to the download SVG icon within each project list item
   const downloadIcon = item.querySelector('.svgListStyle.download');
   if (downloadIcon) {
-    downloadIcon.addEventListener('click', () => {
-      const project = item.dataset.project;
-      const fileDownloadLink = projects[project].fileDownloadLink;
-      if (fileDownloadLink) {
+    const project = item.dataset.project;
+    const fileDownloadLink = projects[project].fileDownloadLink;
+    if (fileDownloadLink) {
+      downloadIcon.style.display = 'inline-block'; // Show the SVG icon
+      downloadIcon.addEventListener('click', () => {
         // Create an anchor element to trigger the download
         const downloadLink = document.createElement('a');
         downloadLink.href = fileDownloadLink;
@@ -113,17 +115,26 @@ projectListItems.forEach((item) => {
         document.body.appendChild(downloadLink);
         downloadLink.click();
         document.body.removeChild(downloadLink);
-      }
-    });
+      });
+    } else {
+      downloadIcon.style.display = 'none'; // Hide the SVG icon
+    }
   }
 
   // Add an event listener to the web SVG icon within each project list item
   const webIcon = item.querySelector('.svgListStyle.web');
   if (webIcon) {
-    webIcon.addEventListener('click', () => {
-      // Open a new window or tab with the fixed URL
-      window.open('http://www.google.com', '_blank');
-    });
+    const project = item.dataset.project;
+    const liveWebsite = projects[project].liveWebsite;
+    if (liveWebsite) {
+      webIcon.style.display = 'inline-block'; // Show the SVG icon
+      webIcon.addEventListener('click', () => {
+        // Open a new window or tab with the fixed URL
+        window.open(liveWebsite, '_blank');
+      });
+    } else {
+      webIcon.style.display = 'none'; // Hide the SVG icon
+    }
   }
 });
 
