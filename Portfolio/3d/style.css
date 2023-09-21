@@ -1,0 +1,114 @@
+/*RESETTING DEFAULT STYLING*/
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/*HEADER STYLING*/
+header {
+  height: 8vh;
+  background-color: grey;
+  padding: 1rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.1rem;
+}
+
+.grid-item {
+  border: 1px solid grey;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  aspect-ratio: 1/1;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.close {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  bottom: 1rem; /* Position it 1rem from the bottom */
+  left: 0;
+  width: 100%;
+  height: 90vh; /* Set the height to 80vh */
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+  overflow-y: auto; /* Add scroll when content exceeds modal height */
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: row;
+  background-color: purple;
+  padding: 20px;
+  position: relative;
+}
+
+.modal-left {
+  border: 1px solid black;
+  justify-content: center;
+  margin: 0 auto;
+  display: grid;
+  width: 80%;
+  place-items: center;
+}
+
+.modal-right {
+  width: 40%;
+  border: 1px solid black;
+  background-color: red;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .modal-content {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+
+  .modal-left {
+    border: 1px solid black;
+    justify-content: center;
+    margin: 0 auto;
+    display: grid;
+    width: 100%;
+    place-items: center;
+  }
+
+  .modal-right {
+    width: 100%;
+    border: 1px solid black;
+    background-color: red;
+  }
+}

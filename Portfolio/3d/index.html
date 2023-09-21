@@ -5,47 +5,115 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
+    <header class="3dPorfolio-header">
+        <!-- MenuBarSection -->
+        3D portfolio
+    </header>
+    <div class="grid" id="projectGrid">
+        <!-- Your grid items will be added dynamically here -->
+    </div>
 
-        <div class="grid" id="projectGrid">
-            <!-- Your grid items will be added dynamically here -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <div class="modal-left">
+                <!-- Place to display additional images -->
+            </div>
+            <div class="modal-right">
+
+                <!-- Place to display text content -->
+            </div>
         </div>
+    </div>
 
+    <script>
+        // Define your projects and allProjects array here (if not already defined)
+
+        const modal = document.getElementById('myModal');
+        const closeBtn = document.getElementById('closeModal');
+
+        // Function to open the modal and populate it with project data
+        function openModal(project) {
+            // Populate the left section of the modal with additional images
+            const modalLeft = document.querySelector('.modal-left');
+            modalLeft.innerHTML = '';
+            project.images.forEach(image => {
+                const img = document.createElement('img');
+                img.src = image;
+                modalLeft.appendChild(img);
+            });
+
+            // Populate the right section of the modal with text content
+            const modalRight = document.querySelector('.modal-right');
+            modalRight.textContent = project.name; // You can add more text content here
+
+            modal.style.display = 'block';
+        }
+
+        // Function to close the modal
+        function closeModal() {
+            modal.style.display = 'none';
+        }
+
+        // Event listener to close the modal when the close button is clicked
+        closeBtn.addEventListener('click', closeModal);
+
+        // Event listener to close the modal when clicking outside the modal content
+        window.addEventListener('click', (event) => {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        const project1 = {
+            name: 'NightlyTree',
+            thumbnailImageUrl: './treeNight.jpg',
+            images: ['treeNight.jpg', 'treeNightly.jpg', 'image3.jpg']
+        };
+
+        const project2 = {
+            name: 'characterGirl',
+            thumbnailImageUrl: './characterGirl.jpg',
+            images: ['characterGirl.jpg', 'characterGirl.jpg', 'characterGirl.jpg']
+        };
+
+        const project3 = {
+            name: 'webpage',
+            thumbnailImageUrl: './website.jpg',
+            images: ['website.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg']
+        };
+
+        const allProjects = [project1, project2, project3];
+
+        // Function to load projects into grid items
+        function loadProjectsIntoGrid() {
+            const projectGrid = document.getElementById('projectGrid');
+
+            allProjects.forEach(project => {
+                const gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+
+                const thumbnailImage = document.createElement('img');
+                thumbnailImage.src = project.thumbnailImageUrl;
+                thumbnailImage.alt = project.name;
+
+                gridItem.appendChild(thumbnailImage);
+                projectGrid.appendChild(gridItem);
+
+                // Add a click event listener to open the modal when this project is clicked
+                gridItem.addEventListener('click', () => {
+                    openModal(project);
+                });
+            });
+        }
+
+        // Call the function when the page is loaded
+        window.addEventListener('load', loadProjectsIntoGrid);
+
+    </script>
 </body>
-
-<style>
-    .grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.1rem;
-    }
-
-    .grid-item {
-        border: 1px solid grey;
-        border-radius: 0.5rem;
-        overflow: hidden;
-        aspect-ratio: 1/1;
-    }
-
-    .grid-item img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center;
-    }
-
-    @media screen and (max-width: 1024px) {
-        .grid {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media screen and (max-width: 800px) {
-        .grid {
-            grid-template-columns: repeat(2, 1fr);
-        }
-    }
-</style>
-<script src="./3d.js"></script>
 </html>
