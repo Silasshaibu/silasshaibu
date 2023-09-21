@@ -4,27 +4,54 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D | Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
 </head>
 <body>
-    <div class="artBody">
-        <h1>Welcome to 3D portfolio</h1>
-        <div class="grid">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
+    <div class="grid">
+        <div class="grid-item">
+            <img src="./silasshaibu30bg_website_for_personal_portfolio_friendly_sleek_g_588d0812-61db-4af6-8969-aee1ce8bc3e4.png" alt="">
         </div>
-    </div>    
+        <div class="grid-item"> <img src="./ssilas_A_stunning_3D_character_model_of_a_fierce_female_warrior_fbdc5cdd-6fc4-4c13-868c-30999cb4f5bb.png" alt=""></div>
+        <div class="grid-item"> <img src="./treeNight.jpg" alt=""></div>
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 1</div>
+        <div class="grid-item">Item 1</div>
+    </div>
 </body>
-<script src="./3d.js"></script>
+
+<style>
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    .grid-item {
+        border: 1px solid grey;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        aspect-ratio: 1/1;
+    }
+
+    .grid-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (max-width: 800px) {
+        .grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+</style>
 </html>
