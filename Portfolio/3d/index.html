@@ -17,18 +17,74 @@
         <!-- Your grid items will be added dynamically here -->
     </div>
 
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close" id="closeModal">&times;</span>
-            <div class="modal-left">
-                <!-- Place to display additional images -->
-            </div>
-            <div class="modal-right">
+    <!-- LightBox section -->
+    <div id="myModal" class="modal-featureProjectDetails">
+        <div class="leftSection">
+            <div class="contentDisplayArea">
+                <div class="content">
+                    <img src="" width="100%" alt="iage1">
+                </div>
 
-                <!-- Place to display text content -->
+                <div class="content">
+                    <img src="" width="100%" alt="iage1">
+                </div>
+
+                <div class="content">
+                    <img src="" width="100%" alt="iage1">
+                </div>
+
+                <span class="leftArrowController">
+                    <
+                </span>
+
+                <span class="rightArrowController">
+                    >
+                </span>
             </div>
         </div>
+        <aside class="rightSection">
+            <div class="authorInfo">
+                <div class="authorImage">
+
+                </div>
+
+                <div class="authorSocials">
+                    <h4>Silas S</h4>
+                    <p>Concept Artist at Riot Games</p>
+                    <p class="projectNumber">1147591659</p>
+
+                </div>
+            </div>
+
+            <div class="authorInfo socials">
+                <button>Hire Me</button> <button>Message Me</button>
+            </div>
+
+            <div class="authorInfo advertSales">
+                <p>
+                    From the Swade_Studio MarketPlace
+                </p>
+                <div class="advert">
+                    <img src="" width="100%" alt="advert">
+                </div>
+
+            </div>
+
+            <div class="authorInfo aboutProject">
+                <li>Rendered with Arnold </li>
+                <li>2K Resolution </li>
+                <li>Diffuse Map Available </li>
+                <li>Specular Map Available </li>
+                <li>Displacement Map Available </li>
+                <li>Normal Map Available </li>
+            </div>
+
+            <span onclick="closeModal()" class="closeButton">
+                X
+            </span>
+        </aside>
     </div>
+
 
     <script>
         // Define your projects and allProjects array here (if not already defined)
@@ -38,53 +94,46 @@
 
         // Function to open the modal and populate it with project data
         function openModal(project) {
-            // Populate the left section of the modal with additional images
-            const modalLeft = document.querySelector('.modal-left');
-            modalLeft.innerHTML = '';
-            project.images.forEach(image => {
-                const img = document.createElement('img');
-                img.src = image;
-                modalLeft.appendChild(img);
-            });
+            const modalImages = modal.querySelectorAll('.content img');
+            const projectName = modal.querySelector('.authorSocials h4');
 
-            // Populate the right section of the modal with text content
-            const modalRight = document.querySelector('.modal-right');
-            modalRight.textContent = project.name; // You can add more text content here
-
-            modal.style.display = 'block';
-        }
-
-        // Function to close the modal
-        function closeModal() {
-            modal.style.display = 'none';
-        }
-
-        // Event listener to close the modal when the close button is clicked
-        closeBtn.addEventListener('click', closeModal);
-
-        // Event listener to close the modal when clicking outside the modal content
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                closeModal();
+            // Set the image sources in the modal
+            for (let i = 0; i < project.images.length; i++) {
+                modalImages[i].src = project.images[i];
             }
-        });
+
+           //Set advert Image
+           const advertImage = modal.querySelector('.advert img');
+           advertImage.src=project.advertImage;
+
+           // Set the project name
+            projectName.textContent = project.name;
+
+            //Set the img src attribute for the advert section
+            console.log(project.advertImage);
+            // Display the modal
+            modal.style.display = 'flex';
+        }
 
         const project1 = {
             name: 'NightlyTree',
             thumbnailImageUrl: './treeNight.jpg',
-            images: ['treeNight.jpg', 'treeNightly.jpg', 'image3.jpg']
+            images: ['treeNight.jpg', 'treeNight.jpg', 'treeNight.jpg'],
+            advertImage:'treeNight.jpg'
         };
 
         const project2 = {
             name: 'characterGirl',
             thumbnailImageUrl: './characterGirl.jpg',
-            images: ['characterGirl.jpg', 'characterGirl.jpg', 'characterGirl.jpg']
+            images: ['characterGirl.jpg', 'characterGirl.jpg', 'characterGirl.jpg'],
+            advertImage:'characterGirl.jpg'
         };
 
         const project3 = {
             name: 'webpage',
             thumbnailImageUrl: './website.jpg',
-            images: ['website.jpg', 'image2.jpg', 'image3.jpg', 'image4.jpg']
+            images: ['website.jpg', 'website.jpg', 'website.jpg'],
+            advertImage:'website.jpg'
         };
 
         const allProjects = [project1, project2, project3];
@@ -113,6 +162,10 @@
 
         // Call the function when the page is loaded
         window.addEventListener('load', loadProjectsIntoGrid);
+
+        function closeModal(){
+            modal.style.display="none";
+        }
 
     </script>
 </body>

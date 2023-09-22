@@ -4,6 +4,164 @@
   padding: 0;
 }
 
+:root {
+  --projectInfoSectionWidth: 30vw;
+  --HeaderHeight: 5vh;
+  --rightMarginSpace: 2%;
+  --imageWidthAndheight: 4rem;
+}
+
+.closeButton {
+  top: 0;
+  right: 0;
+  margin: 0.5rem;
+  position: absolute;
+  background-color: white;
+  place-items: center;
+  height: 50px;
+  width: 50px;
+  display: grid;
+  border-radius: 50%;
+}
+
+.content {
+  overflow: hidden;
+  max-height: 150px;
+}
+
+.authorInfo.advertSales {
+  display: block;
+}
+
+.authorInfo {
+  padding: 1rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.authorInfo.aboutProject {
+  flex-direction: column;
+  display: block;
+  align-items: flex-start;
+  list-style: none;
+}
+
+.advert {
+  width: 50%;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+button {
+  padding: 7px 15px;
+  /* border-radius:.5em; */
+}
+
+.authorImage {
+  border-radius: 50%;
+  min-width: var(--imageWidthAndheight);
+  height: var(--imageWidthAndheight);
+  background-color: white;
+}
+
+.contentDisplayArea {
+  width: calc(100% - var(--projectInfoSectionWidth) - var(--rightMarginSpace));
+  border: 1px solid green;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  left: 0%;
+}
+
+.content {
+  border: 3px solid white;
+}
+
+.leftArrowController,
+.rightArrowController {
+  position: fixed;
+  cursor: pointer;
+  top: 50%;
+  display: grid;
+  z-index: 1;
+  place-items: center;
+  background-color: white;
+  border-radius: 50%;
+  height: 50px;
+  min-width: 50px;
+}
+
+.leftArrowController {
+  left: 0%;
+  transform: translate(50%, -50%);
+}
+
+.rightArrowController {
+  left: calc(100% - var(--projectInfoSectionWidth) - var(--rightMarginSpace));
+  transform: translate(-200%, -50%);
+}
+
+.leftSection {
+  overflow-y: scroll;
+  background-color: black;
+  position: relative;
+  width: 100%;
+}
+
+.rightSection {
+  position: fixed;
+  top: 3%;
+  right: var(--rightMarginSpace);
+  width: var(--projectInfoSectionWidth);
+  border-radius: 1rem;
+  background-color: grey;
+  border: 1px solid black;
+  height: 80vh;
+  max-height: 80vh;
+  overflow-y: scroll;
+}
+
+.modal-featureProjectDetails {
+  position: fixed;
+  border: 1px solid red;
+  background-color: rgba(128, 128, 128, 0.295);
+  height: calc(100vh - var(--HeaderHeight) - 6vh);
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+  z-index: 0;
+  display: none;
+}
+
+.modal-featureProjectDetails.active {
+  z-index: 2;
+  display: flex;
+}
+
+body,
+.AllContainer {
+  position: relative;
+}
+
+header,
+.gridSystem {
+  border: 1px solid black;
+}
+
+header {
+  height: var(--HeaderHeight);
+  padding: 0.5rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content {
+  width: 100%;
+  max-height: 60vh;
+}
+
 /*HEADER STYLING*/
 header {
   height: 8vh;
@@ -31,50 +189,6 @@ header {
   object-position: center;
 }
 
-.close {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.modal {
-  display: none;
-  position: fixed;
-  bottom: 1rem; /* Position it 1rem from the bottom */
-  left: 0;
-  width: 100%;
-  height: 90vh; /* Set the height to 80vh */
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-  overflow-y: auto; /* Add scroll when content exceeds modal height */
-}
-
-.modal-content {
-  display: flex;
-  flex-direction: row;
-  background-color: purple;
-  padding: 20px;
-  position: relative;
-}
-
-.modal-left {
-  border: 1px solid black;
-  justify-content: center;
-  margin: 0 auto;
-  display: grid;
-  width: 80%;
-  place-items: center;
-}
-
-.modal-right {
-  width: 40%;
-  border: 1px solid black;
-  background-color: red;
-  overflow-y: auto;
-}
-
 @media screen and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
@@ -85,6 +199,14 @@ header {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .rightSection {
+    border-radius: 0.8rem;
+  }
+
+  .modal-featureProjectDetails {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 @media screen and (max-width: 600px) {
@@ -92,23 +214,16 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .modal-content {
-    display: flex;
+  .modal-featureProjectDetails {
     flex-direction: column-reverse;
-  }
-
-  .modal-left {
-    border: 1px solid black;
-    justify-content: center;
-    margin: 0 auto;
     display: grid;
-    width: 100%;
-    place-items: center;
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px;
+    /* grid-template-rows: auto; */
   }
 
-  .modal-right {
-    width: 100%;
-    border: 1px solid black;
-    background-color: red;
+  .rightSection {
+    border-radius: 0.8rem;
+    order: -1;
   }
 }
