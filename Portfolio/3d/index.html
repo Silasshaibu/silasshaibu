@@ -87,16 +87,13 @@
 
 
     <script>
-        // Define your projects and allProjects array here (if not already defined)
-
         const modal = document.getElementById('myModal');
-
-        // Function to open the modal and populate it with project data
 
         function closeModal(){
             modal.style.display="none";
         }
 
+        // Function to open the modal and populate it with project data
         function openModal(project) {
             const modalImages = modal.querySelectorAll('.content img');
             const projectName = modal.querySelector('.authorSocials h4');
@@ -119,6 +116,8 @@
             modal.style.display = 'flex';
         }
 
+
+        //DEFINE ALL YOUR PROJECTS HERE
         const project1 = {
             name: 'NightlyTree',
             thumbnailImageUrl: './treeNight.jpg',
@@ -140,6 +139,7 @@
             advertImage:'website.jpg'
         };
 
+        //PACKING ALL THE PROJECTS IN ONE
         const allProjects = [project1, project2, project3];
 
         // Function to load projects into grid items
@@ -166,9 +166,6 @@
 
         // Call the function when the page is loaded
         window.addEventListener('load', loadProjectsIntoGrid);
-
-
-
     </script>
 </body>
 </html>
