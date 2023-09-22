@@ -90,9 +90,13 @@
         // Define your projects and allProjects array here (if not already defined)
 
         const modal = document.getElementById('myModal');
-        const closeBtn = document.getElementById('closeModal');
 
         // Function to open the modal and populate it with project data
+
+        function closeModal(){
+            modal.style.display="none";
+        }
+
         function openModal(project) {
             const modalImages = modal.querySelectorAll('.content img');
             const projectName = modal.querySelector('.authorSocials h4');
@@ -163,9 +167,7 @@
         // Call the function when the page is loaded
         window.addEventListener('load', loadProjectsIntoGrid);
 
-        function closeModal(){
-            modal.style.display="none";
-        }
+
 
     </script>
 </body>
