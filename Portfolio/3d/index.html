@@ -11,7 +11,7 @@
 <body>
     <header class="3dPorfolio-header">
         <!-- MenuBarSection -->
-        3D portfolio
+        <h3>3D PORTFOLIO</h3>
     </header>
     <div class="grid" id="projectGrid">
         <!-- Your grid items will be added dynamically here -->
@@ -34,30 +34,33 @@
                 </div>
 
                 <span class="leftArrowController">
-                    <
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
                 </span>
 
                 <span class="rightArrowController">
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                      </svg>
+
                 </span>
             </div>
         </div>
         <aside class="rightSection">
             <div class="authorInfo">
                 <div class="authorImage">
-
                 </div>
 
                 <div class="authorSocials">
-                    <h4>Silas S</h4>
-                    <p>Concept Artist at Riot Games</p>
+                    <h4>Silas S.</h4>
+                    <p>3D Generalist </p>
                     <p class="projectNumber">1147591659</p>
-
                 </div>
             </div>
 
             <div class="authorInfo socials">
-                <button>Hire Me</button> <button>Message Me</button>
+                <button onclick="HireMe()">Hire Me</button> <button>Inbox Me </button>
             </div>
 
             <div class="authorInfo advertSales">
@@ -71,20 +74,25 @@
             </div>
 
             <div class="authorInfo aboutProject">
-                <li>Rendered with Arnold </li>
-                <li>2K Resolution </li>
-                <li>Diffuse Map Available </li>
-                <li>Specular Map Available </li>
-                <li>Displacement Map Available </li>
-                <li>Normal Map Available </li>
             </div>
 
             <span onclick="closeModal()" class="closeButton">
-                X
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
             </span>
         </aside>
     </div>
+    <style>
+        .authorSocials p{
+            font-size:.9rem;
+        }
 
+        .authorImage{
+            background-image: url(./MY-PROFILE--Sharp.jpg);
+            background-size: contain;
+        }
+    </style>
 
     <script>
         const modal = document.getElementById('myModal');
@@ -93,10 +101,16 @@
             modal.style.display="none";
         }
 
+        function HireMe(){
+            //redirect to google.com
+            window.open('https://www.fiverr.com/silasshaibu', "_blank");
+        }
+
         // Function to open the modal and populate it with project data
         function openModal(project) {
             const modalImages = modal.querySelectorAll('.content img');
-            const projectName = modal.querySelector('.authorSocials h4');
+            const projectID = modal.querySelector('.projectNumber');
+            const projectDescription = modal.querySelector('.authorInfo.aboutProject');
 
             // Set the image sources in the modal
             for (let i = 0; i < project.images.length; i++) {
@@ -108,10 +122,10 @@
            advertImage.src=project.advertImage;
 
            // Set the project name
-            projectName.textContent = project.name;
+             projectID.textContent = project.id;
 
-            //Set the img src attribute for the advert section
-            console.log(project.advertImage);
+             projectDescription.innerHTML = project.description;
+
             // Display the modal
             modal.style.display = 'flex';
         }
@@ -122,21 +136,35 @@
             name: 'NightlyTree',
             thumbnailImageUrl: './treeNight.jpg',
             images: ['treeNight.jpg', 'treeNight.jpg', 'treeNight.jpg'],
-            advertImage:'treeNight.jpg'
+            advertImage:'treeNight.jpg',
+            id:'1147591657',
+            description:` Diffuse Map Available </li>
+                <li>Displacement Map Available </li>`
         };
 
         const project2 = {
             name: 'characterGirl',
             thumbnailImageUrl: './characterGirl.jpg',
             images: ['characterGirl.jpg', 'characterGirl.jpg', 'characterGirl.jpg'],
-            advertImage:'characterGirl.jpg'
+            advertImage:'characterGirl.jpg',
+            id:'1147591658',
+            description:`<li>Rendered with Arnold </li>
+                <li>1K Resolution </li>
+                <li>Diffuse Map Available </li>
+                <li>Displacement Map Available </li>
+                `
         };
 
         const project3 = {
             name: 'webpage',
             thumbnailImageUrl: './website.jpg',
             images: ['website.jpg', 'website.jpg', 'website.jpg'],
-            advertImage:'website.jpg'
+            advertImage:'website.jpg',
+            id:'1147591659',
+            description:`<li>Rendered with Arnold </li>
+                <li>2K Resolution </li>
+                <li>Displacement Map Available </li>
+                <li>Normal Map Available </li>`
         };
 
         //PACKING ALL THE PROJECTS IN ONE
