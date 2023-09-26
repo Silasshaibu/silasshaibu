@@ -4,27 +4,196 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D | Portfolio</title>
+    <title>Document</title>
     <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-    <div class="artBody">
-        <h1>Graphics Portfolio</h1>
-        <div class="grid">
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
-            <div class="item"></div>
+    <header class="3dPorfolio-header">
+        <!-- MenuBarSection -->
+        <h3>3D PORTFOLIO</h3>
+    </header>
+    <div class="grid" id="projectGrid">
+        <!-- Your grid items will be added dynamically here -->
+    </div>
+
+    <!-- LightBox section -->
+    <div id="myModal" class="modal-featureProjectDetails">
+        <div class="leftSection">
+            <div class="contentDisplayArea">
+                <div class="content">
+                    <img src="" width="100%" alt="iage1">
+                </div>
+
+                <div class="content">
+                    <img src="" width="100%" alt="iage1">
+                </div>
+
+                <div class="content">
+                    <img src="" width="100%" alt="iage1">
+                </div>
+
+                <span class="leftArrowController">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                    </svg>
+                </span>
+
+                <span class="rightArrowController">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                      </svg>
+
+                </span>
+            </div>
         </div>
-    </div>    
+        <aside class="rightSection">
+            <div class="authorInfo">
+                <div class="authorImage">
+                </div>
+
+                <div class="authorSocials">
+                    <h4>Silas S.</h4>
+                    <p>3D Generalist </p>
+                    <p class="projectNumber">1147591659</p>
+                </div>
+            </div>
+
+            <div class="authorInfo socials">
+                <button onclick="HireMe()">Hire Me</button> <button>Inbox Me </button>
+            </div>
+
+            <div class="authorInfo advertSales">
+                <p>
+                    From the Swade_Studio MarketPlace
+                </p>
+                <div class="advert">
+                    <img src="" width="100%" alt="advert">
+                </div>
+
+            </div>
+
+            <div class="authorInfo aboutProject">
+            </div>
+
+            <span onclick="closeModal()" class="closeButton">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+            </span>
+        </aside>
+    </div>
+    <style>
+        .authorSocials p{
+            font-size:.9rem;
+        }
+
+        .authorImage{
+            background-image: url(./MY-PROFILE--Sharp.jpg);
+            background-size: contain;
+        }
+    </style>
+
+    <script>
+        const modal = document.getElementById('myModal');
+
+        function closeModal(){
+            modal.style.display="none";
+        }
+
+        function HireMe(){
+            //redirect to google.com
+            window.open('https://www.fiverr.com/silasshaibu', "_blank");
+        }
+
+        // Function to open the modal and populate it with project data
+        function openModal(project) {
+            const modalImages = modal.querySelectorAll('.content img');
+            const projectID = modal.querySelector('.projectNumber');
+            const projectDescription = modal.querySelector('.authorInfo.aboutProject');
+
+            // Set the image sources in the modal
+            for (let i = 0; i < project.images.length; i++) {
+                modalImages[i].src = project.images[i];
+            }
+
+           //Set advert Image
+           const advertImage = modal.querySelector('.advert img');
+           advertImage.src=project.advertImage;
+
+           // Set the project name
+             projectID.textContent = project.id;
+
+             projectDescription.innerHTML = project.description;
+
+            // Display the modal
+            modal.style.display = 'flex';
+        }
+
+
+        //DEFINE ALL YOUR PROJECTS HERE
+        const project1 = {
+            name: 'NightlyTree',
+            thumbnailImageUrl: './treeNight.jpg',
+            images: ['treeNight.jpg', 'treeNight.jpg', 'treeNight.jpg'],
+            advertImage:'treeNight.jpg',
+            id:'1147591657',
+            description:` Diffuse Map Available </li>
+                <li>Displacement Map Available </li>`
+        };
+
+        const project2 = {
+            name: 'characterGirl',
+            thumbnailImageUrl: './characterGirl.jpg',
+            images: ['characterGirl.jpg', 'characterGirl.jpg', 'characterGirl.jpg'],
+            advertImage:'characterGirl.jpg',
+            id:'1147591658',
+            description:`<li>Rendered with Arnold </li>
+                <li>1K Resolution </li>
+                <li>Diffuse Map Available </li>
+                <li>Displacement Map Available </li>
+                `
+        };
+
+        const project3 = {
+            name: 'webpage',
+            thumbnailImageUrl: './website.jpg',
+            images: ['website.jpg', 'website.jpg', 'website.jpg'],
+            advertImage:'website.jpg',
+            id:'1147591659',
+            description:`<li>Rendered with Arnold </li>
+                <li>2K Resolution </li>
+                <li>Displacement Map Available </li>
+                <li>Normal Map Available </li>`
+        };
+
+        //PACKING ALL THE PROJECTS IN ONE
+        const allProjects = [project1, project2, project3];
+
+        // Function to load projects into grid items
+        function loadProjectsIntoGrid() {
+            const projectGrid = document.getElementById('projectGrid');
+
+            allProjects.forEach(project => {
+                const gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+
+                const thumbnailImage = document.createElement('img');
+                thumbnailImage.src = project.thumbnailImageUrl;
+                thumbnailImage.alt = project.name;
+
+                gridItem.appendChild(thumbnailImage);
+                projectGrid.appendChild(gridItem);
+
+                // Add a click event listener to open the modal when this project is clicked
+                gridItem.addEventListener('click', () => {
+                    openModal(project);
+                });
+            });
+        }
+
+        // Call the function when the page is loaded
+        window.addEventListener('load', loadProjectsIntoGrid);
+    </script>
 </body>
-<script src="./graphics.js"></script>
 </html>
