@@ -128,9 +128,27 @@
 
             // Display the modal
             modal.style.display = 'flex';
+
+            // Add click event listeners to the arrow controllers
+            const leftArrow = modal.querySelector('.leftArrowController');
+            const rightArrow = modal.querySelector('.rightArrowController');
+
+            let currentProjectIndex = 0;
+
+            leftArrow.addEventListener('click', () => {
+                // Display the previous project
+                currentProjectIndex = (currentProjectIndex - 1 + allProjects.length) % allProjects.length;
+                openModal(allProjects[currentProjectIndex]);
+            });
+
+            rightArrow.addEventListener('click', () => {
+                // Display the next project
+                currentProjectIndex = (currentProjectIndex + 1) % allProjects.length;
+                openModal(allProjects[currentProjectIndex]);
+            });
         }
 
-
+        //
         //DEFINE ALL YOUR PROJECTS HERE
         const project1 = {
             name: 'NightlyTree',
