@@ -6,11 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Graphics | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <header class="3dPorfolio-header">
-        <!-- MenuBarSection -->
         <h3>GRAPHICS PORTFOLIO 2D</h3>
     </header>
     <div class="grid" id="projectGrid">
@@ -21,20 +19,12 @@
     <div id="myModal" class="modal-featureProjectDetails">
         <div class="leftSection">
             <div class="contentDisplayArea">
-                <div class="content">
-                    <img src="" width="100%" alt="iage1">
-                </div>
-
-                <div class="content">
-                    <img src="" width="100%" alt="iage1">
-                </div>
-
-                <div class="content">
-                    <img src="" width="100%" alt="iage1">
+                <div id="modalImages" class="content">
+                    <!-- Images will be added here -->
                 </div>
 
                 <span class="leftArrowController">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                     </svg>
                 </span>
@@ -42,157 +32,106 @@
                 <span class="rightArrowController">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-
+                    </svg>
                 </span>
             </div>
         </div>
         <aside class="rightSection">
             <div class="authorInfo">
-                <div class="authorImage">
-                </div>
-
+                <div class="authorImage"></div>
                 <div class="authorSocials">
                     <h4>Silas S.</h4>
                     <p>Graphics Designer</p>
                     <p class="projectNumber">0147591659</p>
                 </div>
             </div>
-
             <div class="authorInfo socials">
-                <button onclick="HireMe()">Hire Me</button> <button>Inbox Me </button>
+                <button onclick="HireMe()">Hire Me</button>
+                <button>Inbox Me</button>
             </div>
-
             <div class="authorInfo advertSales">
-                <p>
-                    From the Swade_Studio MarketPlace
-                </p>
+                <p>From the Swade_Studio MarketPlace</p>
                 <div class="advert">
                     <img src="" width="100%" alt="advert">
                 </div>
-
             </div>
-
-            <div class="authorInfo aboutProject">
-            </div>
-
+            <div class="authorInfo aboutProject"></div>
             <span onclick="closeModal()" class="closeButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                </svg>
             </span>
         </aside>
     </div>
+
     <style>
-        .authorSocials p{
-            font-size:.9rem;
+        .authorSocials p {
+            font-size: 0.9rem;
         }
 
-        .authorImage{
+        .authorImage {
             background-image: url(./MY-PROFILE--Sharp.jpg);
             background-size: contain;
+        }
+
+        /* Style for the modal images */
+        #modalImages {
+            max-height: 90vh; /* Set a maximum height for the modal content */
+            overflow-y: auto; /* Enable vertical scrolling if content overflows */
+        }
+
+        #modalImages img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
         }
     </style>
 
     <script>
+        let currentProjectIndex = 0;
+
         const modal = document.getElementById('myModal');
+        const modalImages = document.getElementById('modalImages');
+        const leftArrow = modal.querySelector('.leftArrowController');
+        const rightArrow = modal.querySelector('.rightArrowController');
 
-        function closeModal(){
-            modal.style.display="none";
-        }
-
-        function HireMe(){
-            //redirect to google.com
-            window.open('https://www.fiverr.com/silasshaibu', "_blank");
-        }
-
-        // Function to open the modal and populate it with project data
-        function openModal(project) {
-            const modalImages = modal.querySelectorAll('.content img');
-            const projectID = modal.querySelector('.projectNumber');
-            const projectDescription = modal.querySelector('.authorInfo.aboutProject');
-
-            // Set the image sources in the modal
-            for (let i = 0; i < project.images.length; i++) {
-                modalImages[i].src = project.images[i];
-            }
-
-           //Set advert Image
-           const advertImage = modal.querySelector('.advert img');
-           advertImage.src=project.advertImage;
-
-           // Set the project name
-             projectID.textContent = project.id;
-
-             projectDescription.innerHTML = project.description;
-
-            // Display the modal
-            modal.style.display = 'flex';
-
-            // Add click event listeners to the arrow controllers
-            const leftArrow = modal.querySelector('.leftArrowController');
-            const rightArrow = modal.querySelector('.rightArrowController');
-
-            let currentProjectIndex = 0;
-
-            leftArrow.addEventListener('click', () => {
-                // Display the previous project
-                currentProjectIndex = (currentProjectIndex - 1 + allProjects.length) % allProjects.length;
-                openModal(allProjects[currentProjectIndex]);
-            });
-
-            rightArrow.addEventListener('click', () => {
-                // Display the next project
-                currentProjectIndex = (currentProjectIndex + 1) % allProjects.length;
-                openModal(allProjects[currentProjectIndex]);
-            });
-        }
-
-        //
-        //DEFINE ALL YOUR PROJECTS HERE
+        // Define your projects here
         const project1 = {
             name: 'NightlyTree',
             thumbnailImageUrl: './treeNight.jpg',
-            images: ['treeNight.jpg', 'treeNight.jpg', 'treeNight.jpg'],
-            advertImage:'treeNight.jpg',
-            id:'1147591657',
-            description:` Diffuse Map Available </li>
-                <li>Displacement Map Available </li>`
+            images: ['./treeNight.jpg', './treeNight.jpg', './treeNight.jpg'],
+            advertImage: './treeNight.jpg',
+            id: '1147591657',
+            description: `<li>Diffuse Map Available</li><li>Displacement Map Available</li>`
         };
 
         const project2 = {
             name: 'characterGirl',
             thumbnailImageUrl: './characterGirl.jpg',
-            images: ['characterGirl.jpg', 'characterGirl.jpg', 'characterGirl.jpg'],
-            advertImage:'characterGirl.jpg',
-            id:'1147591658',
-            description:`<li>Rendered with Arnold </li>
-                <li>1K Resolution </li>
-                <li>Diffuse Map Available </li>
-                <li>Displacement Map Available </li>
-                `
+            images: ['./characterGirl.jpg', './characterGirl.jpg', './characterGirl.jpg'],
+            advertImage: './characterGirl.jpg',
+            id: '1147591658',
+            description: `<li>Rendered with Arnold</li><li>1K Resolution</li><li>Diffuse Map Available</li><li>Displacement Map Available</li>`
         };
 
         const project3 = {
             name: 'webpage',
             thumbnailImageUrl: './website.jpg',
-            images: ['website.jpg', 'website.jpg', 'website.jpg'],
-            advertImage:'website.jpg',
-            id:'1147591659',
-            description:`<li>Rendered with Arnold </li>
-                <li>2K Resolution </li>
-                <li>Displacement Map Available </li>
-                <li>Normal Map Available </li>`
+            images: ['./website.jpg', './website.jpg', './website.jpg'],
+            advertImage: './website.jpg',
+            id: '1147591659',
+            description: `<li>Rendered with Arnold</li><li>2K Resolution</li><li>Displacement Map Available</li><li>Normal Map Available</li>`
         };
 
-        //PACKING ALL THE PROJECTS IN ONE
+        // Pack all the projects in one array
         const allProjects = [project1, project2, project3];
 
         // Function to load projects into grid items
         function loadProjectsIntoGrid() {
             const projectGrid = document.getElementById('projectGrid');
 
-            allProjects.forEach(project => {
+            allProjects.forEach((project, index) => {
                 const gridItem = document.createElement('div');
                 gridItem.className = 'grid-item';
 
@@ -205,13 +144,61 @@
 
                 // Add a click event listener to open the modal when this project is clicked
                 gridItem.addEventListener('click', () => {
-                    openModal(project);
+                    openModal(project, index);
                 });
             });
         }
 
         // Call the function when the page is loaded
         window.addEventListener('load', loadProjectsIntoGrid);
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function HireMe() {
+            // Redirect to google.com
+            window.open('https://www.fiverr.com/silasshaibu', "_blank");
+        }
+
+        // Function to open the modal and populate it with project data
+        function openModal(project, index) {
+            modalImages.innerHTML = ""; // Clear previous images
+
+            for (let i = 0; i < project.images.length; i++) {
+                const image = document.createElement('img');
+                image.src = project.images[i];
+                image.alt = project.name;
+                modalImages.appendChild(image);
+            }
+
+            // Set the project name
+            const projectID = modal.querySelector('.projectNumber');
+            projectID.textContent = project.id;
+
+            // Set the project description
+            const projectDescription = modal.querySelector('.authorInfo.aboutProject');
+            projectDescription.innerHTML = project.description;
+
+            // Display the modal
+            modal.style.display = 'flex';
+            currentProjectIndex = index;
+        }
+
+        // Function to navigate to the next project
+        function goToNextProject() {
+            currentProjectIndex = (currentProjectIndex + 1) % allProjects.length;
+            openModal(allProjects[currentProjectIndex], currentProjectIndex);
+        }
+
+        // Function to navigate to the previous project
+        function goToPreviousProject() {
+            currentProjectIndex = (currentProjectIndex - 1 + allProjects.length) % allProjects.length;
+            openModal(allProjects[currentProjectIndex], currentProjectIndex);
+        }
+
+        leftArrow.addEventListener('click', goToPreviousProject);
+        rightArrow.addEventListener('click', goToNextProject);
     </script>
 </body>
 </html>
