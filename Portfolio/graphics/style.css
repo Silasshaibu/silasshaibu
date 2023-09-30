@@ -83,24 +83,32 @@ button {
 
 .image-container {
   position: relative;
-
+  height: 500px;
 }
 
-.inner-div{
+.image-container img {
+  width: 100%;
+  height: 100% !important;
+  object-fit: contain;
+}
+
+.inner-div {
   position: absolute;
-  left:50%;
-  transform:translateX(-50%);
-  bottom:10%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10%;
 }
 
-.DownloadButton, .ViewFullScreen{
+.DownloadButton,
+.ViewFullScreen {
   background-color: white;
-  padding:10px 20px;
-  border-radius:.2rem;
-  margin:.5rem;
+  padding: 10px 20px;
+  border-radius: 0.2rem;
+  margin: 0.5rem;
 }
 
-.DownloadButton:hover, .ViewFullScreen:hover{
+.DownloadButton:hover,
+.ViewFullScreen:hover {
   cursor: pointer;
 }
 
@@ -116,6 +124,7 @@ button {
   align-items: center;
   opacity: 0;
   transition: opacity 0.3s ease-in-out;
+  pointer-events: none;
 }
 
 .extraFeature span {
@@ -145,7 +154,7 @@ button {
 }
 
 .leftArrowController {
-  left: 0%;
+  left: 0.5rem;
   transform: translate(50%, -50%);
 }
 

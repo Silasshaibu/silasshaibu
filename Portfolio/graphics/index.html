@@ -61,7 +61,7 @@
             <div class="authorInfo advertSales">
                 <p>From the Swade_Studio MarketPlace</p>
                 <div class="advert">
-                    <img src="" width="100%" alt="advert">
+                    <!-- <img src="" width="100%" alt="advert"> -->
                 </div>
             </div>
             <div class="authorInfo aboutProject"></div>
@@ -110,7 +110,7 @@
         const project1 = {
             name: 'NightlyTree',
             thumbnailImageUrl: './treeNight.jpg',
-            images: ['./treeNight.jpg', './treeNight.jpg', './treeNight.jpg'],
+            images: ['./treeNight.jpg', './characterGirl.jpg', './treeNight.jpg'],
             advertImage: './treeNight.jpg',
             id: '1147591657',
             description: `<li>Diffuse Map Available</li><li>Displacement Map Available</li>`
@@ -176,32 +176,34 @@
             modalImages.innerHTML = ""; // Clear previous images
 
             for (let i = 0; i < project.images.length; i++) {
-                const imageContainer = document.createElement('div'); // Create a div container for the image
-                imageContainer.className = 'image-container';
+            const imageContainer = document.createElement('div'); // Create a div container for the image
+            imageContainer.className = 'image-container';
+            imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
 
-                const image = document.createElement('img');
-                image.src = project.images[i];
-                image.alt = project.name;
+            const actionSection = document.createElement('div');
+            actionSection.className = 'inner-div';
+            actionSection.innerHTML = `
+            <button class="DownloadButton">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                </svg>
+            </button>
 
-                const innerDiv = document.createElement('div'); // Create a div for buttons
-                innerDiv.className = 'inner-div';
+            <button class="ViewFullScreen">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
+                </svg>
+            </button>
+            `;
 
-                const downloadButton = document.createElement('span'); // Create the Download button
-                downloadButton.className = 'DownloadButton';
-                downloadButton.textContent = 'Download';
+            const downloadButton = document.querySelector('.DownloadButton');
+            const viewFullScreenButton = document.querySelector('.ViewFullScreen');
 
-                const viewFullScreenButton = document.createElement('span'); // Create the ViewFullScreen button
-                viewFullScreenButton.className = 'ViewFullScreen';
-                viewFullScreenButton.textContent = 'Full Screen';
+            const advertImage = document.querySelector('.advert');
+            advertImage.innerHTML=`<img src='${project.advertImage}' alt='advert' width="100%">`;
 
-                innerDiv.appendChild(downloadButton); // Add Download button to inner div
-                innerDiv.appendChild(viewFullScreenButton); // Add ViewFullScreen button to inner div
-
-                // Add image, inner div with buttons, and image container to modalImages div
-                imageContainer.appendChild(image); // Add the image to the container
-                imageContainer.appendChild(innerDiv); // Add the inner div with buttons to the container
-                modalImages.appendChild(imageContainer); // Add the container to the modalImages div
-            }
+            // Add image, and image container to modalImages div
+            modalImages.appendChild(imageContainer); // Add the container to the modalImages div
+            imageContainer.appendChild(actionSection); // Add the section where you find the download and maximize button to the container
+        }
 
 
             // Set the project name
@@ -216,7 +218,7 @@
             modal.style.display = 'flex';
             currentProjectIndex = index;
 
-                // Get the Download and View Full Screen buttons
+            // Get the Download and View Full Screen buttons
             const downloadButton = modal.querySelector('.DownloadButton');
             const viewFullScreenButton = modal.querySelector('.ViewFullScreen');
 
@@ -228,7 +230,7 @@
                     // Create an anchor element to trigger the download
                     const downloadLink = document.createElement('a');
                     downloadLink.href = imageSrc;
-                    downloadLink.download = 'image.jpg'; // Set the desired download filename
+                    downloadLink.download = `${project.name}_SilasShaibu_Portfolio.jpg`; // Set the desired download filename
                     downloadLink.click();
                 }
             });
