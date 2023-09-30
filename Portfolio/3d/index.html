@@ -204,6 +204,8 @@
         function openModal(project, index) {
             modalImages.innerHTML = ""; // Clear previous images
 
+            const currentImages = project.images; //Store the current project Image
+
             for (let i = 0; i < project.images.length; i++) {
             const imageContainer = document.createElement('div'); // Create a div container for the image
             imageContainer.className = 'image-container';
@@ -261,7 +263,9 @@
 
             // Add click event listener for Download button
             downloadButton.addEventListener('click', () => {
-                const currentImage = modalImages.querySelector('img');
+            const currentImage = modalImages.querySelector('img');
+
+
                 if (currentImage) {
                     const imageSrc = currentImage.getAttribute('src');
                     // Create an anchor element to trigger the download
@@ -275,6 +279,8 @@
             // Add click event listener for View Full Screen button
             viewFullScreenButton.addEventListener('click', () => {
                 const currentImage = modalImages.querySelector('img');
+
+
                 if (currentImage) {
                     const imageSrc = currentImage.getAttribute('src');
                     // Open a new window/tab with the image
