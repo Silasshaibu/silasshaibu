@@ -117,7 +117,7 @@
         };
 
         const project2 = {
-            name: 'characterGirl',
+            name: 'CharacterGirl',
             thumbnailImageUrl: './characterGirl.jpg',
             images: ['./characterGirl.jpg', './characterGirl.jpg', './characterGirl.jpg'],
             advertImage: './characterGirl.jpg',
@@ -126,7 +126,7 @@
         };
 
         const project3 = {
-            name: 'webpage',
+            name: 'Webpage',
             thumbnailImageUrl: './website.jpg',
             images: ['./website.jpg', './rotatingGlobe.mp4', './website.jpg'],
             advertImage: './website.jpg',
@@ -144,12 +144,7 @@
             allProjects.forEach((project, index) => {
                 const gridItem = document.createElement('div');
                 gridItem.className = 'grid-item';
-
-                const thumbnailImage = document.createElement('img');
-                thumbnailImage.src = project.thumbnailImageUrl;
-                thumbnailImage.alt = project.name;
-
-                gridItem.appendChild(thumbnailImage);
+                gridItem.innerHTML = `<img src="${project.thumbnailImageUrl}" alt="${project.name}" />`;
                 projectGrid.appendChild(gridItem);
 
                 const gridItemOverlay = document.createElement('div');
@@ -159,14 +154,12 @@
                 //CHECKING VIDEO FILE IN PROJECT
                 //declaring that by default there is no video extenstion
                 let hasVideo = 'none';
-
                 for (j=0; j  < project.images.length; j++){
                     //Video files should be in .mp4 format
                     if (project.images[j].includes('.mp4')){
                     hasVideo = 'block';
                     }
                 }
-
 
                 gridItemOverlay.innerHTML=`
                 <div class="overlay">
@@ -179,6 +172,10 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">   <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                     </svg>
                     </span>
+
+                    <div style="bottom:1rem; padding:.5rem; position:absolute; color:white;"><strong>${project.name}</strong><br>
+                        <h3 style="font-weight:300; font-size:.9em;">Silas S.</h3></div>
+
                 </div>
                 `;
                 gridItem.appendChild(gridItemOverlay);
@@ -213,43 +210,38 @@
 
 
 
-            const actionSection = document.createElement('div');
-            actionSection.className = 'inner-div';
-            actionSection.innerHTML = `
-            <button class="DownloadButton">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
-                </svg>
-            </button>
-
-            <button class="ViewFullScreen">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
-                </svg>
-            </button>
-            `;
-
             if (project.images[i].includes('.jpg')){
                     imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
-                }
 
-                if(project.images[i].includes('.mp4')){
+                    const actionSection = document.createElement('div');
+                    actionSection.className = 'inner-div';
+                    actionSection.innerHTML = `
+                    <button class="DownloadButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                        </svg>
+                    </button>
+                    <button class="ViewFullScreen">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
+                        </svg>
+                    </button>
+                    `;
+                    imageContainer.appendChild(actionSection);
+            }
+
+            if(project.images[i].includes('.mp4')){
                     imageContainer.innerHTML = `<video controls controlslist="nofullscreen nodownload" width="100%">
                     <source src="${project.images[i]}"  type="video/mp4" /> </video>`;
-                }
-
-
-            const downloadButton = document.querySelector('.DownloadButton');
-            const viewFullScreenButton = document.querySelector('.ViewFullScreen');
+                    // let removal = imageContainer.querySeclector('.inner-div');
+                    // removal.style.display='none';
+            }
 
             const advertImage = document.querySelector('.advert');
             advertImage.innerHTML=`<img src='${project.advertImage}' alt='advert' width="100%">`;
 
             // Add image, and image container to modalImages div
-            modalImages.appendChild(imageContainer); // Add the container to the modalImages div
+            modalImages.appendChild(imageContainer);
 
-            imageContainer.appendChild(actionSection);
-
-        }
-
+            }
 
             // Set the project name
             const projectID = modal.querySelector('.projectNumber');

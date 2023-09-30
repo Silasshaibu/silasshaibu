@@ -77,10 +77,6 @@ button {
   left: 0%;
 }
 
-.content {
-  /* border: 3px solid white; */
-}
-
 .image-container {
   position: relative;
   height: 500px;
@@ -245,16 +241,6 @@ header {
   z-index: 0;
 }
 
-.grid-item-overlay {
-  position: absolute;
-  left: 0;
-  top: 0;
-  background-color: rgba(0, 0, 0, 0.212);
-  min-height: 100%;
-  width: 100%;
-  z-index: 1;
-}
-
 .overlay {
   padding: 0.5rem;
 }
@@ -273,6 +259,10 @@ header {
   display: flex;
 }
 
+.overlay span:hover {
+  padding: 11rem;
+}
+
 .grid-item img {
   transition: 300ms;
 }
@@ -286,6 +276,10 @@ header {
   height: 100%;
   object-fit: cover;
   object-position: center;
+}
+
+/*On hover on grid image item let the overlay show.*/
+.grid-item:hover /*To Do*/ {
 }
 
 #modalImages {
