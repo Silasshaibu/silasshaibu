@@ -168,7 +168,6 @@
                 }
 
 
-
                 gridItemOverlay.innerHTML=`
                 <div class="overlay">
                     <span style="display:block;">
@@ -212,14 +211,7 @@
             const imageContainer = document.createElement('div'); // Create a div container for the image
             imageContainer.className = 'image-container';
 
-                if (project.images[i].includes('.jpg')){
-                    imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
-                }
 
-                if(project.images[i].includes('.mp4')){
-                    imageContainer.innerHTML = `<video controls controlslist="nofullscreen nodownload" width="100%">
-                    <source src="${project.images[i]}"  type="video/mp4" /> </video>`;
-                }
 
             const actionSection = document.createElement('div');
             actionSection.className = 'inner-div';
@@ -235,14 +227,14 @@
             </button>
             `;
 
+            if (project.images[i].includes('.jpg')){
+                    imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
+                }
 
-            //if the container has an image tag that its src contains .mp4, change the tag to video and add an autoplay to it and also remove the actionSection class to the video
-            // if(imageContainer.children.src.contains('.mp4')){
-            //     console.log(imageContainer.children);
-            // }
-
-            // console.log(imageContainer.children);
-
+                if(project.images[i].includes('.mp4')){
+                    imageContainer.innerHTML = `<video controls controlslist="nofullscreen nodownload" width="100%">
+                    <source src="${project.images[i]}"  type="video/mp4" /> </video>`;
+                }
 
 
             const downloadButton = document.querySelector('.DownloadButton');
@@ -253,7 +245,9 @@
 
             // Add image, and image container to modalImages div
             modalImages.appendChild(imageContainer); // Add the container to the modalImages div
-            imageContainer.appendChild(actionSection); // Add the section where you find the download and maximize button to the container
+
+            imageContainer.appendChild(actionSection);
+
         }
 
 
