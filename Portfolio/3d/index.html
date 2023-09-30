@@ -4,13 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>3D | Portfolio</title>
+    <title>Graphics | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
 </head>
 <body>
     <header class="3dPorfolio-header">
-        <!-- MenuBarSection -->
         <h3>3D PORTFOLIO</h3>
     </header>
     <div class="grid" id="projectGrid">
@@ -21,20 +19,21 @@
     <div id="myModal" class="modal-featureProjectDetails">
         <div class="leftSection">
             <div class="contentDisplayArea">
-                <div class="content">
-                    <img src="" width="100%" alt="iage1">
+                <div id="modalImages" class="content">
+                    <!-- Images will be added here -->
                 </div>
 
-                <div class="content">
-                    <img src="" width="100%" alt="iage1">
-                </div>
-
-                <div class="content">
-                    <img src="" width="100%" alt="iage1">
+                <div class="extraFeature">
+                    <span class='DownloadButton'>
+                        Download
+                    </span>
+                    <span class='ViewFullScreen'>
+                        View Full Screen
+                    </span>
                 </div>
 
                 <span class="leftArrowController">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"     stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                     </svg>
                 </span>
@@ -42,139 +41,107 @@
                 <span class="rightArrowController">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
-                      </svg>
-
+                    </svg>
                 </span>
             </div>
         </div>
         <aside class="rightSection">
             <div class="authorInfo">
-                <div class="authorImage">
-                </div>
-
+                <div class="authorImage"></div>
                 <div class="authorSocials">
                     <h4>Silas S.</h4>
-                    <p>3D Generalist </p>
-                    <p class="projectNumber">1147591659</p>
+                    <p>Senior 3D Artist</p>
+                    <p class="projectNumber">0147591659</p>
                 </div>
             </div>
-
             <div class="authorInfo socials">
-                <button onclick="HireMe()">Hire Me</button> <button>Inbox Me </button>
+                <button onclick="HireMe()">Hire Me</button>
+                <button>Inbox Me</button>
             </div>
-
             <div class="authorInfo advertSales">
-                <p>
-                    From the Swade_Studio MarketPlace
-                </p>
+                <p>From the Swade_Studio MarketPlace</p>
                 <div class="advert">
-                    <img src="" width="100%" alt="advert">
+                    <!-- <img src="" width="100%" alt="advert"> -->
                 </div>
-
             </div>
-
-            <div class="authorInfo aboutProject">
-            </div>
-
+            <div class="authorInfo aboutProject"></div>
             <span onclick="closeModal()" class="closeButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                  </svg>
+                </svg>
             </span>
         </aside>
     </div>
+
     <style>
-        .authorSocials p{
-            font-size:.9rem;
+        .authorSocials p {
+            font-size: 0.9rem;
         }
 
-        .authorImage{
+        .authorImage {
             background-image: url(./MY-PROFILE--Sharp.jpg);
             background-size: contain;
+        }
+
+        /* Style for the modal images */
+        #modalImages {
+            max-height: 90vh; /* Set a maximum height for the modal content */
+            overflow-y: auto; /* Enable vertical scrolling if content overflows */
+        }
+
+         #modalImages img {
+            width: 100%;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
         }
     </style>
 
     <script>
+        let currentProjectIndex = 0;
+
         const modal = document.getElementById('myModal');
-
-        function closeModal(){
-            modal.style.display="none";
-        }
-
-        function HireMe(){
-            //redirect to google.com
-            window.open('https://www.fiverr.com/silasshaibu', "_blank");
-        }
-
-        // Function to open the modal and populate it with project data
-        function openModal(project) {
-            const modalImages = modal.querySelectorAll('.content img');
-            const projectID = modal.querySelector('.projectNumber');
-            const projectDescription = modal.querySelector('.authorInfo.aboutProject');
-
-            // Set the image sources in the modal
-            for (let i = 0; i < project.images.length; i++) {
-                modalImages[i].src = project.images[i];
-            }
-
-           //Set advert Image
-           const advertImage = modal.querySelector('.advert img');
-           advertImage.src=project.advertImage;
-
-           // Set the project name
-             projectID.textContent = project.id;
-
-             projectDescription.innerHTML = project.description;
-
-            // Display the modal
-            modal.style.display = 'flex';
-        }
+        const modalImages = document.getElementById('modalImages');
+        const leftArrow = modal.querySelector('.leftArrowController');
+        const rightArrow = modal.querySelector('.rightArrowController');
 
 
-        //DEFINE ALL YOUR PROJECTS HERE
+        // Define your projects here
         const project1 = {
             name: 'NightlyTree',
             thumbnailImageUrl: './treeNight.jpg',
-            images: ['treeNight.jpg', 'treeNight.jpg', 'treeNight.jpg'],
-            advertImage:'treeNight.jpg',
-            id:'1147591657',
-            description:` <li>Diffuse Map Available </li>
-                <li>Displacement Map Available </li>`
+            images: ['./treeNight.jpg', './characterGirl.jpg', './treeNight.jpg'],
+            advertImage: './treeNight.jpg',
+            id: '1147591657',
+            description: `<li>Diffuse Map Available</li><li>Displacement Map Available</li>`
         };
 
         const project2 = {
             name: 'characterGirl',
             thumbnailImageUrl: './characterGirl.jpg',
-            images: ['characterGirl.jpg', 'characterGirl.jpg', 'characterGirl.jpg'],
-            advertImage:'characterGirl.jpg',
-            id:'1147591658',
-            description:`<li>Rendered with Arnold </li>
-                <li>1K Resolution </li>
-                <li>Diffuse Map Available </li>
-                <li>Displacement Map Available </li>
-                `
+            images: ['./characterGirl.jpg', './characterGirl.jpg', './characterGirl.jpg'],
+            advertImage: './characterGirl.jpg',
+            id: '1147591658',
+            description: `<li>Rendered with Arnold</li><li>1K Resolution</li><li>Diffuse Map Available</li><li>Displacement Map Available</li>`
         };
 
         const project3 = {
             name: 'webpage',
             thumbnailImageUrl: './website.jpg',
-            images: ['website.jpg', 'website.jpg', 'website.jpg'],
-            advertImage:'website.jpg',
-            id:'1147591659',
-            description:`<li>Rendered with Arnold </li>
-                <li>2K Resolution </li>
-                <li>Displacement Map Available </li>
-                <li>Normal Map Available </li>`
+            images: ['./website.jpg', './video.mp4', './website.jpg'],
+            advertImage: './website.jpg',
+            id: '1147591659',
+            description: `<li>Rendered with Arnold</li><li>2K Resolution</li><li>Displacement Map Available</li><li>Normal Map Available</li>`
         };
 
-        //PACKING ALL THE PROJECTS IN ONE
+        // Pack all the projects in one array
         const allProjects = [project1, project2, project3];
 
         // Function to load projects into grid items
         function loadProjectsIntoGrid() {
             const projectGrid = document.getElementById('projectGrid');
 
-            allProjects.forEach(project => {
+            allProjects.forEach((project, index) => {
                 const gridItem = document.createElement('div');
                 gridItem.className = 'grid-item';
 
@@ -185,15 +152,142 @@
                 gridItem.appendChild(thumbnailImage);
                 projectGrid.appendChild(gridItem);
 
+                const gridItemOverlay = document.createElement('div');
+                gridItemOverlay.className = 'grid-item-overlay';
+
+                //If project has a video extension of .mp4 display the span tag
+
+                let hasVideo = 'none';
+                console.log(project.image);
+                gridItemOverlay.innerHTML=`
+                <div class="overlay">
+                    <span style="display:block;">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" />
+                        </svg>
+                    </span>
+
+                    <span style="display:${hasVideo}">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">   <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
+                    </svg>
+                    </span>
+                </div>
+                `;
+                gridItem.appendChild(gridItemOverlay);
+
+
                 // Add a click event listener to open the modal when this project is clicked
                 gridItem.addEventListener('click', () => {
-                    openModal(project);
+                    openModal(project, index);
                 });
+
             });
         }
 
         // Call the function when the page is loaded
         window.addEventListener('load', loadProjectsIntoGrid);
+
+        function closeModal() {
+            modal.style.display = "none";
+        }
+
+        function HireMe() {
+            // Redirect to google.com
+            window.open('https://www.fiverr.com/silasshaibu', "_blank");
+        }
+
+        // Function to open the modal and populate it with project data
+        function openModal(project, index) {
+            modalImages.innerHTML = ""; // Clear previous images
+
+            for (let i = 0; i < project.images.length; i++) {
+            const imageContainer = document.createElement('div'); // Create a div container for the image
+            imageContainer.className = 'image-container';
+            imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
+
+            const actionSection = document.createElement('div');
+            actionSection.className = 'inner-div';
+            actionSection.innerHTML = `
+            <button class="DownloadButton">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                </svg>
+            </button>
+
+            <button class="ViewFullScreen">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
+                </svg>
+            </button>
+            `;
+
+            const downloadButton = document.querySelector('.DownloadButton');
+            const viewFullScreenButton = document.querySelector('.ViewFullScreen');
+
+            const advertImage = document.querySelector('.advert');
+            advertImage.innerHTML=`<img src='${project.advertImage}' alt='advert' width="100%">`;
+
+            // Add image, and image container to modalImages div
+            modalImages.appendChild(imageContainer); // Add the container to the modalImages div
+            imageContainer.appendChild(actionSection); // Add the section where you find the download and maximize button to the container
+        }
+
+
+            // Set the project name
+            const projectID = modal.querySelector('.projectNumber');
+            projectID.textContent = project.id;
+
+            // Set the project description
+            const projectDescription = modal.querySelector('.authorInfo.aboutProject');
+            projectDescription.innerHTML = project.description;
+
+            // Display the modal
+            modal.style.display = 'flex';
+            currentProjectIndex = index;
+
+            // Get the Download and View Full Screen buttons
+            const downloadButton = modal.querySelector('.DownloadButton');
+            const viewFullScreenButton = modal.querySelector('.ViewFullScreen');
+
+            // Add click event listener for Download button
+            downloadButton.addEventListener('click', () => {
+                const currentImage = modalImages.querySelector('img');
+                if (currentImage) {
+                    const imageSrc = currentImage.getAttribute('src');
+                    // Create an anchor element to trigger the download
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = imageSrc;
+                    downloadLink.download = `${project.name}_SilasShaibu_Portfolio.jpg`; // Set the desired download filename
+                    downloadLink.click();
+                }
+            });
+
+            // Add click event listener for View Full Screen button
+            viewFullScreenButton.addEventListener('click', () => {
+                const currentImage = modalImages.querySelector('img');
+                if (currentImage) {
+                    const imageSrc = currentImage.getAttribute('src');
+                    // Open a new window/tab with the image
+                    const newWindow = window.open(imageSrc, '_blank', 'fullscreen=yes');
+                    if (newWindow) {
+                        newWindow.document.body.style.margin = '0';
+                        newWindow.document.body.style.overflow = 'hidden';
+                    }
+                }
+            });
+        }
+
+        // Function to navigate to the next project
+        function goToNextProject() {
+            currentProjectIndex = (currentProjectIndex + 1) % allProjects.length;
+            openModal(allProjects[currentProjectIndex], currentProjectIndex);
+        }
+
+        // Function to navigate to the previous project
+        function goToPreviousProject() {
+            currentProjectIndex = (currentProjectIndex - 1 + allProjects.length) % allProjects.length;
+            openModal(allProjects[currentProjectIndex], currentProjectIndex);
+        }
+
+        leftArrow.addEventListener('click', goToPreviousProject);
+        rightArrow.addEventListener('click', goToNextProject);
     </script>
 </body>
 </html>
