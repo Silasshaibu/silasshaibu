@@ -176,11 +176,32 @@
             modalImages.innerHTML = ""; // Clear previous images
 
             for (let i = 0; i < project.images.length; i++) {
-            const image = document.createElement('img');
-            image.src = project.images[i];
-            image.alt = project.name;
-            modalImages.appendChild(image);
-             }
+                const imageContainer = document.createElement('div'); // Create a div container for the image
+                imageContainer.className = 'image-container';
+
+                const image = document.createElement('img');
+                image.src = project.images[i];
+                image.alt = project.name;
+
+                const innerDiv = document.createElement('div'); // Create a div for buttons
+                innerDiv.className = 'inner-div';
+
+                const downloadButton = document.createElement('span'); // Create the Download button
+                downloadButton.className = 'DownloadButton';
+                downloadButton.textContent = 'Download';
+
+                const viewFullScreenButton = document.createElement('span'); // Create the ViewFullScreen button
+                viewFullScreenButton.className = 'ViewFullScreen';
+                viewFullScreenButton.textContent = 'Full Screen';
+
+                innerDiv.appendChild(downloadButton); // Add Download button to inner div
+                innerDiv.appendChild(viewFullScreenButton); // Add ViewFullScreen button to inner div
+
+                // Add image, inner div with buttons, and image container to modalImages div
+                imageContainer.appendChild(image); // Add the image to the container
+                imageContainer.appendChild(innerDiv); // Add the inner div with buttons to the container
+                modalImages.appendChild(imageContainer); // Add the container to the modalImages div
+            }
 
 
             // Set the project name

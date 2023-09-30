@@ -83,6 +83,25 @@ button {
 
 .image-container {
   position: relative;
+
+}
+
+.inner-div{
+  position: absolute;
+  left:50%;
+  transform:translateX(-50%);
+  bottom:10%;
+}
+
+.DownloadButton, .ViewFullScreen{
+  background-color: white;
+  padding:10px 20px;
+  border-radius:.2rem;
+  margin:.5rem;
+}
+
+.DownloadButton:hover, .ViewFullScreen:hover{
+  cursor: pointer;
 }
 
 .extraFeature {
