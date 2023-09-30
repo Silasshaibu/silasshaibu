@@ -128,7 +128,7 @@
         const project3 = {
             name: 'webpage',
             thumbnailImageUrl: './website.jpg',
-            images: ['./website.jpg', './video.mp4', './website.jpg'],
+            images: ['./website.jpg', './rotatingGlobe.mp4', './website.jpg'],
             advertImage: './website.jpg',
             id: '1147591659',
             description: `<li>Rendered with Arnold</li><li>2K Resolution</li><li>Displacement Map Available</li><li>Normal Map Available</li>`
@@ -156,9 +156,19 @@
                 gridItemOverlay.className = 'grid-item-overlay';
 
                 //If project has a video extension of .mp4 display the span tag
-
+                //CHECKING VIDEO FILE IN PROJECT
+                //declaring that by default there is no video extenstion
                 let hasVideo = 'none';
-                console.log(project.image);
+
+                for (j=0; j  < project.images.length; j++){
+                    //Video files should be in .mp4 format
+                    if (project.images[j].includes('.mp4')){
+                    hasVideo = 'block';
+                    }
+                }
+
+
+
                 gridItemOverlay.innerHTML=`
                 <div class="overlay">
                     <span style="display:block;">
@@ -173,7 +183,6 @@
                 </div>
                 `;
                 gridItem.appendChild(gridItemOverlay);
-
 
                 // Add a click event listener to open the modal when this project is clicked
                 gridItem.addEventListener('click', () => {
@@ -202,7 +211,15 @@
             for (let i = 0; i < project.images.length; i++) {
             const imageContainer = document.createElement('div'); // Create a div container for the image
             imageContainer.className = 'image-container';
-            imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
+
+                if (project.images[i].includes('.jpg')){
+                    imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
+                }
+
+                if(project.images[i].includes('.mp4')){
+                    imageContainer.innerHTML = `<video controls controlslist="nofullscreen nodownload" width="100%">
+                    <source src="${project.images[i]}"  type="video/mp4" /> </video>`;
+                }
 
             const actionSection = document.createElement('div');
             actionSection.className = 'inner-div';
@@ -217,6 +234,16 @@
                 </svg>
             </button>
             `;
+
+
+            //if the container has an image tag that its src contains .mp4, change the tag to video and add an autoplay to it and also remove the actionSection class to the video
+            // if(imageContainer.children.src.contains('.mp4')){
+            //     console.log(imageContainer.children);
+            // }
+
+            // console.log(imageContainer.children);
+
+
 
             const downloadButton = document.querySelector('.DownloadButton');
             const viewFullScreenButton = document.querySelector('.ViewFullScreen');
