@@ -26,6 +26,28 @@
   cursor: pointer;
 }
 
+.authorSocials p {
+  font-size: 0.9rem;
+}
+
+.authorImage {
+  background-image: url(./MY-PROFILE--Sharp.jpg);
+  background-size: contain;
+}
+
+/* Style for the modal images */
+#modalImages {
+  max-height: 90vh; /* Set a maximum height for the modal content */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+#modalImages img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
 .projectInformation {
   margin-top: 2rem;
   width: 100%;
