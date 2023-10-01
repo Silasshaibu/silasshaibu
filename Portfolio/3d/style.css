@@ -12,10 +12,10 @@
   --imageWidthAndheight: 4rem;
 }
 
-span img{
-  width:1rem;
+span img {
+  width: 1rem;
   height: 1rem;
-  margin-right:.3rem;
+  margin-right: 0.3rem;
 }
 
 .closeButton {
@@ -53,7 +53,7 @@ div.advert {
 }
 
 /*ADDING LOGO TO EACH SOFTWARE TAG*/
-.projectInformation span{
+.projectInformation span {
   display: inline-flex;
 }
 
@@ -327,9 +327,11 @@ header {
 #modalImages {
   min-width: 100%;
   width: 100%;
+  padding: 1rem;
   padding-right: calc(
     var(--projectInfoSectionWidth) + 1.5 * (var(--rightMarginSpace))
   );
+  padding-left: 0;
 
   max-height: 90vh;
   box-sizing: content-box;

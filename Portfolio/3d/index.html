@@ -9,7 +9,14 @@
 </head>
 <body>
     <header class="3dPorfolio-header">
-        <h3>3D PORTFOLIO</h3>
+        <div class="header--left">
+            <img src="./softwareLogos/Swade_Logo2000x2000.png" alt="Swaide-Studio" width="50px" height="50px"/>
+        </div>
+        <div class="header--right">
+            <h3>Contact Me</h3>
+            <p>Senior 3D Artist</p>
+            <!--Modify this section Whenever you want-->
+        </div>
     </header>
     <div class="grid" id="projectGrid">
         <!-- Your grid items will be added dynamically here -->
@@ -63,8 +70,12 @@
                 <div class="advert">
                     <!-- <img src="" width="100%" alt="advert"> -->
                 </div>
+
                 <div class="projectInformation">
-                    <h4>Software Used</h4>
+                <h4>Software Used</h4>
+                    <div class="projectInformationSoftware">
+
+                    </div>
                 </div>
                 <div class="projectInformation Description">
                 </div>
@@ -165,7 +176,7 @@
 
         // Function to update the projectInformation section with software logos
         function updateProjectInformation() {
-            const projectInformation = modal.querySelector('.projectInformation');
+            const projectInformation = modal.querySelector('.projectInformationSoftware');
             const spanTags = projectInformation.querySelectorAll('span');
 
             spanTags.forEach((span) => {
@@ -293,7 +304,7 @@
             projectDescription.innerHTML = project.description;
 
             // Set Software Used InfoSection
-            const projectInformation = modal.querySelector('.projectInformation');
+            const projectInformation = modal.querySelector('.projectInformationSoftware');
 
             //Clearing the project information before adding software tags
             projectInformation.innerHTML = '';
