@@ -12,6 +12,12 @@
   --imageWidthAndheight: 4rem;
 }
 
+span img{
+  width:1rem;
+  height: 1rem;
+  margin-right:.3rem;
+}
+
 .closeButton {
   top: 0;
   right: 0;
@@ -47,13 +53,8 @@ div.advert {
 }
 
 /*ADDING LOGO TO EACH SOFTWARE TAG*/
-.projectInformation span:before {
-  content: 'SoftwareLogo';
-  top: 0;
-  left: 0;
-  min-width: 50px;
-  min-height: 50px;
-  margin-right: 10px;
+.projectInformation span{
+  display: inline-flex;
 }
 
 .content {
