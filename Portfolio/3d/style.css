@@ -346,7 +346,7 @@ header {
 
 /*Trying to place the video in the center*/
 #modalImages video {
-  width: 80%;
+  width: 100%;
   display: flex;
   margin: 0 auto;
   padding: 2rem 0rem;
