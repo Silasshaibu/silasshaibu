@@ -26,6 +26,36 @@
   cursor: pointer;
 }
 
+.projectInformation {
+  margin-top: 2rem;
+  width: 100%;
+}
+
+div.advert {
+  background-color: grey;
+  border: 1px solid whitesmoke;
+}
+
+.projectInformation span {
+  display: inline-block;
+  background-color: rgb(53, 53, 53);
+  border-radius: 0.2rem;
+  padding: 0.25rem 0.5rem;
+  color: white;
+  margin: 0.25rem 0.4rem;
+  margin-left: 0;
+}
+
+/*ADDING LOGO TO EACH SOFTWARE TAG*/
+.projectInformation span:before {
+  content: 'SoftwareLogo';
+  top: 0;
+  left: 0;
+  min-width: 50px;
+  min-height: 50px;
+  margin-right: 10px;
+}
+
 .content {
   overflow: hidden;
   max-height: 150px;
@@ -46,6 +76,11 @@
   display: block;
   align-items: flex-start;
   list-style: none;
+  padding: 0;
+}
+.authorInfo.aboutProject p {
+  padding-top: 0.2em;
+  padding-bottom: 4em;
 }
 
 .advert {
@@ -75,6 +110,10 @@ button {
   display: flex;
   flex-direction: column;
   left: 0%;
+}
+
+.content {
+  /* border: 3px solid white; */
 }
 
 .image-container {
@@ -241,6 +280,16 @@ header {
   z-index: 0;
 }
 
+.grid-item-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.212);
+  min-height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
 .overlay {
   padding: 0.5rem;
 }
@@ -257,10 +306,6 @@ header {
   flex-direction: row;
   /* place-items: center; */
   display: flex;
-}
-
-.overlay span:hover {
-  padding: 11rem;
 }
 
 .grid-item img {

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Graphics | Portfolio</title>
+    <title>2D | Portfolio</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header class="3dPorfolio-header">
-        <h3>GRAPHICS PORTFOLIO 2D</h3>
+        <h3>GRAPHICS PORTFOLIO</h3>
     </header>
     <div class="grid" id="projectGrid">
         <!-- Your grid items will be added dynamically here -->
@@ -49,8 +49,8 @@
             <div class="authorInfo">
                 <div class="authorImage"></div>
                 <div class="authorSocials">
-                    <h4>Silas S.</h4>
-                    <p>Graphics Designer</p>
+                    <h3>Silas S.</h3>
+                    <p>Graphics Artist</p>
                     <p class="projectNumber">0147591659</p>
                 </div>
             </div>
@@ -63,8 +63,14 @@
                 <div class="advert">
                     <!-- <img src="" width="100%" alt="advert"> -->
                 </div>
+                <div class="projectInformation">
+                    <h4>Software Used</h4>
+                </div>
+                <div class="projectInformation Description">
+                </div>
+                <div class="authorInfo aboutProject"></div>
             </div>
-            <div class="authorInfo aboutProject"></div>
+
             <span onclick="closeModal()" class="closeButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -105,7 +111,6 @@
         const leftArrow = modal.querySelector('.leftArrowController');
         const rightArrow = modal.querySelector('.rightArrowController');
 
-
         // Define your projects here
         const project1 = {
             name: 'NightlyTree',
@@ -113,16 +118,20 @@
             images: ['./treeNight.jpg', './characterGirl.jpg', './treeNight.jpg'],
             advertImage: './treeNight.jpg',
             id: '1147591657',
-            description: `<li>Diffuse Map Available</li><li>Displacement Map Available</li>`
+            description: `<p> I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+            softwareUsed: ['Photoshop']
         };
 
+
+
         const project2 = {
-            name: 'webpage',
+            name: 'Webpage',
             thumbnailImageUrl: './website.jpg',
-            images: ['./website.jpg', './video.mp4', './website.jpg'],
+            images: ['./website.jpg', './rotatingGlobe.mp4', './website.jpg'],
             advertImage: './website.jpg',
             id: '1147591659',
-            description: `<li>Rendered with Arnold</li><li>2K Resolution</li><li>Displacement Map Available</li><li>Normal Map Available</li>`
+            description: `<p> I love (Glam rock). Hope you guys like it! ♥</p>`,
+            softwareUsed: ['CorelDraw']
         };
 
         // Pack all the projects in one array
@@ -135,21 +144,23 @@
             allProjects.forEach((project, index) => {
                 const gridItem = document.createElement('div');
                 gridItem.className = 'grid-item';
-
-                const thumbnailImage = document.createElement('img');
-                thumbnailImage.src = project.thumbnailImageUrl;
-                thumbnailImage.alt = project.name;
-
-                gridItem.appendChild(thumbnailImage);
+                gridItem.innerHTML = `<img src="${project.thumbnailImageUrl}" alt="${project.name}" />`;
                 projectGrid.appendChild(gridItem);
 
                 const gridItemOverlay = document.createElement('div');
                 gridItemOverlay.className = 'grid-item-overlay';
 
                 //If project has a video extension of .mp4 display the span tag
-
+                //CHECKING VIDEO FILE IN PROJECT
+                //declaring that by default there is no video extenstion
                 let hasVideo = 'none';
-                console.log(project.image);
+                for (j=0; j  < project.images.length; j++){
+                    //Video files should be in .mp4 format
+                    if (project.images[j].includes('.mp4')){
+                    hasVideo = 'block';
+                    }
+                }
+
                 gridItemOverlay.innerHTML=`
                 <div class="overlay">
                     <span style="display:block;">
@@ -161,10 +172,13 @@
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">   <path stroke-linecap="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9a2.25 2.25 0 00-2.25-2.25h-9A2.25 2.25 0 002.25 7.5v9a2.25 2.25 0 002.25 2.25z" />
                     </svg>
                     </span>
+
+                    <div style="bottom:1rem; padding:.5rem; position:absolute; color:white;"><strong>${project.name}</strong><br>
+                        <h3 style="font-weight:300; font-size:.9em;">Silas S.</h3>
+                    </div>
                 </div>
                 `;
                 gridItem.appendChild(gridItemOverlay);
-
 
                 // Add a click event listener to open the modal when this project is clicked
                 gridItem.addEventListener('click', () => {
@@ -190,36 +204,43 @@
         function openModal(project, index) {
             modalImages.innerHTML = ""; // Clear previous images
 
+            const currentImages = project.images; //Store the current project Image
+
             for (let i = 0; i < project.images.length; i++) {
             const imageContainer = document.createElement('div'); // Create a div container for the image
             imageContainer.className = 'image-container';
-            imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
 
-            const actionSection = document.createElement('div');
-            actionSection.className = 'inner-div';
-            actionSection.innerHTML = `
-            <button class="DownloadButton">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
-                </svg>
-            </button>
+                if (project.images[i].includes('.jpg')){
+                        imageContainer.innerHTML = `<img src="${project.images[i]}" alt="${project.name}" />`;
 
-            <button class="ViewFullScreen">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
-                </svg>
-            </button>
-            `;
+                        const actionSection = document.createElement('div');
+                        actionSection.className = 'inner-div';
+                        actionSection.innerHTML = `
+                        <button class="DownloadButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
+                            </svg>
+                        </button>
+                        <button class="ViewFullScreen">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
+                            </svg>
+                        </button>
+                        `;
+                        imageContainer.appendChild(actionSection);
+                }
 
-            const downloadButton = document.querySelector('.DownloadButton');
-            const viewFullScreenButton = document.querySelector('.ViewFullScreen');
+                if(project.images[i].includes('.mp4')){
+                        imageContainer.innerHTML = `<video controls controlslist="nofullscreen nodownload" width="100%">
+                        <source src="${project.images[i]}"  type="video/mp4" /> </video>`;
+                        // let removal = imageContainer.querySeclector('.inner-div');
+                        // removal.style.display='none';
+                }
 
             const advertImage = document.querySelector('.advert');
             advertImage.innerHTML=`<img src='${project.advertImage}' alt='advert' width="100%">`;
 
             // Add image, and image container to modalImages div
-            modalImages.appendChild(imageContainer); // Add the container to the modalImages div
-            imageContainer.appendChild(actionSection); // Add the section where you find the download and maximize button to the container
-        }
-
+            modalImages.appendChild(imageContainer);
+            }
 
             // Set the project name
             const projectID = modal.querySelector('.projectNumber');
@@ -228,6 +249,18 @@
             // Set the project description
             const projectDescription = modal.querySelector('.authorInfo.aboutProject');
             projectDescription.innerHTML = project.description;
+
+            // Set Software Used InfoSection
+            const projectInformation = modal.querySelector('.projectInformation');
+            for(w in project.softwareUsed){
+                const softwares = document.createElement('span');
+                softwares.textContent = project.softwareUsed[w];
+                projectInformation.appendChild(softwares);
+            }
+
+            //Set ProjectAboutTitle
+            const projectAbout = modal.querySelector('.projectInformation.Description');
+            projectAbout.innerHTML = `<h4>${project.name}</h4>`;
 
             // Display the modal
             modal.style.display = 'flex';
@@ -239,7 +272,9 @@
 
             // Add click event listener for Download button
             downloadButton.addEventListener('click', () => {
-                const currentImage = modalImages.querySelector('img');
+            const currentImage = modalImages.querySelector('img');
+
+
                 if (currentImage) {
                     const imageSrc = currentImage.getAttribute('src');
                     // Create an anchor element to trigger the download
@@ -253,6 +288,8 @@
             // Add click event listener for View Full Screen button
             viewFullScreenButton.addEventListener('click', () => {
                 const currentImage = modalImages.querySelector('img');
+
+
                 if (currentImage) {
                     const imageSrc = currentImage.getAttribute('src');
                     // Open a new window/tab with the image

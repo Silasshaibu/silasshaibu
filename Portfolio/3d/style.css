@@ -46,6 +46,16 @@ div.advert {
   margin-left: 0;
 }
 
+/*ADDING LOGO TO EACH SOFTWARE TAG*/
+.projectInformation span:before {
+  content: 'SoftwareLogo';
+  top: 0;
+  left: 0;
+  min-width: 50px;
+  min-height: 50px;
+  margin-right: 10px;
+}
+
 .content {
   overflow: hidden;
   max-height: 150px;
