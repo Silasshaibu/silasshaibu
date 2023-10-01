@@ -49,7 +49,7 @@
             <div class="authorInfo">
                 <div class="authorImage"></div>
                 <div class="authorSocials">
-                    <h4>Silas S.</h4>
+                    <h3>Silas S.</h3>
                     <p>Senior 3D Artist</p>
                     <p class="projectNumber">0147591659</p>
                 </div>
@@ -63,8 +63,14 @@
                 <div class="advert">
                     <!-- <img src="" width="100%" alt="advert"> -->
                 </div>
+                <div class="projectInformation">
+                    <h4>Software Used</h4>
+                </div>
+                <div class="projectInformation Description">
+                </div>
+                <div class="authorInfo aboutProject"></div>
             </div>
-            <div class="authorInfo aboutProject"></div>
+
             <span onclick="closeModal()" class="closeButton">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -113,7 +119,8 @@
             images: ['./treeNight.jpg', './characterGirl.jpg', './treeNight.jpg'],
             advertImage: './treeNight.jpg',
             id: '1147591657',
-            description: `<li>Diffuse Map Available</li><li>Displacement Map Available</li>`
+            description: `<p> I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+            softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
         };
 
         const project2 = {
@@ -122,7 +129,8 @@
             images: ['./characterGirl.jpg', './characterGirl.jpg', './characterGirl.jpg'],
             advertImage: './characterGirl.jpg',
             id: '1147591658',
-            description: `<li>Rendered with Arnold</li><li>1K Resolution</li><li>Diffuse Map Available</li><li>Displacement Map Available</li>`
+            description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+            softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
         };
 
         const project3 = {
@@ -131,7 +139,8 @@
             images: ['./website.jpg', './rotatingGlobe.mp4', './website.jpg'],
             advertImage: './website.jpg',
             id: '1147591659',
-            description: `<li>Rendered with Arnold</li><li>2K Resolution</li><li>Displacement Map Available</li><li>Normal Map Available</li>`
+            description: `<p> I love (Glam rock). Hope you guys like it! ♥</p>`,
+            softwareUsed: ['Zbrush']
         };
 
         // Pack all the projects in one array
@@ -252,6 +261,18 @@
             // Set the project description
             const projectDescription = modal.querySelector('.authorInfo.aboutProject');
             projectDescription.innerHTML = project.description;
+
+            // Set Software Used InfoSection
+            const projectInformation = modal.querySelector('.projectInformation');
+            for(k in project.softwareUsed){
+                const softwares = document.createElement('span');
+                softwares.textContent = project.softwareUsed[k];
+                projectInformation.appendChild(softwares);
+            }
+
+            //Set ProjectAboutTitle
+            const projectAbout = modal.querySelector('.projectInformation.Description');
+            projectAbout.innerHTML = `<h4>${project.name}</h4>`;
 
             // Display the modal
             modal.style.display = 'flex';

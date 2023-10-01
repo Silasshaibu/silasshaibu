@@ -278,10 +278,6 @@ header {
   object-position: center;
 }
 
-/*On hover on grid image item let the overlay show.*/
-.grid-item:hover /*To Do*/ {
-}
-
 #modalImages {
   min-width: 100%;
   width: 100%;
