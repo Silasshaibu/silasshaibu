@@ -327,17 +327,29 @@ header {
 #modalImages {
   min-width: 100%;
   width: 100%;
-  padding: 1rem;
   padding-right: calc(
     var(--projectInfoSectionWidth) + 1.5 * (var(--rightMarginSpace))
   );
-  padding-left: 0;
 
   max-height: 90vh;
   box-sizing: content-box;
 
   overflow-y: auto;
   position: relative;
+}
+
+/*Trying to place the img vertically in the center*/
+#modalImages img {
+  padding: 2rem;
+  padding-left: 0;
+}
+
+/*Trying to place the video in the center*/
+#modalImages video {
+  width: 80%;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0rem;
 }
 
 @media screen and (max-width: 1024px) {
