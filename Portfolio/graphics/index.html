@@ -9,7 +9,7 @@
 </head>
 <body>
     <header class="3dPorfolio-header">
-        <h3>GRAPHICS PORTFOLIO</h3>
+        <h3>GRRAPHICS PORTFOLIO</h3>
     </header>
     <div class="grid" id="projectGrid">
         <!-- Your grid items will be added dynamically here -->
@@ -50,7 +50,7 @@
                 <div class="authorImage"></div>
                 <div class="authorSocials">
                     <h3>Silas S.</h3>
-                    <p>Graphics Artist</p>
+                    <p>Senior 3D Artist</p>
                     <p class="projectNumber">0147591659</p>
                 </div>
             </div>
@@ -119,23 +119,31 @@
             advertImage: './treeNight.jpg',
             id: '1147591657',
             description: `<p> I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
-            softwareUsed: ['Photoshop']
+            softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
         };
 
-
-
         const project2 = {
+            name: 'CharacterGirl',
+            thumbnailImageUrl: './characterGirl.jpg',
+            images: ['./characterGirl.jpg', './characterGirl.jpg', './characterGirl.jpg'],
+            advertImage: './characterGirl.jpg',
+            id: '1147591658',
+            description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+            softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
+        };
+
+        const project3 = {
             name: 'Webpage',
             thumbnailImageUrl: './website.jpg',
             images: ['./website.jpg', './rotatingGlobe.mp4', './website.jpg'],
             advertImage: './website.jpg',
             id: '1147591659',
             description: `<p> I love (Glam rock). Hope you guys like it! ♥</p>`,
-            softwareUsed: ['CorelDraw']
+            softwareUsed: ['Zbrush']
         };
 
         // Pack all the projects in one array
-        const allProjects = [project1, project2];
+        const allProjects = [project1, project2, project3];
 
         // Function to load projects into grid items
         function loadProjectsIntoGrid() {
