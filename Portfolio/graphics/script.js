@@ -154,6 +154,10 @@ let currentProjectIndex = 0;
 
             // Set Software Used InfoSection
             const projectInformation = modal.querySelector('.projectInformation');
+
+            //Clearing the project information before adding software tags
+            projectInformation.innerHTML = '';
+
             for(w in project.softwareUsed){
                 const softwares = document.createElement('span');
                 softwares.textContent = project.softwareUsed[w];
