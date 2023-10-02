@@ -30,17 +30,23 @@ main {
   flex: 1;
   background-color: white;
   padding: 1rem;
-  margin-right:1rem;
   padding-left:2rem;
-  padding-right:5rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 75vh; /*Just as place holder but to allow */
+  height: 78vh; /*Just as place holder but to allow */
   overflow-y: scroll;
 }
 
 .grid-2-column{
   display: grid;
   grid-template-columns: 1fr 2fr;
+}
+
+ol li{
+  padding:.5rem .5rem;
+}
+
+ol{
+  padding-left:1rem;
 }
 
 .feature-list:nth-child(even){
@@ -50,32 +56,13 @@ main {
   border-left:none;
   border-right:none;
 }
+
 .feature-list:nth-child(odd){
   padding:1rem;
   background-color: rgb(209, 207, 207);
   border: 1px dashed black;
   border-left:none;
   border-right:none;
-}
-
-#image-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  overflow: hidden;
-  position: relative;
-}
-
-#image-container img {
-  width: 100%;
-  height: auto;
-  transition: transform 0.3s;
-  position:relative;
-}
-
-#image-container img.active {
-  display: block;
 }
 
 #project-list {
@@ -144,13 +131,6 @@ nav li:hover {
   padding-left:.8rem;
 }
 
-.action-icons{
-position: absolute;
-display: flex;
-right:.8rem;
-bottom:1rem;
-}
-
 /*if current project is the one that has its image displayed on the image containter, then add the active class to its li element*/
 #project-list li.active {
   background-color: rgb(80, 80, 80);
@@ -171,20 +151,6 @@ img.svgListStyle.filtered{
   filter:brightness(100%) grayscale(100%) invert(100%);
 }
 
-/* Arrow button styles */
-.arrow-button {
-  color: black;
-  border: none;
-  /* border-radius: 2rem; */
-  width: 50px;
-  height: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  background-color: white;
-}
-
 .arrow-button:hover {
   background-color: #efefef;
 }
@@ -203,29 +169,6 @@ nav ul {
   border-radius: 0px;
 }
 
-.arrow-button svg {
-  width: 20px;
-  height: 20px;
-}
-/* Mobile styles: 9/16 aspect ratio */
-
-/*ADD LIVE IMAGES OF DEVICES, PC, TABLET AND MOBILE
-SO THEY ARE SHOW RESPECTIVELY WHEN CALLED*/
-.deviceViewer--imageCustomize {
-  width: fit-content;
-  height: 50vh;
-  padding: 0px;
-  border-radius: 1rem;
-  border: 3px solid black;
-  background-color: grey;
-  margin-bottom: 12vh;
-  position: relative;
-}
-
-#image-container img.active {
-  display: block;
-}
-
 /* Body styles to ensure full viewport height */
 body {
   min-height: 100vh;
@@ -242,25 +185,8 @@ main {
   max-height: 100%; /* Set the maximum height of the main content to 100% */
 }
 
-.keypad-section {
-  position: absolute;
-  bottom: 0;
-  width: fit-content;
-  padding: 10px 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 3rem;
-}
 
-#image-container img {
-  max-height: 50vh; /* Set the maximum height of any image to 50vh */
-  width: auto; /* Reset the width to auto to maintain aspect ratio */
-  height: auto; /* Reset the height to auto to maintain aspect ratio */
-  transition: transform 0.3s;
-  display: none;
-  position: relative;
-}
+
 
 
 #project-list ul li{
@@ -287,19 +213,6 @@ main {
   stroke:black;
 }
 
-.deviceViewer--imageCustomize {
-  width: fit-content;
-  /*Set width property to a percentage of the media width so it can feature well and also when a device option is toggled, you can achieve using both css and js*/
-  height: auto;
-  padding: 0px;
-  border-radius: 1rem;
-  border: 3px solid black;
-  background-color: grey;
-  margin-bottom: 12vh;
-  position: relative;
-  overflow-y: hidden;
-  aspect-ratio: inherit;
-}
 
 #project-list li {
   display: block;
