@@ -2,19 +2,25 @@
 const projects = {
   project1: {
     name: "Bimto",
-    tools: "Adobe XD",
+    tools: "HTML5 CSS3 JS",
     description:"Ecommerce",
     liveWebsite: "http://www.google.com",
-    fileDownloadLink: "bimto-uiux.pdf",
     previewImage:'.1920x1080_Bimteo_01_desktop.jpg'
   },
 
   project2: {
     name: "AskMeAbroad",
-    tools: "Adobe XD",
+    tools: "HTML5 CSS3 ES6",
     description:"Educational",
     liveWebsite: "http://www.askmeabroad.com",
-    fileDownloadLink: "",
+    previewImage:'.1920x1080_Bimteo_01_desktop.jpg'
+  },
+
+  project3: {
+    name: "Air BnB",
+    tools: "React JS",
+    description:"Rental",
+    liveWebsite: "http://www.askmeabroad.com",
     previewImage:'.1920x1080_Bimteo_01_desktop.jpg'
   }
 };
@@ -59,25 +65,6 @@ function populateProjectList() {
         actionIcons.appendChild(webIcon);
       }
 
-      // Create an SVG icon for the download action
-      if (project.fileDownloadLink) {
-        const downloadIcon = document.createElement('img');
-        downloadIcon.classList.add('svgListStyle', 'download');
-        downloadIcon.src = 'downloadIcon.svg'; // Replace with the URL of your download SVG icon
-        downloadIcon.alt = 'Download Icon';
-
-        // Add an event listener for the download action
-        downloadIcon.addEventListener('click', () => {
-          // Handle the download logic here
-          // For example, open the file download link in a new tab
-          if (project.fileDownloadLink) {
-            window.open(project.fileDownloadLink, '_blank');
-          }
-        });
-
-        actionIcons.appendChild(downloadIcon);
-      }
-
       // Append the project details and action icons to the list item
       listItem.appendChild(projectDetails);
       listItem.appendChild(actionIcons);
@@ -116,7 +103,6 @@ document.addEventListener('DOMContentLoaded', populateProjectList);
 
 
 // Function to set the default project, device, and display images
-
 
 // Call the function to set the default project and device after the DOM has loaded
 document.addEventListener('DOMContentLoaded', setDefaultProjectAndDevice);

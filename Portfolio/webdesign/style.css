@@ -28,8 +28,10 @@ main {
   flex: 1;
   background-color: white;
   padding: 1rem;
+  margin-right:1rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 80vh; /*Just as place holder but to allow */
+  height: 70vh; /*Just as place holder but to allow */
+  overflow-y: scroll;
 }
 
 #image-container {
