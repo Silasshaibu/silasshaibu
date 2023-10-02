@@ -4,41 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UI UX | Portfolio</title>
     <link rel="stylesheet" href="style.css">
-
-    <title>WebDesign | Portfolio</title>
 </head>
 <body>
-    <h1>Welcome to WebDesign
-    </h1>
-    <div class="container">
-        <div class="carousel">
-          <div class="slides">
-            <div class="slide active">
-              <img src="https://placehold.co/600x400/eee/333/?text=Slide 1" alt="">
-            </div>
-            <div class="slide">
-              <img src="https://placehold.co/600x400/ddd/333/?text=Slide 2" alt="">
-            </div>
-            <div class="slide">
-              <img src="https://placehold.co/600x400/ccc/333/?text=Slide 3" alt="">
-            </div>
-            <div class="slide">
-              <img src="https://placehold.co/600x400/bbb/333/?text=Slide 4" alt="">
-            </div>
-          </div>
-          <button class="previous">previous</button>
-          <button class="next">next</button>
-        </div>
+    <header>
+        <h1>UI/UX Portfolio</h1>
+    </header>
 
-        <!-- Put this code anywhere in the body of your page where you want the badge to show up. -->
-     </div>
- </a>
-</div>
+    <main>
+        <section id="viewer">
+            <div id="image-container">
+                <div class="deviceViewer--imageCustomize">
+                    <!-- Images will be displayed here -->
 
-<script id='fiverr-seller-widget-script-403019b7-c393-4a30-9bf0-bd9fe3c1b4e1' src='https://widgets.fiverr.com/api/v1/seller/silasshaibu?widget_id=403019b7-c393-4a30-9bf0-bd9fe3c1b4e1' data-config='{"category_name":"Graphics \u0026 Design"}' async='true' defer='true'></script>
+                    <img src="" alt="Image 1" class="slide">
+                    <img src="" alt="Image 2" class="slide">
+                </div>
 
-      </div>
+                <!-- KeyPad Section Area -->
+                <div class="keypad-section">
+                    <div class="viewerDevice--section">
+                        <nav>
+                            <ul>
+                                <li class="active" data-device="tablet">Tablet</li>
+                                <li data-device="pc">PC</li>
+                                <li data-device="mobile">Mobile</li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div class="navigation--arrow--section">
+                        <button id="left-arrow" class="arrow-button left">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                            </svg>
+                        </button>
+
+                        <button id="right-arrow" class="arrow-button right">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="svgIcon">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="project-list">
+            <h2>Projects</h2>
+            <ul class="projectList">
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 | Made with ❤ by Silas Shaibu</p>
+    </footer>
 </body>
-<script src="script.js"></script>
+<script src="uiux.js"></script>
 </html>

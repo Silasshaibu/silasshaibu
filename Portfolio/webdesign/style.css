@@ -1,0 +1,280 @@
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'product sans', Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* Header styles */
+header {
+  background-color: rgb(80, 80, 80);
+  color: white;
+  /* text-align: center; */
+  padding: 1rem 2rem;
+}
+
+/* Main content styles */
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+#viewer {
+  flex: 1;
+  background-color: white;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  height: 80vh; /*Just as place holder but to allow */
+}
+
+#image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+#image-container img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s;
+  position:relative;
+}
+
+#image-container img.active {
+  display: block;
+}
+
+#project-list {
+  flex: 0.3;
+  background-color: #f4f4f4;
+  padding: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+#project-list h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+#project-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+#project-list li {
+  /* margin: 0.5rem 0; */
+  cursor: pointer;
+  padding: 0.5rem;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-bottom: none;
+}
+nav li.hidden {
+  display: none;
+}
+#project-list li:last-child {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Footer styles */
+footer {
+  text-align: center;
+  background-color: #333;
+  color: white;
+  padding: 1rem 0;
+}
+
+/* Navigation styles */
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  background: white;
+  border: 3px solid grey;
+}
+
+nav li {
+  cursor: pointer;
+  padding: 1rem;
+  min-width: 16px;
+  width: 100px;
+  text-align: center;
+}
+
+nav li:hover {
+  background-color: #efefef;
+}
+
+#project-list li{
+  position: relative;
+  padding-left:.8rem;
+}
+
+.action-icons{
+position: absolute;
+display: flex;
+right:.8rem;
+bottom:1rem;
+}
+
+/*if current project is the one that has its image displayed on the image containter, then add the active class to its li element*/
+#project-list li.active {
+  background-color: rgb(80, 80, 80);
+  color: white;
+}
+
+/* Device toggle button styles */
+nav li.active {
+  background-color: rgb(59, 59, 59);
+  color: white;
+}
+
+.active-icon{
+  stroke:white;
+}
+
+img.svgListStyle.filtered{
+  filter:brightness(100%) grayscale(100%) invert(100%);
+}
+
+/* Arrow button styles */
+.arrow-button {
+  color: black;
+  border: none;
+  /* border-radius: 2rem; */
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: white;
+}
+
+.arrow-button:hover {
+  background-color: #efefef;
+}
+
+.navigation--arrow--section {
+  display: flex;
+  margin-left: 1rem;
+  background-color: white;
+  border: 3px solid grey;
+}
+
+.navigation--arrow--section,
+nav li,
+nav ul {
+  border-radius: 50px;
+  border-radius: 0px;
+}
+
+.arrow-button svg {
+  width: 20px;
+  height: 20px;
+}
+/* Mobile styles: 9/16 aspect ratio */
+
+/*ADD LIVE IMAGES OF DEVICES, PC, TABLET AND MOBILE
+SO THEY ARE SHOW RESPECTIVELY WHEN CALLED*/
+.deviceViewer--imageCustomize {
+  width: fit-content;
+  height: 50vh;
+  padding: 0px;
+  border-radius: 1rem;
+  border: 3px solid black;
+  background-color: grey;
+  margin-bottom: 12vh;
+  position: relative;
+}
+
+#image-container img.active {
+  display: block;
+}
+
+/* Body styles to ensure full viewport height */
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content styles */
+main {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+  max-height: 100%; /* Set the maximum height of the main content to 100% */
+}
+
+.keypad-section {
+  position: absolute;
+  bottom: 0;
+  width: fit-content;
+  padding: 10px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+}
+
+#image-container img {
+  max-height: 50vh; /* Set the maximum height of any image to 50vh */
+  width: auto; /* Reset the width to auto to maintain aspect ratio */
+  height: auto; /* Reset the height to auto to maintain aspect ratio */
+  transition: transform 0.3s;
+  display: none;
+  position: relative;
+}
+
+
+#project-list ul li{
+  position:relative;
+}
+
+.actionIcons{
+  min-width:1rem;
+  min-height:1rem;
+  stroke:white;
+  position:absolute;
+  bottom:0;
+  right:.5rem;
+}
+
+.svgListStyle{
+  stroke: rgba(54, 54, 54, 0.527);
+  stroke:black;
+  width:1.5rem;
+  height:1.5rem;
+}
+
+.svgListStyle:hover {
+  stroke:black;
+}
+
+.deviceViewer--imageCustomize {
+  width: fit-content;
+  /*Set width property to a percentage of the media width so it can feature well and also when a device option is toggled, you can achieve using both css and js*/
+  height: auto;
+  padding: 0px;
+  border-radius: 1rem;
+  border: 3px solid black;
+  background-color: grey;
+  margin-bottom: 12vh;
+  position: relative;
+  overflow-y: hidden;
+  aspect-ratio: inherit;
+}
+
+#project-list li {
+  display: block;
+}
