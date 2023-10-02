@@ -1,12 +1,3 @@
-// JavaScript code for your UI/UX Portfolio
-
-// Define aspect ratios for different devices
-const aspectRatios = {
-  tablet: '4/3',
-  mobile: '9/16',
-  pc: '16/9'
-};
-
 // Define project data with images for each device
 const projects = {
   project1: {
@@ -15,60 +6,18 @@ const projects = {
     description:"Ecommerce",
     liveWebsite: "http://www.google.com",
     fileDownloadLink: "bimto-uiux.pdf",
-    tablet: [
-      '1024x768_Bimteo_01_Tablet.jpg',
-      '1024x768_Bimteo_02_Tablet.jpg'
-    ],
-    mobile: [
-      '768x384_Bimteo_01_Mobile.jpg',
-      '768x384_Bimteo_01_Mobile.jpg'
-    ],
-    pc: [
-      '1920x1080_Bimteo_01_desktop.jpg',
-      '1920x1080_Bimteo_02_desktop.jpg'
-    ]
+    previewImage:'.1920x1080_Bimteo_01_desktop.jpg'
   },
+
   project2: {
     name: "AskMeAbroad",
     tools: "Adobe XD",
     description:"Educational",
     liveWebsite: "http://www.askmeabroad.com",
     fileDownloadLink: "",
-    tablet: [
-      '1024x768_Bimto_01_Tablet.jpg',
-      '1024x768_Bimto_02_Tablet.jpg'
-    ],
-    mobile: [
-      '768x384_Bimto_01_Mobile.jpg',
-      '768x384_Bimto_01_Mobile.jpg'
-    ],
-    pc: [
-      '1920x1080_Bimto_01_desktop.jpg',
-      '1920x1080_Bimto_02_desktop.jpg'
-    ]
-  },
-  project3: {
-    name: "Optimum-Payments",
-    tools: "Adobe XD",
-    description:"Affiliate",
-    liveWebsite: "",
-    fileDownloadLink: "Anytechsolutions.pdf",
-    tablet: [
-      '1024x768_Bimto_01_Tablet.jpg',
-      '1024x768_Bimto_02_Tablet.jpg'
-    ],
-    mobile: [
-      '768x384_Bimto_01_Mobile.jpg',
-      '768x384_Bimto_01_Mobile.jpg'
-    ],
-    pc: [
-      '1920x1080_Bimto_01_desktop.jpg',
-      '1920x1080_Bimto_02_desktop.jpg'
-    ]
+    previewImage:'.1920x1080_Bimteo_01_desktop.jpg'
   }
 };
-
-
 
 // Function to populate the project list dynamically
 function populateProjectList() {
@@ -79,8 +28,6 @@ function populateProjectList() {
     if (projects.hasOwnProperty(projectKey)) {
       const project = projects[projectKey];
 
-
-
       // Create a new list item element
       const listItem = document.createElement('li');
       listItem.dataset.project = projectKey;
@@ -88,28 +35,17 @@ function populateProjectList() {
       // Create a div for the project details
       const projectDetails = document.createElement('div');
       projectDetails.classList.add('project-details');
-
-      // Create spans for the project name, description, and tools
-      const projectName = document.createElement('span');
-      projectName.textContent = `${project.name}`;
-
-      const projectDescription = document.createElement('p');
-      projectDescription.textContent = `Type: ${project.description}`;
-
-      const projectTools = document.createElement('span');
-      projectTools.textContent = `Tools: ${project.tools}`;
-
-      // Append the spans to the project details div
-      projectDetails.appendChild(projectName);
-      projectDetails.appendChild(projectDescription);
-      projectDetails.appendChild(projectTools);
+      projectDetails.innerHTML = `
+      <div class='project-details'>
+        <span>${project.name}</span>
+        <p>Type: ${project.description}</p>
+        <span>Tools: ${project.tools} </span>
+      </div>
+      `;
 
       // Create a div for the action icons
       const actionIcons = document.createElement('div');
       actionIcons.classList.add('action-icons');
-
-
-
 
       // Create an SVG icon for the live website link
       if (project.liveWebsite) {
@@ -178,54 +114,9 @@ function populateProjectList() {
 // Call the function to populate the project list after the DOM has loaded
 document.addEventListener('DOMContentLoaded', populateProjectList);
 
-// Function to update images based on selected project and device
-function updateImages(imageList) {
-  const imageContainer = document.querySelector('.deviceViewer--imageCustomize');
-  const images = imageContainer.querySelectorAll('img');
-
-  // Hide all images
-  images.forEach((img) => {
-    img.classList.remove('active');
-  });
-
-  // Display images for the selected project and device
-  imageList.forEach((imageName, index) => {
-    images[index].src = imageName;
-
-    // Update alt attribute following the specified format
-    const activeProject = document.querySelector('#project-list li.active').dataset.project;
-    const activeDevice = document.querySelector('nav li.active').dataset.device;
-    images[index].alt = `${activeProject}_${activeDevice}_image${index + 1}`;
-  });
-
-  // Start with the first image displayed
-  currentIndex = 0;
-  images[currentIndex].classList.add('active');
-}
 
 // Function to set the default project, device, and display images
-function setDefaultProjectAndDevice() {
-  // Select the first project in the list and mark it as active
-  const firstProjectItem = document.querySelector('#project-list li');
-  if (firstProjectItem) {
-    firstProjectItem.classList.add('active');
-  }
 
-  // Set the default device to "Tablet" and mark it as active
-  const defaultDeviceOption = document.querySelector('nav li[data-device="tablet"]');
-  if (defaultDeviceOption) {
-    defaultDeviceOption.classList.add('active');
-  }
-
-  // Get the selected project and device
-  const selectedProject = firstProjectItem ? firstProjectItem.dataset.project : null;
-  const selectedDevice = defaultDeviceOption ? defaultDeviceOption.dataset.device : null;
-
-  // Update the image list based on the selected project and device
-  if (selectedProject && selectedDevice) {
-    updateImages(projects[selectedProject][selectedDevice]);
-  }
-}
 
 // Call the function to set the default project and device after the DOM has loaded
 document.addEventListener('DOMContentLoaded', setDefaultProjectAndDevice);
