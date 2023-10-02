@@ -15,6 +15,8 @@ header {
   color: white;
   /* text-align: center; */
   padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
 }
 
 /* Main content styles */
@@ -29,9 +31,31 @@ main {
   background-color: white;
   padding: 1rem;
   margin-right:1rem;
+  padding-left:2rem;
+  padding-right:5rem;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  height: 70vh; /*Just as place holder but to allow */
+  height: 75vh; /*Just as place holder but to allow */
   overflow-y: scroll;
+}
+
+.grid-2-column{
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+}
+
+.feature-list:nth-child(even){
+  padding:1rem;
+  background-color: rgb(163, 163, 163);
+  border: 1px dashed black;
+  border-left:none;
+  border-right:none;
+}
+.feature-list:nth-child(odd){
+  padding:1rem;
+  background-color: rgb(209, 207, 207);
+  border: 1px dashed black;
+  border-left:none;
+  border-right:none;
 }
 
 #image-container {
