@@ -12,6 +12,12 @@
   --imageWidthAndheight: 4rem;
 }
 
+span img {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.3rem;
+}
+
 .closeButton {
   top: 0;
   right: 0;
@@ -24,28 +30,6 @@
   display: grid;
   border-radius: 50%;
   cursor: pointer;
-}
-
-.authorSocials p {
-  font-size: 0.9rem;
-}
-
-.authorImage {
-  background-image: url(./MY-PROFILE--Sharp.jpg);
-  background-size: contain;
-}
-
-/* Style for the modal images */
-#modalImages {
-  max-height: 90vh; /* Set a maximum height for the modal content */
-  overflow-y: auto; /* Enable vertical scrolling if content overflows */
-}
-
-#modalImages img {
-  width: 100%;
-  height: auto;
-  object-fit: contain;
-  margin-bottom: 10px;
 }
 
 .projectInformation {
@@ -69,13 +53,8 @@ div.advert {
 }
 
 /*ADDING LOGO TO EACH SOFTWARE TAG*/
-.projectInformation span:before {
-  content: 'SoftwareLogo';
-  top: 0;
-  left: 0;
-  min-width: 50px;
-  min-height: 50px;
-  margin-right: 10px;
+.projectInformation span {
+  display: inline-flex;
 }
 
 .content {
@@ -357,6 +336,20 @@ header {
 
   overflow-y: auto;
   position: relative;
+}
+
+/*Trying to place the img vertically in the center*/
+#modalImages img {
+  padding: 2rem;
+  padding-left: 0;
+}
+
+/*Trying to place the video in the center*/
+#modalImages video {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0rem;
 }
 
 @media screen and (max-width: 1024px) {
