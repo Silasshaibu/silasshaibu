@@ -92,6 +92,37 @@ div.advert {
   border: 1px solid grey;
 }
 
+.caption {
+  color: white;
+  border: 1px solid red;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+
+  text-align: center;
+}
+
+.authorSocials p {
+  font-size: 0.9rem;
+}
+
+.authorImage {
+  background-image: url(./MY-PROFILE--Sharp.jpg);
+  background-size: contain;
+}
+
+/* Style for the modal images */
+#modalImages {
+  max-height: 90vh; /* Set a maximum height for the modal content */
+  overflow-y: auto; /* Enable vertical scrolling if content overflows */
+}
+
+#modalImages img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
 button {
   padding: 7px 15px;
   cursor: pointer;
@@ -113,18 +144,20 @@ button {
   left: 0%;
 }
 
-.content {
-  /* border: 3px solid white; */
-}
-
 .image-container {
   position: relative;
-  height: 500px;
+  height: 600px;
+  border: 1px solid blue;
+}
+
+video {
+  height: 70%;
 }
 
 .image-container img {
+  margin-top: 2rem;
   width: 100%;
-  height: 100% !important;
+  height: 80% !important;
   object-fit: contain;
 }
 
@@ -132,7 +165,7 @@ button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 10%;
+  bottom: 15%;
 }
 
 .DownloadButton,
@@ -340,7 +373,6 @@ header {
 
 /*Trying to place the img vertically in the center*/
 #modalImages img {
-  padding: 2rem;
   padding-left: 0;
 }
 
