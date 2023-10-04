@@ -17,8 +17,8 @@ const project1 = {
     name: 'NightlyTree',
     thumbnailImageUrl: './treeNight.jpg',
     images: [
-        { imageUrl: './treeNight.jpg', caption: 'Image Caption' },
-        { imageUrl: './treeNight.jpg', caption: 'This is a Character Girl' }
+        { imageUrl: './treeNight.jpg', caption: 'Noon Time Diffuse 1K' },
+        { imageUrl: './treeNight.jpg', caption: 'On the Sea Side, Fine-Time Wireframe 4K' }
     ],
     advertImage: './treeNight.jpg',
     id: '1147591657',
@@ -30,9 +30,9 @@ const project2 = {
     name: 'CharacterGirl',
     thumbnailImageUrl: './characterGirl.jpg',
     images: [
-        { imageUrl: './characterGirl.jpg', caption: 'Image Caption' },
-        { imageUrl: './characterGirl.jpg', caption: 'Image Caption' },
-        { imageUrl: './characterGirl.jpg', caption: 'Image Caption' }
+        { imageUrl: './characterGirl.jpg', caption: 'Female Warrior Athena' },
+        { imageUrl: './characterGirl.jpg', caption: '30K Polygons Wireframe' },
+        { imageUrl: './characterGirl.jpg', caption: 'Sculpt Version Multi Resolution Corona Render' }
     ],
     advertImage: './characterGirl.jpg',
     id: '1147591658',
@@ -44,9 +44,9 @@ const project3 = {
     name: 'Webpage',
     thumbnailImageUrl: './website.jpg',
     images: [
-        { imageUrl: './website.jpg', caption: 'Image Caption' },
-        { imageUrl: './rotatingGlobe.mp4', caption: 'Video Caption' },
-        { imageUrl: './website.jpg', caption: 'Image Caption' }
+        { imageUrl: './website.jpg', caption: 'Only4uWebSite' },
+        { imageUrl: './rotatingGlobe.mp4', caption: 'Rendered with AfterEffects 4K' },
+        { imageUrl: './website.jpg', caption: 'Dashboard Page' }
     ],
     advertImage: './website.jpg',
     id: '1147591659',
