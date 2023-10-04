@@ -478,6 +478,7 @@ header {
   }
 }
 
+/*LOWEST MEDIA DEVICE (mobile or smallt tablet)*/
 @media screen and (max-width: 600px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
@@ -494,5 +495,33 @@ header {
   .rightSection {
     border-radius: 0.8rem;
     order: -1;
+    position: absolute;
+    width: 100% !important;
+    overflow: hidden;
+    height: 20vh;
+    right: 0;
+    top: 0%;
+  }
+
+  #modalImages {
+    padding-right: 0;
+  }
+
+  .contentDisplayArea {
+    width: 100%;
+    margin-top: 20vh;
+  }
+
+  .leftArrowController,
+  .rightArrowController {
+    top: 23vh;
+    left: 0;
+    z-index: 2;
+    background-color: transparent;
+  }
+
+  .rightArrowController {
+    right: 0%;
+    left: 100%;
   }
 }
