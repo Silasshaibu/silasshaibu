@@ -158,7 +158,10 @@ button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 15%;
+  bottom: 20%;
+  background-color: rgb(3, 3, 3);
+  padding: 0.3rem 0rem;
+  border-radius: 0.5rem;
 }
 
 /*VIDEO BOX STYLING*/
@@ -176,9 +179,21 @@ video {
 /*ACTION FIELD DOWNLOAD AND VIEW FULL SCREEN*/
 .DownloadButton,
 .ViewFullScreen {
-  background-color: white;
-  border-radius: 1rem;
+  background-color: rgb(44, 44, 44);
   margin: 0;
+  color: rgb(255, 255, 255);
+}
+
+.inner-div span {
+  padding: 0.5rem 1rem;
+}
+
+span.DownloadButton {
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+
+span.ViewFullScreen {
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
 }
 
 .DownloadButton:hover,
