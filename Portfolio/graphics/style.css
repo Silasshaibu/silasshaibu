@@ -177,9 +177,8 @@ video {
 .DownloadButton,
 .ViewFullScreen {
   background-color: white;
-  padding: 10px 20px;
-  border-radius: 0.2rem;
-  margin: 0.5rem;
+  border-radius: 1rem;
+  margin: 0;
 }
 
 .DownloadButton:hover,
@@ -223,10 +222,18 @@ video {
   display: grid;
   z-index: 1;
   place-items: center;
-  background-color: white;
+  background-color: rgb(70, 70, 70);
   border-radius: 50%;
   height: 50px;
+  color: white;
   min-width: 50px;
+  transition: all 300ms;
+}
+
+.leftArrowController:hover,
+.rightArrowController:hover {
+  color: rgb(31, 30, 30);
+  background-color: rgba(110, 110, 110, 0.829);
 }
 
 .leftArrowController {
@@ -346,6 +353,11 @@ header {
 
 .overlay span {
   margin-right: 0.2rem;
+}
+
+/*SVG STYLING FORMATTING*/
+.w-6.h-6 {
+  width: 1rem;
 }
 
 .svgMediaIcons {
