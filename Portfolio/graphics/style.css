@@ -94,11 +94,15 @@ div.advert {
 
 .caption {
   color: white;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   padding: 1rem 0;
   margin-bottom: 2rem;
 
   text-align: center;
+}
+
+#modalImages img {
+  margin-top: 2rem;
 }
 
 .authorSocials p {
@@ -309,10 +313,6 @@ header {
   color: white;
 }
 
-.w-6.h-6 {
-  width: 1rem;
-  height: 1rem;
-}
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -331,11 +331,12 @@ header {
 
 .grid-item-overlay {
   position: absolute;
-  left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.212);
+  left: 0;
+  color: white;
+  min-width: 100%;
   min-height: 100%;
-  width: 100%;
+  background: rgba(39, 39, 39, 0.219);
   z-index: 1;
 }
 
@@ -344,16 +345,20 @@ header {
 }
 
 .overlay span {
-  background-color: white;
-  padding: 2px 2px;
-  border-radius: 1rem;
-  min-width: 1rem;
+  margin-right: 0.2rem;
+}
+
+.svgMediaIcons {
   width: 1rem;
-  min-height: 1rem;
+  border-radius: 50%;
+  background-color: rgb(29, 27, 27);
   aspect-ratio: 1/1;
-  margin: 0.5rem;
-  flex-direction: row;
-  /* place-items: center; */
+  padding: 0.5rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+}
+
+.overlaySpanFlex {
   display: flex;
 }
 
