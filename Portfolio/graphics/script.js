@@ -259,5 +259,3 @@ function goToPreviousProject() {
 leftArrow.addEventListener('click', goToPreviousProject);
 rightArrow.addEventListener('click', goToNextProject);
 
-// Call the function to initially load projects into the grid
-loadProjectsIntoGrid();

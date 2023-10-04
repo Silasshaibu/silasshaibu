@@ -110,12 +110,6 @@ div.advert {
   background-size: contain;
 }
 
-/* Style for the modal images */
-#modalImages {
-  max-height: 90vh; /* Set a maximum height for the modal content */
-  overflow-y: auto; /* Enable vertical scrolling if content overflows */
-}
-
 #modalImages img {
   width: 100%;
   height: auto;
@@ -144,14 +138,10 @@ button {
   left: 0%;
 }
 
+/*IMAGE CONTAINER STYLING*/
 .image-container {
   position: relative;
-  height: 600px;
-  border: 1px solid blue;
-}
-
-video {
-  height: 70%;
+  height: 75vh;
 }
 
 .image-container img {
@@ -168,6 +158,19 @@ video {
   bottom: 15%;
 }
 
+/*VIDEO BOX STYLING*/
+video {
+  height: 70%;
+}
+
+#modalImages video {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+}
+
+/*ACTION FIELD DOWNLOAD AND VIEW FULL SCREEN*/
 .DownloadButton,
 .ViewFullScreen {
   background-color: white;
@@ -208,6 +211,7 @@ video {
   opacity: 1;
 }
 
+/*NAVIGATOR LEFT ARROW AND RIGHT ARROW*/
 .leftArrowController,
 .rightArrowController {
   position: fixed;
@@ -232,6 +236,7 @@ video {
   transform: translate(-200%, -50%);
 }
 
+/* PROJECT LIGHT BOX SECTION */
 .leftSection {
   background-color: black;
   position: relative;
@@ -239,6 +244,7 @@ video {
   max-height: 90vh;
 }
 
+/* PROJECT INFORMATION SECTION */
 .rightSection {
   position: fixed;
   top: 3%;
@@ -252,6 +258,7 @@ video {
   overflow-y: scroll;
 }
 
+/* PROJECT INFORMATION MODAL BOX*/
 .modal-featureProjectDetails {
   position: fixed;
   background-color: rgba(128, 128, 128, 0.295);
@@ -269,6 +276,7 @@ video {
   display: flex;
 }
 
+/*BODY AND CONTAINER*/
 body,
 .AllContainer {
   position: relative;
@@ -364,7 +372,7 @@ header {
     var(--projectInfoSectionWidth) + 1.5 * (var(--rightMarginSpace))
   );
 
-  max-height: 90vh;
+  max-height: 89vh;
   box-sizing: content-box;
 
   overflow-y: auto;
@@ -374,14 +382,6 @@ header {
 /*Trying to place the img vertically in the center*/
 #modalImages img {
   padding-left: 0;
-}
-
-/*Trying to place the video in the center*/
-#modalImages video {
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 2rem 0rem;
 }
 
 @media screen and (max-width: 1024px) {
