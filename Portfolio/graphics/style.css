@@ -479,7 +479,7 @@ header {
 }
 
 /*LOWEST MEDIA DEVICE (mobile or smallt tablet)*/
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -496,11 +496,13 @@ header {
     border-radius: 0.8rem;
     order: -1;
     position: absolute;
-    width: 100% !important;
+    width: 95% !important;
     overflow: hidden;
     height: 20vh;
-    right: 0;
+    right: 1rem;
+    left: 0.5rem;
     top: 0%;
+    border-radius: 0.5rem;
   }
 
   #modalImages {
@@ -514,7 +516,7 @@ header {
 
   .leftArrowController,
   .rightArrowController {
-    top: 23vh;
+    top: 24vh;
     left: 0;
     z-index: 2;
     background-color: transparent;
@@ -523,5 +525,27 @@ header {
   .rightArrowController {
     right: 0%;
     left: 100%;
+  }
+
+  .rightArrowController::after {
+    content: ' Next';
+    width: 100px;
+    top: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .leftArrowController::before {
+    content: ' Previous';
+    width: 100px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(15%, -50%);
+  }
+
+  .authorInfo.socials {
+    padding-top: 0;
   }
 }
