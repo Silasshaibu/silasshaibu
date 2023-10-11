@@ -92,6 +92,35 @@ div.advert {
   border: 1px solid grey;
 }
 
+.caption {
+  color: white;
+  /* border: 1px solid red; */
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+
+  text-align: center;
+}
+
+#modalImages img {
+  margin-top: 2rem;
+}
+
+.authorSocials p {
+  font-size: 0.9rem;
+}
+
+.authorImage {
+  background-image: url(./MY-PROFILE--Sharp.jpg);
+  background-size: contain;
+}
+
+#modalImages img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
 button {
   padding: 7px 15px;
   cursor: pointer;
@@ -113,18 +142,15 @@ button {
   left: 0%;
 }
 
-.content {
-  /* border: 3px solid white; */
-}
-
+/*IMAGE CONTAINER STYLING*/
 .image-container {
   position: relative;
-  height: 500px;
+  height: 75vh;
 }
 
 .image-container img {
   width: 100%;
-  height: 100% !important;
+  height: 80% !important;
   object-fit: contain;
 }
 
@@ -132,15 +158,42 @@ button {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: 10%;
+  bottom: 20%;
+  background-color: rgb(3, 3, 3);
+  padding: 0.3rem 0rem;
+  border-radius: 0.5rem;
 }
 
+/*VIDEO BOX STYLING*/
+video {
+  height: 70%;
+}
+
+#modalImages video {
+  width: 100%;
+  display: flex;
+  margin: 0 auto;
+  padding: 2rem 0rem;
+}
+
+/*ACTION FIELD DOWNLOAD AND VIEW FULL SCREEN*/
 .DownloadButton,
 .ViewFullScreen {
-  background-color: white;
-  padding: 10px 20px;
-  border-radius: 0.2rem;
-  margin: 0.5rem;
+  background-color: rgb(44, 44, 44);
+  margin: 0;
+  color: rgb(255, 255, 255);
+}
+
+.inner-div span {
+  padding: 0.5rem 1rem;
+}
+
+span.DownloadButton {
+  border-radius: 0.5rem 0rem 0rem 0.5rem;
+}
+
+span.ViewFullScreen {
+  border-radius: 0rem 0.5rem 0.5rem 0rem;
 }
 
 .DownloadButton:hover,
@@ -175,6 +228,7 @@ button {
   opacity: 1;
 }
 
+/*NAVIGATOR LEFT ARROW AND RIGHT ARROW*/
 .leftArrowController,
 .rightArrowController {
   position: fixed;
@@ -183,10 +237,18 @@ button {
   display: grid;
   z-index: 1;
   place-items: center;
-  background-color: white;
+  background-color: rgb(70, 70, 70);
   border-radius: 50%;
   height: 50px;
+  color: white;
   min-width: 50px;
+  transition: all 300ms;
+}
+
+.leftArrowController:hover,
+.rightArrowController:hover {
+  color: rgb(31, 30, 30);
+  background-color: rgba(110, 110, 110, 0.829);
 }
 
 .leftArrowController {
@@ -199,6 +261,7 @@ button {
   transform: translate(-200%, -50%);
 }
 
+/* PROJECT LIGHT BOX SECTION */
 .leftSection {
   background-color: black;
   position: relative;
@@ -206,6 +269,7 @@ button {
   max-height: 90vh;
 }
 
+/* PROJECT INFORMATION SECTION */
 .rightSection {
   position: fixed;
   top: 3%;
@@ -219,6 +283,7 @@ button {
   overflow-y: scroll;
 }
 
+/* PROJECT INFORMATION MODAL BOX*/
 .modal-featureProjectDetails {
   position: fixed;
   background-color: rgba(128, 128, 128, 0.295);
@@ -236,9 +301,17 @@ button {
   display: flex;
 }
 
+/*BODY AND CONTAINER*/
 body,
 .AllContainer {
   position: relative;
+  padding: 0rem 2rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(16, 16, 20, 1) 52%
+  );
 }
 
 header {
@@ -257,14 +330,11 @@ header {
 /*HEADER STYLING*/
 header {
   height: 8vh;
-  background-color: grey;
+  /* background-color: grey; */
   padding: 1rem;
+  color: white;
 }
 
-.w-6.h-6 {
-  width: 1rem;
-  height: 1rem;
-}
 .grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
@@ -272,7 +342,7 @@ header {
 }
 
 .grid-item {
-  border: 1px solid grey;
+  border: 3px solid rgb(26, 25, 25);
   border-radius: 0.5rem;
   overflow: hidden;
   aspect-ratio: 1/1;
@@ -283,11 +353,12 @@ header {
 
 .grid-item-overlay {
   position: absolute;
-  left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.212);
+  left: 0;
+  color: white;
+  min-width: 100%;
   min-height: 100%;
-  width: 100%;
+  background: rgba(39, 39, 39, 0.219);
   z-index: 1;
 }
 
@@ -296,16 +367,25 @@ header {
 }
 
 .overlay span {
-  background-color: white;
-  padding: 2px 2px;
-  border-radius: 1rem;
-  min-width: 1rem;
+  margin-right: 0.2rem;
+}
+
+/*SVG STYLING FORMATTING*/
+.w-6.h-6 {
   width: 1rem;
-  min-height: 1rem;
+}
+
+.svgMediaIcons {
+  width: 1rem;
+  border-radius: 50%;
+  background-color: rgb(29, 27, 27);
   aspect-ratio: 1/1;
-  margin: 0.5rem;
-  flex-direction: row;
-  /* place-items: center; */
+  padding: 0.5rem;
+  min-height: 1.5rem;
+  min-width: 1.5rem;
+}
+
+.overlaySpanFlex {
   display: flex;
 }
 
@@ -331,7 +411,7 @@ header {
     var(--projectInfoSectionWidth) + 1.5 * (var(--rightMarginSpace))
   );
 
-  max-height: 90vh;
+  max-height: 89vh;
   box-sizing: content-box;
 
   overflow-y: auto;
@@ -340,16 +420,42 @@ header {
 
 /*Trying to place the img vertically in the center*/
 #modalImages img {
-  padding: 2rem;
   padding-left: 0;
 }
 
-/*Trying to place the video in the center*/
-#modalImages video {
-  width: 100%;
-  display: flex;
-  margin: 0 auto;
-  padding: 2rem 0rem;
+/* Scroll Bar Styling - LIGHT BOX*/
+.content::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgb(49, 47, 47);
+}
+
+.content::-webkit-scrollbar {
+  width: 15px;
+  border-radius: 12px;
+}
+
+.content::-webkit-scrollbar-thumb {
+  background-color: #e2e2e2;
+  border-radius: 12px;
+}
+
+/* Scroll Bar Styling - ProjectInforamtion*/
+.rightSection::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: rgb(92, 90, 90);
+  border-radius: 0px 12px 12px 0px;
+}
+
+.rightSection::-webkit-scrollbar {
+  width: 12px;
+  border-radius: 12px;
+  background-color: #424141;
+}
+
+.scrollbar::-webkit-scrollbar-thumb,
+.rightSection::-webkit-scrollbar-thumb {
+  background-color: #242222;
+  border-radius: 12px;
 }
 
 @media screen and (max-width: 1024px) {
@@ -372,7 +478,8 @@ header {
   }
 }
 
-@media screen and (max-width: 600px) {
+/*LOWEST MEDIA DEVICE (mobile or smallt tablet)*/
+@media screen and (max-width: 768px) {
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -388,5 +495,61 @@ header {
   .rightSection {
     border-radius: 0.8rem;
     order: -1;
+    position: absolute;
+    width: 95% !important;
+    overflow: hidden;
+    height: 20vh;
+    right: 1rem;
+    left: 0.5rem;
+    top: 0%;
+    border-radius: 0.5rem;
   }
+
+  #modalImages {
+    padding-right: 0;
+  }
+
+  .contentDisplayArea {
+    width: 100%;
+    margin-top: 20vh;
+  }
+
+  .leftArrowController,
+  .rightArrowController {
+    top: 24vh;
+    left: 0;
+    z-index: 2;
+    background-color: transparent;
+  }
+
+  .rightArrowController {
+    right: 0%;
+    left: 100%;
+  }
+
+  .rightArrowController::after {
+    content: ' Next';
+    width: 100px;
+    top: 50px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .leftArrowController::before {
+    content: ' Previous';
+    width: 100px;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(15%, -50%);
+  }
+
+  .authorInfo.socials {
+    padding-top: 0;
+  }
+
+  /* .modal-featureProjectDetails {
+    max-height: 500px;
+  } */
 }
