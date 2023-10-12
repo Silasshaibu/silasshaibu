@@ -176,6 +176,9 @@ function openModal(project, index) {
     modalImages.innerHTML = ""; // Clear previous images
     const currentImages = project.images; // Store the current project Image
 
+    const advertImage = document.querySelector('.advert');
+    advertImage.innerHTML = `<img src='${project.advertImage}' alt='advert' width="100%">`;
+
     for (let i = 0; i < project.images.length; i++) {
         const imageContainer = document.createElement('div'); // Create a div container for the image
         imageContainer.className = 'image-container';
@@ -196,26 +199,48 @@ function openModal(project, index) {
                 </span>
                 <span class="ViewFullScreen">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
-                    </svg>
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
+                </svg>
                 </span>
             `;
             imageContainer.appendChild(actionSection);
+
+            // Get the Download and View Full Screen buttons for this image
+            const downloadButton = imageContainer.querySelector('.DownloadButton');
+            const viewFullScreenButton = imageContainer.querySelector('.ViewFullScreen');
+
+            // Add event listeners for Download button
+            downloadButton.addEventListener('click', () => {
+                const imageSrc = project.images[i].imageUrl;
+                // Create an anchor element to trigger the download
+                const downloadLink = document.createElement('a');
+                downloadLink.href = imageSrc;
+                downloadLink.download = `${project.name}_${i}_SilasShaibu_Portfolio.jpg`; // Set a unique download filename
+                downloadLink.click();
+            });
+
+            // Add event listeners for View Full Screen button
+            viewFullScreenButton.addEventListener('click', () => {
+                const imageSrc = project.images[i].imageUrl;
+                // Open a new window/tab with the image
+                const newWindow = window.open(imageSrc, '_blank', 'fullscreen=yes');
+                if (newWindow) {
+                    newWindow.document.body.style.margin = '0';
+                    newWindow.document.body.style.overflow = 'hidden';
+                }
+            });
         }
 
         if (project.images[i].imageUrl.endsWith('.mp4')) {
             imageContainer.innerHTML = `
                 <video controls controlslist="nofullscreen nodownload" width="100%">
-                    <source src="${project.images[i].imageUrl}"  type="video/mp4" />
+                    <source src="${project.images[i].imageUrl}" type="video/mp4" />
                 </video>
                 <div class="caption"><p>${project.images[i].caption}</p></div>
             `;
         }
 
-        const advertImage = document.querySelector('.advert');
-        advertImage.innerHTML = `<img src='${project.advertImage}' alt='advert' width="100%">`;
-
-        // Add image, and image container to modalImages div
+        // Add the image container to modalImages div
         modalImages.appendChild(imageContainer);
     }
 
@@ -245,37 +270,6 @@ function openModal(project, index) {
     // Display the modal
     modal.style.display = 'flex';
     currentProjectIndex = index;
-
-    // Get the Download and View Full Screen buttons
-    const downloadButton = modal.querySelector('.DownloadButton');
-    const viewFullScreenButton = modal.querySelector('.ViewFullScreen');
-
-    // Add click event listener for Download button
-    downloadButton.addEventListener('click', () => {
-        const currentImage = modalImages.querySelector('img');
-        if (currentImage) {
-            const imageSrc = currentImage.getAttribute('src');
-            // Create an anchor element to trigger the download
-            const downloadLink = document.createElement('a');
-            downloadLink.href = imageSrc;
-            downloadLink.download = `${project.name}_SilasShaibu_Portfolio.jpg`; // Set the desired download filename
-            downloadLink.click();
-        }
-    });
-
-    // Add click event listener for View Full Screen button
-    viewFullScreenButton.addEventListener('click', () => {
-        const currentImage = modalImages.querySelector('img');
-        if (currentImage) {
-            const imageSrc = currentImage.getAttribute('src');
-            // Open a new window/tab with the image
-            const newWindow = window.open(imageSrc, '_blank', 'fullscreen=yes');
-            if (newWindow) {
-                newWindow.document.body.style.margin = '0';
-                newWindow.document.body.style.overflow = 'hidden';
-            }
-        }
-    });
 
     updateProjectInformation();
 }
