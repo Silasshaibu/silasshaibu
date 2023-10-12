@@ -50,8 +50,21 @@ const project3 = {
     softwareUsed: ['Blender', 'Photoshop']
 };
 
+const project4 = {
+    name: 'Egg Grading System',
+    images: [
+        { imageUrl: './project4/_Egg_Thumb.jpg', caption: 'Egg Grading System' },
+        { imageUrl: './project4/Egg_Grading_02.jpg', caption: 'Egg Grading System' },
+        { imageUrl: 'https://youtu.be/_FG21M66wIU', caption: 'Egg Grading System' }
+    ],
+    advertImage: './project4/characterGirl.jpg',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
 // Pack all the projects in one array
-const allProjects = [project1, project2, project3];
+const allProjects = [project1, project2, project3, project4];
 
 // Function to create a software logo element
 function createSoftwareLogo(softwareName) {
