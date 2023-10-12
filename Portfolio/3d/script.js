@@ -17,7 +17,7 @@ const project1 = {
     name: 'Meta Musa',
     images: [
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
-        { imageUrl: './project1/rotatingGlobe.mp4', caption: 'On the Sea Side, Fine-Time Wireframe 4K' }
+        { imageUrl: './project1/rotatingGlobe.mp4', caption: 'Spining Globe' }
     ],
     advertImage: './project1/treeNight.jpg',
     id: '1147591657',
@@ -26,11 +26,10 @@ const project1 = {
 };
 
 const project2 = {
-    name: 'CharacterGirl',
+    name: 'African Lady',
     images: [
-        { imageUrl: './project2/characterGirl.jpg', caption: 'Female Warrior Athena' },
-        { imageUrl: './project2/characterGirl.jpg', caption: '30K Polygons Wireframe' },
-        { imageUrl: './project2/characterGirl.jpg', caption: 'Sculpt Version Multi Resolution Corona Render' }
+        { imageUrl: './project2/FemaleLady_Thumb.jpg', caption: 'African Lady Viewport Render' },
+        { imageUrl: './project2/FemaleLady.jpg', caption: 'Landscape 2 Perspective African Lady'}
     ],
     advertImage: './project2/characterGirl.jpg',
     id: '1147591658',
@@ -38,8 +37,21 @@ const project2 = {
     softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
 };
 
+
+const project3 = {
+    name: 'Lamborghini Hybrid',
+    images: [
+        { imageUrl: './project3/Lamborghini_Thumb.jpg', caption: 'Lamborghini Rendered 2K Resolution' },
+        { imageUrl: './project3/Lamborghini.jpg', caption: 'Lamborghini Rendered 2K Resolution' }
+    ],
+    advertImage: './project3/characterGirl.jpg',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
 // Pack all the projects in one array
-const allProjects = [project1, project2];
+const allProjects = [project1, project2, project3];
 
 // Function to create a software logo element
 function createSoftwareLogo(softwareName) {
