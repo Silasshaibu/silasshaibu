@@ -38,22 +38,8 @@ const project2 = {
     softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
 };
 
-const project3 = {
-    name: 'Webpage',
-    thumbnailImageUrl: './website.jpg',
-    images: [
-        { imageUrl: './website.jpg', caption: 'Only4uWebSite' },
-        { imageUrl: './rotatingGlobe.mp4', caption: 'Rendered with AfterEffects 4K' },
-        { imageUrl: './website.jpg', caption: 'Dashboard Page' }
-    ],
-    advertImage: './website.jpg',
-    id: '1147591659',
-    description: `<p> I love (Glam rock). Hope you guys like it! ♥</p>`,
-    softwareUsed: ['Zbrush']
-};
-
 // Pack all the projects in one array
-const allProjects = [project1, project2, project3];
+const allProjects = [project1, project2];
 
 // Function to create a software logo element
 function createSoftwareLogo(softwareName) {
