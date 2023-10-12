@@ -110,7 +110,7 @@ div.advert {
 }
 
 .authorImage {
-  background-image: url(./MY-PROFILE--Sharp.jpg);
+  background-image: url(./author/silas_profile1.jpg);
   background-size: contain;
 }
 
@@ -456,10 +456,6 @@ header {
 .rightSection::-webkit-scrollbar-thumb {
   background-color: #242222;
   border-radius: 12px;
-}
-
-.modal-featureProjectDetails {
-  display: none;
 }
 
 @media screen and (max-width: 1024px) {

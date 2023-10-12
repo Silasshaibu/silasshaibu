@@ -14,48 +14,32 @@ const softwareLogos = {
 
 // Define your projects here
 const project1 = {
-    name: 'NightlyTree',
-    thumbnailImageUrl: './treeNight.jpg',
+    name: 'Meta Musa',
     images: [
-        { imageUrl: './treeNight.jpg', caption: 'Noon Time Diffuse 1K' },
+        { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
         { imageUrl: './treeNight.jpg', caption: 'On the Sea Side, Fine-Time Wireframe 4K' }
     ],
-    advertImage: './treeNight.jpg',
+    advertImage: './project1/treeNight.jpg',
     id: '1147591657',
     description: `<p> I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
-    softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
+    softwareUsed: ['Blender', 'Photoshop']
 };
 
 const project2 = {
     name: 'CharacterGirl',
-    thumbnailImageUrl: './characterGirl.jpg',
     images: [
-        { imageUrl: './characterGirl.jpg', caption: 'Female Warrior Athena' },
-        { imageUrl: './characterGirl.jpg', caption: '30K Polygons Wireframe' },
-        { imageUrl: './characterGirl.jpg', caption: 'Sculpt Version Multi Resolution Corona Render' }
+        { imageUrl: './project2/characterGirl.jpg', caption: 'Female Warrior Athena' },
+        { imageUrl: './project2/characterGirl.jpg', caption: '30K Polygons Wireframe' },
+        { imageUrl: './project2/characterGirl.jpg', caption: 'Sculpt Version Multi Resolution Corona Render' }
     ],
-    advertImage: './characterGirl.jpg',
+    advertImage: './project2/characterGirl.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
 };
 
-const project3 = {
-    name: 'Webpage',
-    thumbnailImageUrl: './website.jpg',
-    images: [
-        { imageUrl: './website.jpg', caption: 'Only4uWebSite' },
-        { imageUrl: './rotatingGlobe.mp4', caption: 'Rendered with AfterEffects 4K' },
-        { imageUrl: './website.jpg', caption: 'Dashboard Page' }
-    ],
-    advertImage: './website.jpg',
-    id: '1147591659',
-    description: `<p> I love (Glam rock). Hope you guys like it! ♥</p>`,
-    softwareUsed: ['Zbrush']
-};
-
 // Pack all the projects in one array
-const allProjects = [project1, project2, project3];
+const allProjects = [project1, project2];
 
 // Function to create a software logo element
 function createSoftwareLogo(softwareName) {
@@ -273,7 +257,6 @@ function openModal(project, index) {
 
     updateProjectInformation();
 }
-
 
 // Function to navigate to the next project
 function goToNextProject() {

@@ -14,10 +14,10 @@ const softwareLogos = {
 
 // Define your projects here
 const project1 = {
-    name: 'MetaMusa',
+    name: 'Meta Musa',
     images: [
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
-        { imageUrl: './treeNight.jpg', caption: 'On the Sea Side, Fine-Time Wireframe 4K' }
+        { imageUrl: './project1/rotatingGlobe.mp4', caption: 'On the Sea Side, Fine-Time Wireframe 4K' }
     ],
     advertImage: './project1/treeNight.jpg',
     id: '1147591657',
