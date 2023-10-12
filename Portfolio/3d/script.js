@@ -15,7 +15,6 @@ const softwareLogos = {
 // Define your projects here
 const project1 = {
     name: 'MetaMusa',
-    thumbnailImageUrl: '/project1/MetaMusa_ViewPort_Eevee.jpg',
     images: [
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
         { imageUrl: './treeNight.jpg', caption: 'On the Sea Side, Fine-Time Wireframe 4K' }
