@@ -28,7 +28,7 @@ const project1 = {
 const project2 = {
     name: 'African Lady',
     images: [
-        { imageUrl: './project2/FemaleLady_Thumb.jpg', caption: 'African Lady Viewport Render' },
+        { imageUrl: './project2/_FemaleLady_Thumb.jpg', caption: 'African Lady Viewport Render' },
         { imageUrl: './project2/FemaleLady.jpg', caption: 'Landscape 2 Perspective African Lady'}
     ],
     advertImage: './project2/characterGirl.jpg',
@@ -41,7 +41,7 @@ const project2 = {
 const project3 = {
     name: 'Lamborghini Hybrid',
     images: [
-        { imageUrl: './project3/Lamborghini_Thumb.jpg', caption: 'Lamborghini Rendered 2K Resolution' },
+        { imageUrl: './project3/_Lamborghini_Thumb.jpg', caption: 'Lamborghini Rendered 2K Resolution' },
         { imageUrl: './project3/Lamborghini.jpg', caption: 'Lamborghini Rendered 2K Resolution' }
     ],
     advertImage: './project3/characterGirl.jpg',
