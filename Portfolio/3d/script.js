@@ -14,16 +14,16 @@ const softwareLogos = {
 
 // Define your projects here
 const project1 = {
-    name: 'NightlyTree',
-    thumbnailImageUrl: './treeNight.jpg',
+    name: 'MetaMusa',
+    thumbnailImageUrl: '/project1/MetaMusa_ViewPort_Eevee.jpg',
     images: [
-        { imageUrl: './treeNight.jpg', caption: 'Noon Time Diffuse 1K' },
+        { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
         { imageUrl: './treeNight.jpg', caption: 'On the Sea Side, Fine-Time Wireframe 4K' }
     ],
     advertImage: './treeNight.jpg',
     id: '1147591657',
     description: `<p> I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
-    softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
+    softwareUsed: ['Blender', 'Photoshop']
 };
 
 const project2 = {
