@@ -458,6 +458,10 @@ header {
   border-radius: 12px;
 }
 
+.modal-featureProjectDetails {
+  display: none;
+}
+
 @media screen and (max-width: 1024px) {
   .grid {
     grid-template-columns: repeat(3, 1fr);
