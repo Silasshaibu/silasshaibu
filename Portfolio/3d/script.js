@@ -17,7 +17,7 @@ const project1 = {
     name: 'Meta Musa',
     images: [
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
-        { imageUrl: './project1/rotatingGlobe.mp4', caption: 'Spining Globe' }
+        { videoUrl: './project1/rotatingGlobe.mp4', caption: 'Spining Globe' }
     ],
     advertImage: './project1/treeNight.jpg',
     id: '1147591657',
@@ -31,12 +31,11 @@ const project2 = {
         { imageUrl: './project2/_FemaleLady_Thumb.jpg', caption: 'African Lady Viewport Render' },
         { imageUrl: './project2/FemaleLady.jpg', caption: 'Landscape 2 Perspective African Lady'}
     ],
-    advertImage: './project2/characterGirl.jpg',
+    advertImage: './project2/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
 };
-
 
 const project3 = {
     name: 'Lamborghini Hybrid',
@@ -44,7 +43,7 @@ const project3 = {
         { imageUrl: './project3/_Lamborghini_Thumb.jpg', caption: 'Lamborghini Rendered 2K Resolution' },
         { imageUrl: './project3/Lamborghini.jpg', caption: 'Lamborghini Rendered 2K Resolution' }
     ],
-    advertImage: './project3/characterGirl.jpg',
+    advertImage: './project3/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -55,9 +54,9 @@ const project4 = {
     images: [
         { imageUrl: './project4/_Egg_Thumb.jpg', caption: 'Egg Grading System' },
         { imageUrl: './project4/Egg_Grading_02.jpg', caption: 'Egg Grading System' },
-        { imageUrl: 'https://youtu.be/_FG21M66wIU', caption: 'Egg Grading System' }
+        { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading System' }
     ],
-    advertImage: './project4/characterGirl.jpg',
+    advertImage: './project4/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -92,7 +91,6 @@ function updateProjectInformation() {
     });
 }
 
-// Function to load projects into grid items
 function loadProjectsIntoGrid() {
     const projectGrid = document.getElementById('projectGrid');
 
@@ -104,13 +102,7 @@ function loadProjectsIntoGrid() {
         gridItemOverlay.className = 'grid-item-overlay';
 
         // Check if the project contains a video
-        let hasVideo = false;
-        for (let j = 0; j < project.images.length; j++) {
-            if (typeof project.images[j].imageUrl === 'string' && project.images[j].imageUrl.endsWith('.mp4')) {
-                hasVideo = true;
-                break; // Exit the loop as soon as a video is found
-            }
-        }
+        const hasVideo = project.images.some((image) => 'videoUrl' in image);
 
         gridItemOverlay.innerHTML = `
             <div class="overlay">
@@ -140,18 +132,16 @@ function loadProjectsIntoGrid() {
             const imageContainer = document.createElement('div');
             imageContainer.className = 'image-container';
 
-            if (image.imageUrl.endsWith('.jpg')) {
+            if ('imageUrl' in image && image.imageUrl.endsWith('.jpg')) {
                 // Render image with caption
                 imageContainer.innerHTML = `
                     <img src="${image.imageUrl}" alt="${project.name}" />
                     <div class="caption"><p>${image.caption}</p></div>
                 `;
-            } else if (image.imageUrl.endsWith('.mp4')) {
+            } else if ('videoUrl' in image) {
                 // Render video with caption
                 imageContainer.innerHTML = `
-                    <video controls controlslist="nofullscreen nodownload" width="100%">
-                        <source src="${image.imageUrl}" type="video/mp4" />
-                    </video>
+                    <iframe width="100%" height="100%" src="${image.videoUrl}" frameborder="0" allowfullscreen></iframe>
                     <div class="caption"><p>${image.caption}</p></div>
                 `;
             }
@@ -180,7 +170,6 @@ function HireMe() {
     window.open('https://www.fiverr.com/silasshaibu', "_blank");
 }
 
-// Function to open the modal and populate it with project data
 function openModal(project, index) {
     modalImages.innerHTML = ""; // Clear previous images
     const currentImages = project.images; // Store the current project Image
@@ -192,59 +181,16 @@ function openModal(project, index) {
         const imageContainer = document.createElement('div'); // Create a div container for the image
         imageContainer.className = 'image-container';
 
-        if (project.images[i].imageUrl.endsWith('.jpg')) {
+        if ('imageUrl' in project.images[i] && project.images[i].imageUrl.endsWith('.jpg')) {
+            // Render image with caption
             imageContainer.innerHTML = `
                 <img src="${project.images[i].imageUrl}" alt="${project.name}" />
                 <div class="caption"><p>${project.images[i].caption}</p></div>
             `;
-
-            const actionSection = document.createElement('div');
-            actionSection.className = 'inner-div';
-            actionSection.innerHTML = `
-                <span class="DownloadButton">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"></path>
-                    </svg>
-                </span>
-                <span class="ViewFullScreen">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                      <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 3.75v4.5m0-4.5h4.5m-4.5 0L9 9M3.75 20.25v-4.5m0 4.5h4.5m-4.5 0L9 15M20.25 3.75h-4.5m4.5 0v4.5m0-4.5L15 9m5.25 11.25h-4.5m4.5 0v-4.5m0 4.5L15 15"></path>
-                </svg>
-                </span>
-            `;
-            imageContainer.appendChild(actionSection);
-
-            // Get the Download and View Full Screen buttons for this image
-            const downloadButton = imageContainer.querySelector('.DownloadButton');
-            const viewFullScreenButton = imageContainer.querySelector('.ViewFullScreen');
-
-            // Add event listeners for Download button
-            downloadButton.addEventListener('click', () => {
-                const imageSrc = project.images[i].imageUrl;
-                // Create an anchor element to trigger the download
-                const downloadLink = document.createElement('a');
-                downloadLink.href = imageSrc;
-                downloadLink.download = `${project.name}_${i}_SilasShaibu_Portfolio.jpg`; // Set a unique download filename
-                downloadLink.click();
-            });
-
-            // Add event listeners for View Full Screen button
-            viewFullScreenButton.addEventListener('click', () => {
-                const imageSrc = project.images[i].imageUrl;
-                // Open a new window/tab with the image
-                const newWindow = window.open(imageSrc, '_blank', 'fullscreen=yes');
-                if (newWindow) {
-                    newWindow.document.body.style.margin = '0';
-                    newWindow.document.body.style.overflow = 'hidden';
-                }
-            });
-        }
-
-        if (project.images[i].imageUrl.endsWith('.mp4')) {
+        } else if ('videoUrl' in project.images[i]) {
+            // Render video with caption
             imageContainer.innerHTML = `
-                <video controls controlslist="nofullscreen nodownload" width="100%">
-                    <source src="${project.images[i].imageUrl}" type="video/mp4" />
-                </video>
+                <iframe width="100%" height="100%" src="${project.images[i].videoUrl}" frameborder="0" allowfullscreen></iframe>
                 <div class="caption"><p>${project.images[i].caption}</p></div>
             `;
         }
@@ -282,6 +228,7 @@ function openModal(project, index) {
 
     updateProjectInformation();
 }
+
 
 // Function to navigate to the next project
 function goToNextProject() {
