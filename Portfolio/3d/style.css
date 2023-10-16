@@ -566,7 +566,7 @@ header {
     right: -2rem;
   }
 
-  .image-container {
+  #modalImages .image-container {
     height: 300px;
   }
 
