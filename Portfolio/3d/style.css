@@ -477,6 +477,29 @@ header {
 
 /*LOWEST MEDIA DEVICE (mobile or smallt tablet)*/
 @media screen and (max-width: 768px) {
+  body,
+  .AllContainer {
+    padding: 1%;
+  }
+
+  .content::-webkit-scrollbar {
+    width: 0.5rem;
+    border-radius: 12px;
+  }
+
+  .content::-webkit-scrollbar-thumb {
+    background-color: #e2e2e2;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 1) 0%,
+      rgba(175, 175, 182, 1) 26%,
+      rgba(156, 156, 162, 1) 65%,
+      rgba(0, 0, 0, 1) 100%
+    );
+    border-radius: 12px;
+  }
+
   .grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -495,7 +518,7 @@ header {
     position: absolute;
     width: 95% !important;
     overflow: hidden;
-    height: 20vh;
+    height: 8.4rem;
     right: 1rem;
     left: 0.5rem;
     top: 0%;
@@ -519,9 +542,40 @@ header {
     background-color: transparent;
   }
 
+  .leftArrowController {
+    left: -2rem;
+  }
+
+  .leftArrowController:hover,
+  .rightArrowController:hover {
+    background-color: transparent;
+    color: white;
+  }
+
   .rightArrowController {
     right: 0%;
-    left: 100%;
+    left: calc(100% + 2.5rem);
+  }
+
+  .rightArrowController {
+    right: -2rem;
+  }
+
+  .image-container {
+    height: 300px;
+  }
+
+  .caption {
+    padding: 0.2rem;
+    margin-bottom: 0.1rem;
+  }
+
+  .authorInfo.advertSales {
+    display: none;
+  }
+
+  .contentDisplayArea {
+    margin-top: 0vh;
   }
 
   .rightArrowController::after {
@@ -544,6 +598,10 @@ header {
 
   .authorInfo.socials {
     padding-top: 0;
+  }
+
+  .authorInfo {
+    padding-bottom: 0.5rem;
   }
 
   /* .modal-featureProjectDetails {
