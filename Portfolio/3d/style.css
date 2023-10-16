@@ -504,6 +504,10 @@ header {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .image-container:first-child {
+    padding-top: 20vh;
+  }
+
   .modal-featureProjectDetails {
     flex-direction: column-reverse;
     display: grid;
@@ -516,13 +520,13 @@ header {
     border-radius: 0.8rem;
     order: -1;
     position: absolute;
-    width: 95% !important;
+    width: 97% !important;
     overflow: hidden;
     height: 8.4rem;
     right: 1rem;
-    left: 0.5rem;
+    left: 0rem;
     top: 0%;
-    border-radius: 0.5rem;
+    border-radius: 0rem;
   }
 
   #modalImages {
