@@ -62,8 +62,22 @@ const project4 = {
     softwareUsed: ['Blender', 'Photoshop']
 };
 
+const project5 = {
+    name: 'Fire Place',
+    images: [
+
+        { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
+        { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' },
+        { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+    ],
+    advertImage: './project5/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
 // Pack all the projects in one array
-const allProjects = [project1, project2, project3, project4];
+const allProjects = [project1, project2, project3, project4, project5];
 
 // Function to create a software logo element
 function createSoftwareLogo(softwareName) {
