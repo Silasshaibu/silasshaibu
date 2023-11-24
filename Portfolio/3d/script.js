@@ -67,10 +67,9 @@ const project4 = {
 const project5 = {
     name: 'Fire Place',
     images: [
-
         { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
-        { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' },
-        { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
+        { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
     ],
     advertImage: './project5/',
     id: '1147591658',
@@ -148,8 +147,8 @@ function loadProjectsIntoGrid() {
             const imageContainer = document.createElement('div');
             imageContainer.className = 'image-container';
 
-            if ('imageUrl' in image && image.imageUrl.endsWith('.jpg')) {
-                // Render image with caption
+            if ('imageUrl' in image && /\.(jpg|jpeg|png)$/.test(image.imageUrl)) {
+                // Render image with caption for .jpg, .jpeg, and .png
                 imageContainer.innerHTML = `
                     <img src="${image.imageUrl}" alt="${project.name}" />
                     <div class="caption"><p>${image.caption}</p></div>
@@ -197,7 +196,7 @@ function openModal(project, index) {
         const imageContainer = document.createElement('div'); // Create a div container for the image
         imageContainer.className = 'image-container';
 
-        if ('imageUrl' in project.images[i] && project.images[i].imageUrl.endsWith('.jpg')) {
+        if ('imageUrl' in project.images[i] && /\.(jpg|jpeg|png)$/.test(project.images[i].imageUrl)){
             // Render image with caption
             imageContainer.innerHTML = `
                 <img src="${project.images[i].imageUrl}" alt="${project.name}" />
