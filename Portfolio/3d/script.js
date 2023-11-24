@@ -16,6 +16,7 @@ const softwareLogos = {
 const project1 = {
     name: 'Meta Musa',
     images: [
+        { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'Thumbnail' },
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
         { videoUrl: './project1/rotatingGlobe.mp4', caption: 'Spining Globe' }
     ],
@@ -28,6 +29,7 @@ const project1 = {
 const project2 = {
     name: 'African Lady',
     images: [
+        { imageUrl: './project2/_FemaleLady_Thumb.jpg', caption: 'Thumbnail' },
         { imageUrl: './project2/_FemaleLady_Thumb.jpg', caption: 'African Lady Viewport Render' },
         { imageUrl: './project2/FemaleLady.jpg', caption: 'Landscape 2 Perspective African Lady'}
     ],
@@ -52,10 +54,10 @@ const project3 = {
 const project4 = {
     name: 'Egg Grading System',
     images: [
-        { imageUrl: './project4/_Egg_Thumb.jpg', caption: 'Egg Grading System' },
-        { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' },
+        { imageUrl: './project4/_Egg_Thumb.jpg', caption: 'Thumbnail' },
         { imageUrl: './project4/Egg_Grading_02.jpg', caption: 'Egg Grading System - Loading Phase' },
         { imageUrl: './project4/Viewport_Wireframe_1.jpg', caption: 'Viewport_Wireframe_1' },
+        { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' },
         { imageUrl: './project4/Viewport_Render.jpg', caption: 'Viewport_Render' }
     ],
     advertImage: './project4/',
@@ -67,6 +69,7 @@ const project4 = {
 const project5 = {
     name: 'Fire Place',
     images: [
+        { imageUrl: './project5/1.jpg', caption: 'Thumbnail' },
         { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
         { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
         { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
@@ -192,7 +195,7 @@ function openModal(project, index) {
     const advertImage = document.querySelector('.advert');
     advertImage.innerHTML = `<img src='${project.advertImage}' alt='advert' width="100%">`;
 
-    for (let i = 0; i < project.images.length; i++) {
+    for (let i = 1; i < project.images.length; i++) {
         const imageContainer = document.createElement('div'); // Create a div container for the image
         imageContainer.className = 'image-container';
 
