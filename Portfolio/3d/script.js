@@ -53,9 +53,10 @@ const project4 = {
     name: 'Egg Grading System',
     images: [
         { imageUrl: './project4/_Egg_Thumb.jpg', caption: 'Egg Grading System' },
+        { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' },
         { imageUrl: './project4/Egg_Grading_02.jpg', caption: 'Egg Grading System - Loading Phase' },
         { imageUrl: './project4/Viewport_Wireframe_1.jpg', caption: 'Viewport_Wireframe_1' },
-        { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' }
+        { imageUrl: './project4/Viewport_Render.jpg', caption: 'Viewport_Render' }
     ],
     advertImage: './project4/',
     id: '1147591658',
