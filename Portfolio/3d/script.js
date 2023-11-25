@@ -70,8 +70,10 @@ const project5 = {
     name: 'Fire Place',
     images: [
         { imageUrl: './project5/1.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
+        { imageUrl: './project5/Render--WhiteMarble.png', caption: 'Render_WhiteMarble' },
+        { imageUrl: './project5/Render--OldMarble.png', caption: 'Render_OldMarble' },
         { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
+        { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
         { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
     ],
     advertImage: './project5/',
