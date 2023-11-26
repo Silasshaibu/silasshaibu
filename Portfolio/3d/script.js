@@ -14,9 +14,9 @@ const softwareLogos = {
 
 // Define your projects here
 const project1 = {
-    name: 'Meta Musa',
+    name: 'Meta Musa NFT Collection',
     images: [
-        { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project1/MetaMusa-NFT__Thumbnail.jpg', caption: 'Thumbnail' },
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
         { videoUrl: './project1/rotatingGlobe.mp4', caption: 'Spining Globe' }
     ],
