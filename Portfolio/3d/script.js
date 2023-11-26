@@ -17,6 +17,11 @@ const project1 = {
     name: 'Meta Musa NFT Collection',
     images: [
         { imageUrl: './project1/MetaMusa-NFT__Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project1/Cobalt.jpg', caption: 'Cobalt' },
+        { imageUrl: './project1/Copper.jpg', caption: 'Copper' },
+        { imageUrl: './project1/Emerald.jpg', caption: 'Emerald' },
+        { imageUrl: './project1/Goldenball.jpg', caption: 'Goldenball' },
+        { imageUrl: './project1/Diamond.jpg', caption: 'Diamond' },
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
         { videoUrl: './project1/rotatingGlobe.mp4', caption: 'Spining Globe' }
     ],
