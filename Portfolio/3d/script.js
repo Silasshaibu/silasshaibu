@@ -152,11 +152,10 @@ const project10 = {
 };
 
 const project11 = {
-    name: 'Tessa Thompson',
+    name: 'Potato Smash Machine',
     images: [
-        { imageUrl: './project11/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project11/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project11/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project11/PotatoSmashMaster_Thumbnail.png', caption: 'Thumbnail' },
+        { videoUrl: './project11/PotatoSmashMaster_Exhibition_30fps.mp4', caption: 'Potato Smash Master Exhibition' }
     ],
     advertImage: './project11/',
     id: '1147591658',
@@ -165,11 +164,10 @@ const project11 = {
 };
 
 const project12 = {
-    name: 'Tessa Thompson',
+    name: 'Car Shredder Recycling System',
     images: [
-        { imageUrl: './project12/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project12/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project12/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project12/CarShredderSystem_Thumbnail.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project12/CarShredderRecycle_System_Overview.mp4', caption: 'Car_Shredder_Recycling_System--Overview' }
     ],
     advertImage: './project12/',
     id: '1147591658',
