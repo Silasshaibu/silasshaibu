@@ -87,8 +87,56 @@ const project5 = {
     softwareUsed: ['Blender', 'Photoshop']
 };
 
+const project6 = {
+    name: 'Couch',
+    images: [
+        { imageUrl: './project5/1.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project5/Render--WhiteMarble.png', caption: 'Render_WhiteMarble' },
+        { imageUrl: './project5/Render--OldMarble.png', caption: 'Render_OldMarble' },
+        { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
+        { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
+        { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
+    ],
+    advertImage: './project5/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
+const project7 = {
+    name: 'Skandi Ship for 3D Print',
+    images: [
+        { imageUrl: './project5/1.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project5/Render--WhiteMarble.png', caption: 'Render_WhiteMarble' },
+        { imageUrl: './project5/Render--OldMarble.png', caption: 'Render_OldMarble' },
+        { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
+        { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
+        { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
+    ],
+    advertImage: './project5/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
+const project8 = {
+    name: 'Tessa Thompson',
+    images: [
+        { imageUrl: './project5/1.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project5/Render--WhiteMarble.png', caption: 'Render_WhiteMarble' },
+        { imageUrl: './project5/Render--OldMarble.png', caption: 'Render_OldMarble' },
+        { videoUrl: './project5/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
+        { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
+        { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
+    ],
+    advertImage: './project5/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
 // Pack all the projects in one array
-const allProjects = [project1, project2, project3, project4, project5];
+const allProjects = [project1, project2, project3, project4, project5, project6, project7, project8];
 
 // Function to create a software logo element
 function createSoftwareLogo(softwareName) {
