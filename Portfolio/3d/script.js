@@ -88,15 +88,18 @@ const project5 = {
 };
 
 const project6 = {
-    name: 'Couch',
+    name: 'BallonUnderground-Carpe01_Bill',
     images: [
-        { imageUrl: './project6/1.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project6/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project6/Ballon_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project6/0246.jpg', caption: 'Stage_1' },
+        { videoUrl: './project6/4K-UHD.mp4', caption: 'Slab-Exhibition' },
+        { imageUrl: './project6/0134.jpg', caption: 'Stage_2' },
+        { imageUrl: './project6/0502.jpg', caption: 'Stage_3' }
     ],
-    advertImage: './project5/',
+    advertImage: './project6/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
-    softwareUsed: ['Blender', 'Photoshop']
+    softwareUsed: ['Blender']
 };
 
 const project7 = {
@@ -114,7 +117,60 @@ const project7 = {
 const project8 = {
     name: 'Tessa Thompson',
     images: [
-        { imageUrl: './project8/1.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+    ],
+    advertImage: './project8/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
+const project9 = {
+    name: 'Tessa Thompson',
+    images: [
+        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+    ],
+    advertImage: './project8/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
+const project10 = {
+    name: 'Tessa Thompson',
+    images: [
+        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+    ],
+    advertImage: './project8/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
+const project11 = {
+    name: 'Tessa Thompson',
+    images: [
+        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+    ],
+    advertImage: './project8/',
+    id: '1147591658',
+    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    softwareUsed: ['Blender', 'Photoshop']
+};
+
+const project12 = {
+    name: 'Tessa Thompson',
+    images: [
+        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
         { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
     ],
     advertImage: './project8/',
@@ -124,7 +180,7 @@ const project8 = {
 };
 
 // Pack all the projects in one array
-const allProjects = [project1, project2, project3, project4, project5, project6, project7, project8];
+const allProjects = [project1, project2, project3, project4, project5, project6, project7, project8, project9, project10, project11, project12];
 
 // Function to create a software logo element
 function createSoftwareLogo(softwareName) {
