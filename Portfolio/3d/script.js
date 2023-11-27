@@ -91,11 +91,7 @@ const project6 = {
     name: 'Couch',
     images: [
         { imageUrl: './project6/1.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project6/Render--WhiteMarble.png', caption: 'Render_WhiteMarble' },
-        { imageUrl: './project6/Render--OldMarble.png', caption: 'Render_OldMarble' },
-        { videoUrl: './project6/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
-        { imageUrl: './project6/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
-        { imageUrl: './project6/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
+        { videoUrl: './project6/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
     ],
     advertImage: './project5/',
     id: '1147591658',
@@ -107,11 +103,7 @@ const project7 = {
     name: 'Skandi Ship for 3D Print',
     images: [
         { imageUrl: './project7/SkandiShip_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project7/Render--WhiteMarble.png', caption: 'Render_WhiteMarble' },
-        { imageUrl: './project7/Render--OldMarble.png', caption: 'Render_OldMarble' },
         { videoUrl: './project7/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
-        { imageUrl: './project7/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
-        { imageUrl: './project7/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
     ],
     advertImage: './project7/',
     id: '1147591658',
@@ -123,11 +115,7 @@ const project8 = {
     name: 'Tessa Thompson',
     images: [
         { imageUrl: './project8/1.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project8/Render--WhiteMarble.png', caption: 'Render_WhiteMarble' },
-        { imageUrl: './project8/Render--OldMarble.png', caption: 'Render_OldMarble' },
-        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
-        { imageUrl: './project8/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
-        { imageUrl: './project8/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
+        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
     ],
     advertImage: './project8/',
     id: '1147591658',
