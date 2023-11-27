@@ -128,26 +128,26 @@ const project8 = {
 };
 
 const project9 = {
-    name: 'Tessa Thompson',
+    name: 'Omniberman Rollercoaster Shelf Drive',
     images: [
-        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project9/Omniberman_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project9/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project9/Revision2-Rail-with-floor.mp4', caption: 'Fire Place TurnTable' }
     ],
-    advertImage: './project8/',
+    advertImage: './project9/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
 const project10 = {
-    name: 'Tessa Thompson',
+    name: 'Reducable Round Table',
     images: [
-        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project10/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project10/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project10/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
     ],
-    advertImage: './project8/',
+    advertImage: './project10/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -156,11 +156,11 @@ const project10 = {
 const project11 = {
     name: 'Tessa Thompson',
     images: [
-        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project11/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project11/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project11/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
     ],
-    advertImage: './project8/',
+    advertImage: './project11/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -169,11 +169,11 @@ const project11 = {
 const project12 = {
     name: 'Tessa Thompson',
     images: [
-        { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project12/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project12/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project12/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
     ],
-    advertImage: './project8/',
+    advertImage: './project12/',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
