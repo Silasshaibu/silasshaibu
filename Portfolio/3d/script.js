@@ -131,7 +131,6 @@ const project9 = {
     name: 'Omniberman Rollercoaster Shelf Drive',
     images: [
         { imageUrl: './project9/Omniberman_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project9/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
         { videoUrl: './project9/Revision2-Rail-with-floor.mp4', caption: 'Fire Place TurnTable' }
     ],
     advertImage: './project9/',
@@ -141,11 +140,10 @@ const project9 = {
 };
 
 const project10 = {
-    name: 'Reducable Round Table',
+    name: 'Convertible Table',
     images: [
-        { imageUrl: './project10/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project10/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project10/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project10/Convertable-Table_Thumbnail.jpg', caption: 'Thumbnail' },
+        { videoUrl: './project10/Convertable-Table.mp4', caption: 'Convertable_Table 360 TurnTable' }
     ],
     advertImage: './project10/',
     id: '1147591658',
