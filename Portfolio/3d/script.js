@@ -34,7 +34,7 @@ const project1 = {
 const project2 = {
     name: 'African Lady',
     images: [
-        { imageUrl: './project2/_FemaleLady_Thumb.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project2/FemaleLady_Thumb1.jpg', caption: 'Thumbnail' },
         { imageUrl: './project2/_FemaleLady_Thumb.jpg', caption: 'African Lady Viewport Render' },
         { imageUrl: './project2/FemaleLady.jpg', caption: 'Landscape 2 Perspective African Lady'}
     ],
