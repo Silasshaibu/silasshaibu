@@ -18,7 +18,6 @@ const project1 = {
     images: [
         { imageUrl: './project1/MetaMusa-NFT__Thumbnail.jpg', caption: 'Thumbnail' },
         { imageUrl: './project1/MetaMusa_ViewPort_Eevee.jpg', caption: 'MetaMusa ViewPort Eevee' },
-        { imageUrl: './project1/Goldenball.jpg', caption: 'Goldenball' },
         { imageUrl: './project1/Cobalt.jpg', caption: 'Cobalt' },
         { imageUrl: './project1/Copper.jpg', caption: 'Copper' },
         { imageUrl: './project1/Emerald.jpg', caption: 'Emerald' },
