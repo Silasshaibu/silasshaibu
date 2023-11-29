@@ -104,8 +104,7 @@ const project6 = {
 const project7 = {
     name: 'Skandi Ship for 3D Print',
     images: [
-        { imageUrl: './project7/SkandiShip_Thumbnail.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project7/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' },
+        { imageUrl: './project7/SkandiShip_Thumbnail.jpg', caption: 'Thumbnail' }
     ],
     advertImage: './project7/',
     id: '1147591658',
@@ -117,8 +116,7 @@ const project8 = {
     name: 'Tessa Thompson',
     images: [
         { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
-        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' },
-        { videoUrl: './project8/FirePlace_ViewportRender360TurnTable.mp4', caption: 'Fire Place TurnTable' }
+        { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' }
     ],
     advertImage: './project8/',
     id: '1147591658',
