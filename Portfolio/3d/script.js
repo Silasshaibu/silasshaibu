@@ -47,7 +47,7 @@ const project2 = {
 const project3 = {
     name: 'Lamborghini Hybrid',
     images: [
-        { imageUrl: './project3/_Lamborghini_Thumb.jpg', caption: 'Lamborghini Rendered 2K Resolution' },
+        { imageUrl: './project3/Lamborghini_Thumb.jpg', caption: 'Lamborghini Rendered 2K Resolution' },
         { imageUrl: './project3/Lamborghini.jpg', caption: 'Lamborghini Rendered 2K Resolution' }
     ],
     advertImage: './project3/',
@@ -59,7 +59,7 @@ const project3 = {
 const project4 = {
     name: 'Egg Grading System',
     images: [
-        { imageUrl: './project4/Egg_Thumb1.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project4/Egg_Thumb.jpg', caption: 'Thumbnail' },
         { imageUrl: './project4/Egg_Grading_02.jpg', caption: 'Egg Grading System - Loading Phase' },
         { imageUrl: './project4/Viewport_Wireframe_1.jpg', caption: 'Viewport_Wireframe_1' },
         { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' },
