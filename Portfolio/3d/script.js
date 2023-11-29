@@ -60,8 +60,7 @@ const project4 = {
         { imageUrl: './project4/Egg_Thumb.jpg', caption: 'Thumbnail' },
         { imageUrl: './project4/Egg_Grading_02.jpg', caption: 'Egg Grading System - Loading Phase' },
         { imageUrl: './project4/Viewport_Wireframe_1.jpg', caption: 'Viewport_Wireframe_1' },
-        { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' },
-        { imageUrl: './project4/Viewport_Render.jpg', caption: 'Viewport_Render' }
+        { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' }
     ],
     advertImage: './project4/',
     id: '1147591658',
