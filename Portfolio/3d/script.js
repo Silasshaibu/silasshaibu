@@ -1,16 +1,18 @@
 //window listen on scroll 10vh let the header be sticky
 
-window.addEventListener('scroll', function() {
-    var header = document.getElementById('mainHeader');
-    var scrollPosition = window.scrollY;
+// window.addEventListener('scroll', function() {
+//     var header = document.getElementById('mainHeader');
+//     var scrollPosition = window.scrollY;
 
-    // Set the header to be sticky after scrolling 10vh
-    if (scrollPosition >= 10 * window.innerHeight / 100) {
-      header.style.top = '0';
-    } else {
-      header.style.top = '-10vh';
-    }
-  });
+//     // Set the header to be sticky after scrolling 10vh
+//     if (scrollPosition >= 10 * window.innerHeight / 100) {
+//       header.style.top = '0';
+//       header.style.backgroundColor ='red';
+//     } else {
+//       header.style.top = '-60vh';
+//       header.style.backgroundColor ='green';
+//     }
+//   });
 
 
 

@@ -7,7 +7,7 @@
 
 :root {
   --projectInfoSectionWidth: 30vw;
-  --HeaderHeight: 5vh;
+  --HeaderHeight: 4vh;
   --rightMarginSpace: 2%;
   --imageWidthAndheight: 4rem;
 }
@@ -308,25 +308,28 @@ body,
   );
 }
 
+/*HEADER STYLING*/
 header {
-  height: var(--HeaderHeight);
-  padding: 0.5rem 1rem;
+  height: 6vh;
+  padding: 1rem;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(16, 16, 20, 1) 52%
+  );
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0vh;
+  z-index: 1;
 }
 
 .content {
   width: 100%;
   max-height: 60vh;
-}
-
-/*HEADER STYLING*/
-header {
-  height: 8vh;
-  /* background-color: grey; */
-  padding: 1rem;
-  color: white;
 }
 
 .grid {
@@ -476,7 +479,7 @@ header {
 @media screen and (max-width: 768px) {
   body,
   .AllContainer {
-    padding: 1%;
+    padding: 0%;
   }
 
   .content::-webkit-scrollbar {
