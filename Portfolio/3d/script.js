@@ -34,7 +34,7 @@ const project1 = {
 const project2 = {
     name: 'African Lady',
     images: [
-        { imageUrl: './project2/FemaleLady_Thumb1.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project2/FemaleLady_Thumb.jpg', caption: 'Thumbnail' },
         { imageUrl: './project2/_FemaleLady_Thumb.jpg', caption: 'African Lady Viewport Render' },
         { imageUrl: './project2/FemaleLady.jpg', caption: 'Landscape 2 Perspective African Lady'}
     ],
@@ -59,7 +59,7 @@ const project3 = {
 const project4 = {
     name: 'Egg Grading System',
     images: [
-        { imageUrl: './project4/_Egg_Thumb.jpg', caption: 'Thumbnail' },
+        { imageUrl: './project4/Egg_Thumb1.jpg', caption: 'Thumbnail' },
         { imageUrl: './project4/Egg_Grading_02.jpg', caption: 'Egg Grading System - Loading Phase' },
         { imageUrl: './project4/Viewport_Wireframe_1.jpg', caption: 'Viewport_Wireframe_1' },
         { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' },
