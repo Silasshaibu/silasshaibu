@@ -26,7 +26,7 @@ const project1 = {
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591657',
-    description: `<p> I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p> I was inspired by the historical richness of Mansa Musa of Mali and decided to create an NFT Collection of it. This collection is a digital homage, meticulously bringing to life the opulence and cultural significance associated with Mansa Musa. Through intricate 3D modeling, each piece captures the grandeur and wealth of this historical figure. Explore the Meta Musa NFT Collection to witness the fusion of history and art, where every detail tells a story of prosperity and leaves a lasting impression. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
@@ -38,7 +38,7 @@ const project2 = {
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Immerse yourself in the beauty of African culture with my latest sculpted masterpiece—an intricately detailed bust of an African lady adorned with a traditional George on her head. Crafted with passion and precision in Blender, this sculpture celebrates the richness of African heritage and the elegance of traditional attire. The careful detailing captures the essence of the subject, bringing to life the grace and strength inherent in her cultural identity. Join me on a visual journey that transcends borders and explores the artistry of tradition, one vertex at a time. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
 };
 
