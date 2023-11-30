@@ -50,7 +50,7 @@ const project3 = {
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Venture into the future of automotive design with my latest creation—a hybrid Lamborghini that seamlessly fuses cutting-edge technology with the iconic style of this legendary brand. Meticulously crafted in 3D, this futuristic masterpiece reimagines the Lamborghini, embracing sustainability without compromising the raw power and elegance synonymous with the marque. From the sleek aerodynamics to the electrically charged details, every element is a testament to the harmony between innovation and automotive excellence. Join me on a ride into the future as we explore the exhilarating world of the Hybrid Lamborghini, where performance meets eco-conscious design in a thrilling blend of luxury and innovation. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
@@ -64,7 +64,7 @@ const project4 = {
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Revolutionizing the efficiency of egg processing, I present my latest creation—an advanced egg grading and sorting machine. Seamlessly blending precision engineering with functionality, this ingenious device automates the sorting process based on egg weight, ensuring optimal organization in every tray. From lightweight to heavy, each egg finds its perfect place, enhancing productivity in the agricultural sector. Dive into the world of innovation and practicality as we redefine egg processing with a machine that streamlines the grading process, bringing a new level of efficiency to the agricultural landscape. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
@@ -80,7 +80,7 @@ const project5 = {
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Embark on a journey of cozy elegance with my latest creation—a meticulously designed fireplace that blends functionality with timeless aesthetics. Crafted with precision in 3D, this fireplace serves as a centerpiece, creating a warm and inviting atmosphere in any space. From the carefully selected materials to the intricate detailing, each element is a testament to the fusion of design and functionality. Join me in embracing the beauty of a crackling fire, elevated by a thoughtfully designed fireplace that not only adds warmth but also becomes a captivating focal point, infusing comfort and style into every environment.. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
