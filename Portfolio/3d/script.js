@@ -100,37 +100,37 @@ const project6 = {
 };
 
 const project7 = {
-    name: 'Skandi Ship for 3D Print',
+    name: 'Skandi Voyager for 3D-Print',
     images: [
         { imageUrl: './project7/SkandiShip_Thumbnail.jpg', caption: 'Thumbnail' }
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Embark on a voyage into the future of maritime design with the Skandi Voyager—a meticulously crafted ship designed exclusively for 3D printing. Every contour, every detail, has been tailored to harness the capabilities of additive manufacturing, resulting in a vessel that seamlessly blends innovation with nautical tradition. Join me in celebrating the convergence of technology and seafaring heritage as the Skandi Voyager sets sail, not just on the waves, but also in the realm of cutting-edge 3D-printed design. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
 const project8 = {
-    name: 'Tessa Thompson',
+    name: 'Tessa Thompson MIB Sculpt',
     images: [
         { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
         { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' }
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Delve into the artistry of my latest creation—the Tessa Thompson Men in Black (MIB) sculpture. Meticulously modeled to capture the celestial elegance of the renowned actress, this piece pays homage to her iconic role in the Men in Black series. From the graceful curves to the meticulous facial details, every aspect is a testament to the fusion of digital craftsmanship and cinematic grace. Explore the Tessa Thompson MIB Sculpt and witness the convergence of talent, technology, and pop culture in a celestial masterpiece. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
 const project9 = {
-    name: 'Omniberman Rollercoaster Shelf Drive',
+    name: 'Revolutionary Seamless Retrieval System',
     images: [
         { imageUrl: './project9/Omniberman_Thumbnail.jpg', caption: 'Thumbnail' },
         { videoUrl: './project9/Revision2-Rail-with-floor.mp4', caption: 'Fire Place TurnTable' }
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Experience the future of storage logistics with my groundbreaking creation—the Revolutionary Seamless Retrieval System. Picture a machine gracefully navigating a circular track, seamlessly adjusting its position to retrieve items from a specially designed semicircular shelf. This innovative system not only streamlines the retrieval process but sets a new standard for precision and efficiency in storage solutions. Join me on a journey where revolutionary design meets practicality, and witness firsthand the transformative impact of the Seamless Shelves Navigating Retrieval System. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
@@ -142,31 +142,31 @@ const project10 = {
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>The AdapTable Fusion. Discover the epitome of versatility with my latest creation—the AdapTable Fusion. A marvel of engineering ingenuity, this table effortlessly transforms between heights, seamlessly transitioning from a standard table to a shorter or taller configuration. By elegantly pulling out and rotating the top half, it effortlessly locks into place, creating a shorter table. The reverse motion forms a taller table, showcasing the adaptability and transformative elegance of this innovative furniture piece. Meet the future of furniture versatility—the Dynamic Table Transformer. This sleek and stylish table is not just a piece of furniture; it's a design marvel that seamlessly transitions between heights. Pull, rotate, and lock—effortlessly switch from a standard table to a shorter or taller configuration. Experience the perfect synergy of form and function as the Dynamic Table Transformer adapts to your needs, offering a chic solution to ever-changing spaces. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
 const project11 = {
-    name: 'Potato Smash Machine',
+    name: 'Potato Smash Master Machine',
     images: [
         { imageUrl: './project11/PotatoSmashMaster_Thumbnail.png', caption: 'Thumbnail' },
         { videoUrl: './project11/PotatoSmashMaster_Exhibition_30fps.mp4', caption: 'Potato Smash Master Exhibition' }
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Step into the future of kitchen efficiency with the Potato Smash Master—a game-changer in the culinary world. Gone are the days of manual potato smashing; instead, envision a machine where potatoes seamlessly move along conveyor belts, arriving at the precision of a hydraulic press. Witness the culinary magic unfold as the smashed potatoes gracefully land in the gastro kitchen container, ready to be transformed into culinary delights by the chef. Embrace innovation and streamline your kitchen operations with the Potato Smash Master—an elegant fusion of technology. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
 const project12 = {
-    name: 'Car Shredder Recycling System',
+    name: 'Car Shredder System ',
     images: [
         { imageUrl: './project12/CarShredderSystem_Thumbnail.jpg', caption: 'Thumbnail' },
         { videoUrl: './project12/CarShredderRecycle_System_Overview.mp4', caption: 'Car_Shredder_Recycling_System--Overview' }
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Automotive Alchemy: The Car Parts Recycler. Immerse yourself in the epicenter of automotive sustainability with the Car Parts Recycler—a colossal and intricate machine designed to revolutionize recycling in the automotive industry. This dense and robust project is a testament to engineering prowess, capable of efficiently shredding car parts into recyclable materials. Witness the transformation of discarded components into a sustainable resource, embodying the essence of environmental responsibility. Explore the intricate mechanics and sheer magnitude of the Car Parts Recycler—a powerful force driving the future of eco-friendly automotive practices. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
 };
 
