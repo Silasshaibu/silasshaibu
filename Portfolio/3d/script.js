@@ -24,7 +24,7 @@ const project1 = {
         { imageUrl: './project1/Diamond.jpg', caption: 'Diamond' },
         { videoUrl: './project1/rotatingGlobe.mp4', caption: 'Spining Globe' }
     ],
-    advertImage: './project1/treeNight.jpg',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591657',
     description: `<p> I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -36,7 +36,7 @@ const project2 = {
         { imageUrl: './project2/FemaleLady_Thumb.jpg', caption: 'Thumbnail' },
         { imageUrl: './project2/FemaleLady.jpg', caption: 'Landscape 2 Perspective African Lady'}
     ],
-    advertImage: './project2/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Zbrush', 'Photoshop']
@@ -48,7 +48,7 @@ const project3 = {
         { imageUrl: './project3/Lamborghini_Thumb.jpg', caption: 'Lamborghini Rendered 2K Resolution' },
         { imageUrl: './project3/Lamborghini.jpg', caption: 'Lamborghini Rendered 2K Resolution' }
     ],
-    advertImage: './project3/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -62,7 +62,7 @@ const project4 = {
         { imageUrl: './project4/Viewport_Wireframe_1.jpg', caption: 'Viewport_Wireframe_1' },
         { videoUrl: 'https://www.youtube.com/embed/_FG21M66wIU', caption: 'Egg Grading/Sorting System Animation' }
     ],
-    advertImage: './project4/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -78,7 +78,7 @@ const project5 = {
         { imageUrl: './project5/1.jpg', caption: 'Fire Place 45 Deg Perspective' },
         { imageUrl: './project5/2-Wireframe.jpg', caption: 'Fire Place 45 Deg Perspective - Wireframe' }
     ],
-    advertImage: './project5/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -93,7 +93,7 @@ const project6 = {
         { imageUrl: './project6/0134.jpg', caption: 'Stage_2' },
         { imageUrl: './project6/0502.jpg', caption: 'Stage_3' }
     ],
-    advertImage: './project6/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender']
@@ -104,7 +104,7 @@ const project7 = {
     images: [
         { imageUrl: './project7/SkandiShip_Thumbnail.jpg', caption: 'Thumbnail' }
     ],
-    advertImage: './project7/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -116,7 +116,7 @@ const project8 = {
         { imageUrl: './project8/TessaThompson_Thumbnail.jpg', caption: 'Thumbnail' },
         { imageUrl: './project8/TessaThompson_Viewport_Eevee.jpg', caption: 'Thumbnail' }
     ],
-    advertImage: './project8/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -128,7 +128,7 @@ const project9 = {
         { imageUrl: './project9/Omniberman_Thumbnail.jpg', caption: 'Thumbnail' },
         { videoUrl: './project9/Revision2-Rail-with-floor.mp4', caption: 'Fire Place TurnTable' }
     ],
-    advertImage: './project9/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -140,7 +140,7 @@ const project10 = {
         { imageUrl: './project10/Convertable-Table_Thumbnail.jpg', caption: 'Thumbnail' },
         { videoUrl: './project10/Convertable-Table.mp4', caption: 'Convertable_Table 360 TurnTable' }
     ],
-    advertImage: './project10/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -152,7 +152,7 @@ const project11 = {
         { imageUrl: './project11/PotatoSmashMaster_Thumbnail.png', caption: 'Thumbnail' },
         { videoUrl: './project11/PotatoSmashMaster_Exhibition_30fps.mp4', caption: 'Potato Smash Master Exhibition' }
     ],
-    advertImage: './project11/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
@@ -164,7 +164,7 @@ const project12 = {
         { imageUrl: './project12/CarShredderSystem_Thumbnail.jpg', caption: 'Thumbnail' },
         { videoUrl: './project12/CarShredderRecycle_System_Overview.mp4', caption: 'Car_Shredder_Recycling_System--Overview' }
     ],
-    advertImage: './project12/',
+    advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
     description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender', 'Photoshop']
