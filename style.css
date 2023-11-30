@@ -61,7 +61,7 @@ a:hover {
 }
 
 .site-title {
-  text-align: center;
+  text-align: left;
   padding: 0.3rem;
 }
 
@@ -88,6 +88,7 @@ footer {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   place-items: center;
+  border: 1px solid red;
 }
 
 img.social-conn-icons {
@@ -149,10 +150,6 @@ h6 {
 
   header {
     height: 1vh;
-  }
-
-  footer {
-    /* padding:1vh; */
   }
 
   .layout {
