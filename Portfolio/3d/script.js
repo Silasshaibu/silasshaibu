@@ -85,7 +85,7 @@ const project5 = {
 };
 
 const project6 = {
-    name: 'BallonUnderground-Carpe01_Bill',
+    name: 'Subterranean Ballet',
     images: [
         { imageUrl: './project6/Ballon_Thumbnail.jpg', caption: 'Thumbnail' },
         { imageUrl: './project6/0246.jpg', caption: 'Stage_1' },
@@ -95,7 +95,7 @@ const project6 = {
     ],
     advertImage: './softwareLogos/notAvailable.jpg',
     id: '1147591658',
-    description: `<p>Project that I made during the Leticia Gillett´s course. I learned a lot developing this piece with something that I love (Glam rock). Hope you guys like it! ♥</p>`,
+    description: `<p>Step into the unseen choreography of construction with my latest project—an intricate dance of design and functionality. Picture a colossal round bag in the form of an inverted hemisphere, its upper parts elegantly tethered by eight straps to frames that envelop its form. As this suspended masterpiece gracefully descends, the frames, intricately tied to its rhythm, follow suit into a purpose-built cavity. Witness the seamless ballet as the bag and frames find their positions in a subterranean stage, redefining the art of foundation setting with a symphony of engineering elegance. Hope you guys like it! ♥</p>`,
     softwareUsed: ['Blender']
 };
 
